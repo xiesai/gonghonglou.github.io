@@ -72,7 +72,7 @@
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FsearchAFNetworking.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FpodInstall.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png">
-<meta property="og:updated_time" content="2016-07-05T02:34:38.000Z">
+<meta property="og:updated_time" content="2016-07-05T03:32:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的库依赖管理工具CocoaPods">
 <meta name="twitter:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
@@ -386,6 +386,12 @@ end
 </ul>
 <p>鉴于<code>Podfile.lock</code>文件对团队协作如此重要，我们应该将它添加到版本控制里。</p>
 <p><a href="http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control" target="_blank" rel="external">点击前往</a>CocoaPods官网查看对<code>Podfile.lock</code>的介绍。</p>
+<blockquote>
+<p>补充：有时执行<code>pod update</code>命令会特别慢，可以尝试使用如下命令：</p>
+<pre><code>$ pod update --verbose --no-repo-update
+</code></pre><p><code>pod install</code>命令同理：</p>
+<pre><code>$ pod install --verbose --no-repo-update
+</code></pre></blockquote>
 <h2 id="发布自己的开源框架到CocoaPods"><a href="#发布自己的开源框架到CocoaPods" class="headerlink" title="发布自己的开源框架到CocoaPods"></a>发布自己的开源框架到CocoaPods</h2><p>你需要如下图创建一个Framework来打造你自己的开源框架</p>
 <p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png" alt="Framework"></p>
 <p>发布自己的开源框架到CocoaPods同样需要一个类似<code>Podfile</code>的文件来告诉CocoaPods我们开源库的名称、版本、作者、描述、地址、所需的framework、依赖库等，这个文件叫<code>Your_Framework_Name.podspec</code>，开始创建这个文件</p>

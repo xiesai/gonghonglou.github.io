@@ -254,7 +254,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-07-05T02:34:38.000Z</updated>
+    <updated>2016-07-05T03:32:29.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
@@ -351,6 +351,12 @@ end
 &lt;/ul&gt;
 &lt;p&gt;鉴于&lt;code&gt;Podfile.lock&lt;/code&gt;文件对团队协作如此重要，我们应该将它添加到版本控制里。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击前往&lt;/a&gt;CocoaPods官网查看对&lt;code&gt;Podfile.lock&lt;/code&gt;的介绍。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;补充：有时执行&lt;code&gt;pod update&lt;/code&gt;命令会特别慢，可以尝试使用如下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pod update --verbose --no-repo-update
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;pod install&lt;/code&gt;命令同理：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pod install --verbose --no-repo-update
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;h2 id=&quot;发布自己的开源框架到CocoaPods&quot;&gt;&lt;a href=&quot;#发布自己的开源框架到CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;发布自己的开源框架到CocoaPods&quot;&gt;&lt;/a&gt;发布自己的开源框架到CocoaPods&lt;/h2&gt;&lt;p&gt;你需要如下图创建一个Framework来打造你自己的开源框架&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png&quot; alt=&quot;Framework&quot;&gt;&lt;/p&gt;
 &lt;p&gt;发布自己的开源框架到CocoaPods同样需要一个类似&lt;code&gt;Podfile&lt;/code&gt;的文件来告诉CocoaPods我们开源库的名称、版本、作者、描述、地址、所需的framework、依赖库等，这个文件叫&lt;code&gt;Your_Framework_Name.podspec&lt;/code&gt;，开始创建这个文件&lt;/p&gt;
