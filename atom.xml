@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2016-07-24T14:09:40.000Z</updated>
+  <updated>2016-07-24T14:31:21.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2016/07/24/ScanQRCode/"/>
     <id>http://gonghonglou.com/2016/07/24/ScanQRCode/</id>
     <published>2016-07-24T07:44:57.000Z</published>
-    <updated>2016-07-24T14:09:40.000Z</updated>
+    <updated>2016-07-24T14:31:21.000Z</updated>
     
     <content type="html">&lt;p&gt;  好久没有写博客了，如果我说最近太忙了你一定要清楚我是在说瞎话！&lt;br&gt;  其实就是太懒了。&lt;/p&gt;
 &lt;p&gt;  惰性，需要修炼另一技能－－习惯，来对抗。随着习惯这一技能不断增减，惰性会随之减弱。&lt;br&gt;  所以惰性是在每件事开始时表现最强，&lt;br&gt;  所以“万事开头难”这句话是多么智慧。&lt;/p&gt;
@@ -46,16 +46,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;导入&lt;code&gt;AVFoundation&lt;/code&gt;框架：&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#import &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;AVFoundation/AVFoundation.h&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
 &lt;p&gt;用到的属性、声明代理：&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QRCodeScanViewController&lt;/span&gt; () &amp;lt;&lt;span class=&quot;title&quot;&gt;AVCaptureMetadataOutputObjectsDelegate&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;strong&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;AVCaptureDevice&lt;/span&gt; *captureDevice;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;strong&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;AVCaptureSession&lt;/span&gt; *captureSession;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;strong&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;AVCaptureVideoPreviewLayer&lt;/span&gt; *captureVideoPreviewLayer;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;strong&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;UIView&lt;/span&gt; *scanView;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;assign&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;BOOL&lt;/span&gt; lightOn;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@property&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;nonatomic&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;strong&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;UIButton&lt;/span&gt; *lightBtn;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;@end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
 &lt;p&gt;实现方法：&lt;br&gt;重点在&lt;code&gt;- (void)scanCodeSetting;&lt;/code&gt;方法    &lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;获取AVCaptureDevice实例&lt;/li&gt;
 &lt;li&gt;初始化输入流&lt;/li&gt;

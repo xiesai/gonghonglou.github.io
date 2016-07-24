@@ -74,7 +74,7 @@
 八小时内拼工作，八小时外拼成长！Give me five!
 正文本文主要讲使用AVFo">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png">
-<meta property="og:updated_time" content="2016-07-24T14:09:40.000Z">
+<meta property="og:updated_time" content="2016-07-24T14:31:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用AVFoundation实现扫码功能">
 <meta name="twitter:description" content="好久没有写博客了，如果我说最近太忙了你一定要清楚我是在说瞎话！  其实就是太懒了。
@@ -319,16 +319,12 @@
 </li>
 </ul>
 <p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png" alt=""> </p>
-<blockquote>
 <p>导入<code>AVFoundation</code>框架：</p>
-</blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>用到的属性、声明代理：</p>
-</blockquote>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">QRCodeScanViewController</span> () &lt;<span class="title">AVCaptureMetadataOutputObjectsDelegate</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVCaptureDevice</span> *captureDevice;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVCaptureSession</span> *captureSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">AVCaptureVideoPreviewLayer</span> *captureVideoPreviewLayer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIView</span> *scanView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> lightOn;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIButton</span> *lightBtn;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>实现方法：<br>重点在<code>- (void)scanCodeSetting;</code>方法    </p>
+<blockquote>
 <ol>
 <li>获取AVCaptureDevice实例</li>
 <li>初始化输入流</li>
