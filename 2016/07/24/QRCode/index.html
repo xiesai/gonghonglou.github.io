@@ -1,0 +1,866 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="与佳期的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="提起二维码 QR Code 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   
+以这篇博客来讲述在iOS中关于二维码的扫描与生成，会尽可能周全的将二维码识别与生成相关的操作讲述清楚。
+关于二维码生成的原理，感兴趣的话各位可以移驾 二维码的生成细节和原理 以做参考。
+注：文中识别与生成二维码的方法同样适用于条形码。
+先上几张二维码压压惊……
+
+识别二维码摄">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中关于二维码的识别与生成">
+<meta property="og:url" content="http://gonghonglou.com/2016/07/24/QRCode/index.html">
+<meta property="og:site_name" content="与佳期的个人博客">
+<meta property="og:description" content="提起二维码 QR Code 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   
+以这篇博客来讲述在iOS中关于二维码的扫描与生成，会尽可能周全的将二维码识别与生成相关的操作讲述清楚。
+关于二维码生成的原理，感兴趣的话各位可以移驾 二维码的生成细节和原理 以做参考。
+注：文中识别与生成二维码的方法同样适用于条形码。
+先上几张二维码压压惊……
+
+识别二维码摄">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/creatcode.png">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/rectOfInterest.jpeg">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png">
+<meta property="og:updated_time" content="2016-08-23T16:58:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS中关于二维码的识别与生成">
+<meta name="twitter:description" content="提起二维码 QR Code 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   
+以这篇博客来讲述在iOS中关于二维码的扫描与生成，会尽可能周全的将二维码识别与生成相关的操作讲述清楚。
+关于二维码生成的原理，感兴趣的话各位可以移驾 二维码的生成细节和原理 以做参考。
+注：文中识别与生成二维码的方法同样适用于条形码。
+先上几张二维码压压惊……
+
+识别二维码摄">
+<meta name="twitter:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/creatcode.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6245606597867865000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> iOS中关于二维码的识别与生成 | 与佳期的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">与佳期的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">登白薠兮骋望，与佳期兮夕张。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS中关于二维码的识别与生成
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-24T15:44:57+08:00" content="2016-07-24">
+              2016-07-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/24/QRCode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/QRCode/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>提起二维码 <a href="https://en.wikipedia.org/wiki/QR_code" target="_blank" rel="external">QR Code</a> 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   </p>
+<p>以这篇博客来讲述在iOS中关于二维码的扫描与生成，会尽可能周全的将二维码识别与生成相关的操作讲述清楚。</p>
+<p>关于二维码生成的原理，感兴趣的话各位可以移驾 <a href="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/mineqrcode.jpeg" target="_blank" rel="external">二维码的生成细节和原理</a> 以做参考。</p>
+<p>注：文中识别与生成二维码的方法同样适用于条形码。</p>
+<p>先上几张二维码压压惊……</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/creatcode.png" alt="我的二维码"></p>
+<h1 id="识别二维码"><a href="#识别二维码" class="headerlink" title="识别二维码"></a>识别二维码</h1><h2 id="摄像头扫描二维码"><a href="#摄像头扫描二维码" class="headerlink" title="摄像头扫描二维码"></a>摄像头扫描二维码</h2><p>iOS7之后苹果推出系统原生API来支持通过扫描获取二维码的功能，较其它 <a href="https://github.com/ZBar/ZBar" target="_blank" rel="external">ZBar</a>、<a href="https://github.com/zxing/zxing" target="_blank" rel="external">ZXing</a> 等第三方库有明显的性能优势。</p>
+<p>首先，你需要弄清楚要用到的以下对象分别起到什么作用：</p>
+<p>1、 <code>AVCaptureDevice</code>：<br>捕获数据的物理设备，如：摄像机、麦克风。 开关灯属性<code>torchMode</code>就是由它管理的。</p>
+<p>2、 <code>AVCaptureSession</code>：<br>会话，管理输入流、输出流之间的数据传递。</p>
+<p>3、 <code>AVCaptureDeviceInput</code>：<br>输入流，从物理设备获取数据。</p>
+<p>4、 <code>AVCaptureMetadataOutput</code>：<br>输出流，需要设置输出流代理及所在线程，由代理对象处理输出流数据。     </p>
+<p>需要说明的是：</p>
+<ul>
+<li>需要将输出流添加到会话后，才能指定元数据类型，否则会报错。</li>
+<li>将输出流设置在主线程中，其代理方法会执行一次。设置在其他线程的话，代理会执行多次且次数不可控制。</li>
+<li>可以通过设置<code>AVFoundation</code>的<code>rectOfInterest</code>属性来设定扫描区域，该属性默认取值是<code>CGRectMake(0, 0, 1, 1)</code>即全屏扫描<br><code>x</code>、<code>y</code>、<code>width</code>、<code>height</code>的取值范围都是<code>0～1</code>，且原点在屏幕右上角，所以和我们正常理解的<code>CGRect</code>相比<code>x</code>和<code>y</code>对调，<code>width</code>和<code>height</code>对调。</li>
+</ul>
+<p>如图：<img src="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/rectOfInterest.jpeg" alt=""></p>
+<p>5、 <code>AVCaptureVideoPreviewLayerCALayer</code>：<br>预览图层，显示相机拍摄到的画面。正因为它是<code>CALayer</code>的子类，为了将它添加到屏幕上，我们需要额外添加一个<code>UIView</code>，在这个<code>UIView</code>的<code>layer上</code>添加<code>AVCaptureVideoPreviewLayerCALayer</code>，否则它会覆盖住所有的控件（除非你把所有的控件都在添加这个视图之后添加）。</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png" alt=""> </p>
+<blockquote>
+<p>设置开始与结束扫描</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开始会话</span></span><br><span class="line">[<span class="keyword">self</span>.captureSession startRunning];</span><br><span class="line"><span class="comment">// 停止会话</span></span><br><span class="line">[<span class="keyword">self</span>.captureSession stopRunning];</span><br><span class="line"><span class="keyword">self</span>.captureSession = <span class="literal">nil</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>获取AVCaptureDevice实例</li>
+<li>初始化输入流</li>
+<li>初始化输出流<br> 3.1.设置代理及所在线程<br> 3.2设置扫描区域</li>
+<li>创建会话<br> 4.1添加输入流<br> 4.2添加输出流<br> *3.3指定元数据类型</li>
+<li>创建预览图层</li>
+</ol>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.获取AVCaptureDevice实例</span></span><br><span class="line"><span class="keyword">self</span>.captureDevice = [<span class="built_in">AVCaptureDevice</span> defaultDeviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.初始化输入流</span></span><br><span class="line"><span class="built_in">NSError</span> * error;</span><br><span class="line"><span class="built_in">AVCaptureDeviceInput</span> *input = [<span class="built_in">AVCaptureDeviceInput</span> deviceInputWithDevice:<span class="keyword">self</span>.captureDevice error:&amp;error];</span><br><span class="line"><span class="keyword">if</span> (!input) &#123;</span><br><span class="line">   <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, [error localizedDescription]);</span><br><span class="line">   <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.初始化输出流</span></span><br><span class="line"><span class="built_in">AVCaptureMetadataOutput</span> *captureMetadataOutput = [<span class="built_in">AVCaptureMetadataOutput</span> new];</span><br><span class="line"><span class="comment">// 3.1设置代理及所在线程</span></span><br><span class="line">[captureMetadataOutput setMetadataObjectsDelegate:<span class="keyword">self</span> queue:dispatch_get_main_queue()];</span><br><span class="line"><span class="comment">// 3.2设置扫描区域</span></span><br><span class="line">[captureMetadataOutput setRectOfInterest:[<span class="keyword">self</span> scanPlace]];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.创建会话</span></span><br><span class="line"><span class="keyword">self</span>.captureSession = [<span class="built_in">AVCaptureSession</span> new];</span><br><span class="line"><span class="comment">// 4.1添加输入流</span></span><br><span class="line">[<span class="keyword">self</span>.captureSession addInput:input];</span><br><span class="line"><span class="keyword">if</span> ([<span class="keyword">self</span>.captureSession canAddInput:input]) &#123;</span><br><span class="line">   [<span class="keyword">self</span>.captureSession addInput:input];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4.2添加输出流</span></span><br><span class="line"><span class="keyword">if</span> ([<span class="keyword">self</span>.captureSession canAddOutput:captureMetadataOutput]) &#123;</span><br><span class="line">   [<span class="keyword">self</span>.captureSession addOutput:captureMetadataOutput];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.3指定元数据类型</span></span><br><span class="line">captureMetadataOutput.metadataObjectTypes = @[<span class="built_in">AVMetadataObjectTypeUPCECode</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeCode39Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeCode39Mod43Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeEAN13Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeEAN8Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeCode93Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeCode128Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypePDF417Code</span>,</span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeQRCode</span>, <span class="comment">// 二维码</span></span><br><span class="line">                                             <span class="built_in">AVMetadataObjectTypeAztecCode</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5创建预览图层</span></span><br><span class="line"><span class="keyword">self</span>.captureVideoPreviewLayer = [[<span class="built_in">AVCaptureVideoPreviewLayer</span> alloc] initWithSession:<span class="keyword">self</span>.captureSession];</span><br><span class="line">[<span class="keyword">self</span>.captureVideoPreviewLayer setVideoGravity:<span class="built_in">AVLayerVideoGravityResizeAspectFill</span>];</span><br><span class="line">[<span class="keyword">self</span>.captureVideoPreviewLayer setFrame:<span class="keyword">self</span>.scanView.layer.bounds];</span><br><span class="line">[<span class="keyword">self</span>.scanView.layer addSublayer:<span class="keyword">self</span>.captureVideoPreviewLayer];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>代理方法处理输出流，返回扫描结果</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)captureOutput:(<span class="built_in">AVCaptureOutput</span> *)captureOutput didOutputMetadataObjects:(<span class="built_in">NSArray</span> *)metadataObjects fromConnection:(<span class="built_in">AVCaptureConnection</span> *)connection &#123;</span><br><span class="line">    <span class="keyword">if</span> (metadataObjects != <span class="literal">nil</span> &amp;&amp; [metadataObjects count] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">AVMetadataMachineReadableCodeObject</span> *metadataObj = [metadataObjects objectAtIndex:<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">NSString</span> *result = metadataObj.stringValue;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"result:%@"</span>, result);</span><br><span class="line">        <span class="keyword">if</span> ([[metadataObj type] isEqualToString:<span class="built_in">AVMetadataObjectTypeQRCode</span>]) &#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"二维码"</span>);</span><br><span class="line">        &#125; <span class="comment">// ...</span></span><br><span class="line">        [<span class="keyword">self</span> closeScanQRCode];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="开灯"><a href="#开灯" class="headerlink" title="开灯"></a>开灯</h2><blockquote>
+<p>给开关灯按钮调用以下 <code>AVCaptureDevice</code> 方法，轻松实现开灯效果</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)turnLight &#123;</span><br><span class="line">	<span class="comment">// 判断允许设置</span></span><br><span class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span>.device hasTorch]) &#123;</span><br><span class="line">        [<span class="keyword">self</span>.device lockForConfiguration:<span class="literal">nil</span>];</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>.device.torchMode == <span class="built_in">AVCaptureTorchModeOff</span>) &#123;</span><br><span class="line">            [<span class="keyword">self</span>.device setTorchMode:<span class="built_in">AVCaptureTorchModeOn</span>]; <span class="comment">// 开灯</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">self</span>.device.torchMode == <span class="built_in">AVCaptureTorchModeOn</span>) &#123;</span><br><span class="line">            [<span class="keyword">self</span>.device setTorchMode:<span class="built_in">AVCaptureTorchModeOff</span>]; <span class="comment">// 关灯</span></span><br><span class="line">        &#125;</span><br><span class="line">        [<span class="keyword">self</span>.device unlockForConfiguration];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结下来就是：<br><code>AVCaptureSession</code>管理从物理设备<code>AVCaptureDevice</code>那里获取的输入流<code>AVCaptureDeviceInput</code>数据，通过输出流<code>AVCaptureMetadataOutput</code>显示到预览图层<code>AVCaptureVideoPreviewLayerCALayer</code>上，并且由代理方法<code>-(void)captureOutput:(AVCaptureOutput*)captureOutput didOutputMetadataObjects:(NSArray*)metadataObjects fromConnection:(AVCaptureConnection*)connection;</code>处理捕获到的数据。</p>
+</blockquote>
+<h2 id="相册识别二维码"><a href="#相册识别二维码" class="headerlink" title="相册识别二维码"></a>相册识别二维码</h2><blockquote>
+<p>识别二维码图片的方法相当简单：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取二维码</span></span><br><span class="line"><span class="built_in">UIImage</span> *sourceImage ＝ ...;</span><br><span class="line"><span class="built_in">CIContext</span> *context = [<span class="built_in">CIContext</span> contextWithOptions:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">CIDetector</span> *detector = [<span class="built_in">CIDetector</span> detectorOfType:<span class="built_in">CIDetectorTypeQRCode</span> context:context options:@&#123;<span class="built_in">CIDetectorAccuracy</span>:<span class="built_in">CIDetectorAccuracyHigh</span>&#125;];</span><br><span class="line"><span class="built_in">CIImage</span> *image = [<span class="built_in">CIImage</span> imageWithCGImage:sourceImage.CGImage];</span><br><span class="line"><span class="built_in">NSArray</span> *array = [detector featuresInImage:image];</span><br><span class="line"><span class="built_in">CIQRCodeFeature</span> *feature = [array firstObject];</span><br><span class="line"><span class="built_in">NSString</span> *result = feature.messageString;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"result:%@"</span>, result);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>打开系统相册，选择图片识别：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)openPhotoLibrary &#123;</span><br><span class="line">    <span class="built_in">UIImagePickerController</span> *photoPicker = [<span class="built_in">UIImagePickerController</span> new];</span><br><span class="line">    photoPicker.delegate = <span class="keyword">self</span>;</span><br><span class="line">    <span class="comment">// 打开的相册类型</span></span><br><span class="line">    photoPicker.sourceType = <span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>;</span><br><span class="line">    [<span class="keyword">self</span> presentViewController:photoPicker animated:<span class="literal">YES</span> completion:<span class="literal">NULL</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>代理方法识别相册中选中的二维码：</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#pragma mark - UIImagePickerControllerDelegate</span></span><br><span class="line">- (<span class="keyword">void</span>)imagePickerController:(<span class="built_in">UIImagePickerController</span> *)picker didFinishPickingMediaWithInfo:(<span class="built_in">NSDictionary</span> *)info &#123;</span><br><span class="line">    [<span class="keyword">self</span> dismissViewControllerAnimated:<span class="literal">YES</span> completion:^&#123;</span><br><span class="line">        <span class="comment">// 读取二维码</span></span><br><span class="line">        <span class="built_in">UIImage</span> *sourceImage = [info objectForKey:<span class="built_in">UIImagePickerControllerOriginalImage</span>];</span><br><span class="line">        <span class="built_in">CIContext</span> *context = [<span class="built_in">CIContext</span> contextWithOptions:<span class="literal">nil</span>];</span><br><span class="line">        <span class="built_in">CIDetector</span> *detector = [<span class="built_in">CIDetector</span> detectorOfType:<span class="built_in">CIDetectorTypeQRCode</span> context:context options:@&#123;<span class="built_in">CIDetectorAccuracy</span>:<span class="built_in">CIDetectorAccuracyHigh</span>&#125;];</span><br><span class="line">        <span class="built_in">CIImage</span> *image = [<span class="built_in">CIImage</span> imageWithCGImage:sourceImage.CGImage];</span><br><span class="line">        <span class="built_in">NSArray</span> *array = [detector featuresInImage:image];</span><br><span class="line">        <span class="built_in">CIQRCodeFeature</span> *feature = [array firstObject];</span><br><span class="line">        <span class="built_in">NSString</span> *result = feature.messageString;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"result:%@"</span>, result);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="生成二维码"><a href="#生成二维码" class="headerlink" title="生成二维码"></a>生成二维码</h1><blockquote>
+<p>使用系统提供的<code>CIFilter</code>可以方便简单的生成二维码</p>
+<p>生成二维码方法</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImage</span> *)generateQRCode:(<span class="built_in">NSString</span> *)code width:(<span class="built_in">CGFloat</span>)width height:(<span class="built_in">CGFloat</span>)height &#123;</span><br><span class="line">    <span class="built_in">CIImage</span> *qrcodeImage;</span><br><span class="line">    <span class="built_in">NSData</span> *data = [code dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span> allowLossyConversion:<span class="literal">false</span>];</span><br><span class="line">    <span class="built_in">CIFilter</span> *filter = [<span class="built_in">CIFilter</span> filterWithName:<span class="string">@"CIQRCodeGenerator"</span>];</span><br><span class="line">    </span><br><span class="line">    [filter setValue:data forKey:<span class="string">@"inputMessage"</span>];</span><br><span class="line">    [filter setValue:<span class="string">@"H"</span> forKey:<span class="string">@"inputCorrectionLevel"</span>];</span><br><span class="line">    qrcodeImage = [filter outputImage];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 消除模糊</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleX = width / qrcodeImage.extent.size.width; <span class="comment">// extent 返回图片的frame</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleY = height / qrcodeImage.extent.size.height;</span><br><span class="line">    <span class="built_in">CIImage</span> *transformedImage = [qrcodeImage imageByApplyingTransform:<span class="built_in">CGAffineTransformScale</span>(<span class="built_in">CGAffineTransformIdentity</span>, scaleX, scaleY)];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">UIImage</span> imageWithCIImage:transformedImage];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>生成带背景色的二维码</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImage</span> *)gaveColor:(<span class="built_in">NSString</span> *)code width:(<span class="built_in">CGFloat</span>)width height:(<span class="built_in">CGFloat</span>)height &#123;</span><br><span class="line">    <span class="built_in">NSData</span> *data = [code dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span> allowLossyConversion:<span class="literal">false</span>];</span><br><span class="line">    <span class="built_in">CIFilter</span> *filter = [<span class="built_in">CIFilter</span> filterWithName:<span class="string">@"CIQRCodeGenerator"</span>];</span><br><span class="line">    [filter setValue:data forKey:<span class="string">@"inputMessage"</span>];</span><br><span class="line">    [filter setValue:<span class="string">@"H"</span> forKey:<span class="string">@"inputCorrectionLevel"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//上色</span></span><br><span class="line">    <span class="built_in">CIFilter</span> *colorFilter = [<span class="built_in">CIFilter</span> filterWithName:<span class="string">@"CIFalseColor"</span></span><br><span class="line">                                       keysAndValues:</span><br><span class="line">                             <span class="string">@"inputImage"</span>,filter.outputImage,</span><br><span class="line">                             <span class="string">@"inputColor0"</span>,[<span class="built_in">CIColor</span> colorWithCGColor:[<span class="built_in">UIColor</span> purpleColor].CGColor], <span class="comment">// 前景色</span></span><br><span class="line">                             <span class="string">@"inputColor1"</span>,[<span class="built_in">CIColor</span> colorWithCGColor:[<span class="built_in">UIColor</span> cyanColor].CGColor], <span class="comment">// 背景色</span></span><br><span class="line">                             <span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">CIImage</span> *qrcodeImage = colorFilter.outputImage;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 消除模糊</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleX = width / qrcodeImage.extent.size.width; <span class="comment">// extent 返回图片的frame</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleY = height / qrcodeImage.extent.size.height;</span><br><span class="line">    <span class="built_in">CIImage</span> *transformedImage = [qrcodeImage imageByApplyingTransform:<span class="built_in">CGAffineTransformScale</span>(<span class="built_in">CGAffineTransformIdentity</span>, scaleX, scaleY)];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">UIImage</span> imageWithCIImage:transformedImage];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>二维码个性化上色</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 颜色变化</span></span><br><span class="line"><span class="keyword">void</span> ProviderReleaseData (<span class="keyword">void</span> *info, <span class="keyword">const</span> <span class="keyword">void</span> *data, size_t size) &#123;</span><br><span class="line">    free((<span class="keyword">void</span> *)data);</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="built_in">UIImage</span> *)imageBlackToTransparent:(<span class="built_in">UIImage</span> *)image &#123;</span><br><span class="line">    <span class="comment">// 分配内存</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> imageWidth = image.size.width;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> imageHeight = image.size.height;</span><br><span class="line">    size_t bytesPerRow = imageWidth * <span class="number">4</span>;</span><br><span class="line">    uint32_t *rgbImageBuf = (uint32_t *)malloc(bytesPerRow * imageHeight);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建context</span></span><br><span class="line">    <span class="built_in">CGColorSpaceRef</span> colorSpace = <span class="built_in">CGColorSpaceCreateDeviceRGB</span>();</span><br><span class="line">    <span class="built_in">CGContextRef</span> context = <span class="built_in">CGBitmapContextCreate</span>(rgbImageBuf, imageWidth, imageHeight, <span class="number">8</span>, bytesPerRow, colorSpace,kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);</span><br><span class="line">    <span class="built_in">CGContextDrawImage</span>(context, <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, imageWidth, imageHeight), image.CGImage);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历像素</span></span><br><span class="line">    <span class="keyword">int</span> pixelNum = imageWidth * imageHeight;</span><br><span class="line">    uint32_t *pCurPtr = rgbImageBuf;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pixelNum; i++, pCurPtr++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((*pCurPtr &amp; <span class="number">0xFFFFFF00</span>) &lt; <span class="number">0x99999900</span>) &#123;</span><br><span class="line">            <span class="comment">// 改变下面的代码，将图片转成想要的颜色</span></span><br><span class="line">            uint8_t *ptr = (uint8_t *)pCurPtr;</span><br><span class="line">            <span class="keyword">if</span> (i&lt;pixelNum/<span class="number">2</span>) &#123;</span><br><span class="line">                ptr[<span class="number">3</span>] = <span class="number">1</span>; <span class="comment">//0~255</span></span><br><span class="line">                ptr[<span class="number">2</span>] = <span class="number">200</span>;</span><br><span class="line">                ptr[<span class="number">1</span>] = <span class="number">200</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ptr[<span class="number">3</span>] = <span class="number">200</span>; <span class="comment">//0~255</span></span><br><span class="line">                ptr[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">                ptr[<span class="number">1</span>] = <span class="number">200</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// 白色 255,255,255</span></span><br><span class="line">            uint8_t *ptr = (uint8_t *)pCurPtr;</span><br><span class="line">            ptr[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将内存转成image</span></span><br><span class="line">    <span class="built_in">CGDataProviderRef</span> dataProvider = <span class="built_in">CGDataProviderCreateWithData</span>(<span class="literal">NULL</span>, rgbImageBuf, bytesPerRow * imageHeight,ProviderReleaseData);</span><br><span class="line">    <span class="built_in">CGImageRef</span> imageRef = <span class="built_in">CGImageCreate</span>(imageWidth, imageHeight, <span class="number">8</span>, <span class="number">32</span>, bytesPerRow, colorSpace,kCGImageAlphaLast | kCGBitmapByteOrder32Little, dataProvider, <span class="literal">NULL</span>, <span class="literal">true</span>, kCGRenderingIntentDefault);</span><br><span class="line">    <span class="built_in">CGDataProviderRelease</span>(dataProvider);</span><br><span class="line">    <span class="built_in">UIImage</span> *resultUIImage = [<span class="built_in">UIImage</span> imageWithCGImage:imageRef];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 释放</span></span><br><span class="line">    <span class="built_in">CGImageRelease</span>(imageRef);</span><br><span class="line">    <span class="built_in">CGContextRelease</span>(context);</span><br><span class="line">    <span class="built_in">CGColorSpaceRelease</span>(colorSpace);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> resultUIImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>生成条码图片</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImage</span> *)generateBarCode:(<span class="built_in">NSString</span> *)code width:(<span class="built_in">CGFloat</span>)width height:(<span class="built_in">CGFloat</span>)height &#123;</span><br><span class="line">    <span class="built_in">CIImage</span> *barcodeImage;</span><br><span class="line">    <span class="built_in">NSData</span> *data = [code dataUsingEncoding:<span class="built_in">NSISOLatin1StringEncoding</span> allowLossyConversion:<span class="literal">false</span>];</span><br><span class="line">    <span class="built_in">CIFilter</span> *filter = [<span class="built_in">CIFilter</span> filterWithName:<span class="string">@"CICode128BarcodeGenerator"</span>];</span><br><span class="line">    </span><br><span class="line">    [filter setValue:data forKey:<span class="string">@"inputMessage"</span>];</span><br><span class="line">    barcodeImage = [filter outputImage];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 消除模糊</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleX = width / barcodeImage.extent.size.width; <span class="comment">// extent 返回图片的frame</span></span><br><span class="line">    <span class="built_in">CGFloat</span> scaleY = height / barcodeImage.extent.size.height;</span><br><span class="line">    <span class="built_in">CIImage</span> *transformedImage = [barcodeImage imageByApplyingTransform:<span class="built_in">CGAffineTransformScale</span>(<span class="built_in">CGAffineTransformIdentity</span>, scaleX, scaleY)];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> [<span class="built_in">UIImage</span> imageWithCIImage:transformedImage];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="保存二维码"><a href="#保存二维码" class="headerlink" title="保存二维码"></a>保存二维码</h1><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启位图上下文</span></span><br><span class="line"><span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(<span class="keyword">self</span>.imageView.bounds.size, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"><span class="comment">// 获取绘图上下文</span></span><br><span class="line"><span class="built_in">CGContextRef</span> context = <span class="built_in">UIGraphicsGetCurrentContext</span>();</span><br><span class="line"><span class="comment">// 将图片渲染的上下文中</span></span><br><span class="line">[<span class="keyword">self</span>.imageView.layer renderInContext:context];</span><br><span class="line"><span class="comment">// 获取上下文中的图片</span></span><br><span class="line"><span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"><span class="comment">// 关闭位图上下文</span></span><br><span class="line"><span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line"><span class="comment">// 保存图片</span></span><br><span class="line"><span class="built_in">UIImageWriteToSavedPhotosAlbum</span>(image, <span class="keyword">self</span>, <span class="keyword">@selector</span>(image:didFinishSavingWithError:contextInfo:), <span class="literal">nil</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>指定回调方法，监测保存是否成功</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span> *)image didFinishSavingWithError:(<span class="built_in">NSError</span> *)error contextInfo:(<span class="keyword">void</span> *)contextInfo &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string;</span><br><span class="line">    <span class="keyword">if</span>(!error)&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save success"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save failed"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ok，就这些吧。Demo地址：<a href="https://github.com/gonghonglou/HLCodeScan" target="_blank" rel="external">https://github.com/gonghonglou/HLCodeScan</a></p>
+<p>写到这里估计涉及了二维码操作的大部分内容，期望对诸君有所帮助。</p>
+<p>祝大家敲码愉快！</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><ul>
+<li><p>小白出手，请多指教。如言有误，还望斧正！</p>
+</li>
+<li><p>转载请保留原文地址<a href="http://gonghonglou.com/2016/07/24/QRCode">http://gonghonglou.com/2016/07/24/QRCode</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/19/lijiang/" rel="next" title="丽江之行">
+                <i class="fa fa-chevron-left"></i> 丽江之行
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/24/QRCode/"
+           data-title="iOS中关于二维码的识别与生成" data-url="http://gonghonglou.com/2016/07/24/QRCode/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="与佳期" />
+          <p class="site-author-name" itemprop="name">与佳期</p>
+          <p class="site-description motion-element" itemprop="description">登白薠兮骋望，与佳期兮夕张。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-github"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#识别二维码"><span class="nav-number">1.</span> <span class="nav-text">识别二维码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#摄像头扫描二维码"><span class="nav-number">1.1.</span> <span class="nav-text">摄像头扫描二维码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开灯"><span class="nav-number">1.2.</span> <span class="nav-text">开灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相册识别二维码"><span class="nav-number">1.3.</span> <span class="nav-text">相册识别二维码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成二维码"><span class="nav-number">2.</span> <span class="nav-text">生成二维码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#保存二维码"><span class="nav-number">3.</span> <span class="nav-text">保存二维码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">与佳期</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gonghonglou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
