@@ -81,7 +81,7 @@
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/rectOfInterest.jpeg">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/QRCodeSacn.png">
-<meta property="og:updated_time" content="2016-08-24T03:42:46.000Z">
+<meta property="og:updated_time" content="2016-08-24T03:52:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中关于二维码的识别与生成">
 <meta name="twitter:description" content="提起二维码 QR Code 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   
@@ -351,7 +351,7 @@
 <p>总结下来就是：<br><code>AVCaptureSession</code>管理从物理设备<code>AVCaptureDevice</code>那里获取的输入流<code>AVCaptureDeviceInput</code>数据，通过输出流<code>AVCaptureMetadataOutput</code>显示到预览图层<code>AVCaptureVideoPreviewLayerCALayer</code>上，并且由代理方法<code>-(void)captureOutput:(AVCaptureOutput*)captureOutput didOutputMetadataObjects:(NSArray*)metadataObjects fromConnection:(AVCaptureConnection*)connection;</code>处理捕获到的数据。</p>
 </blockquote>
 <h2 id="相册识别二维码"><a href="#相册识别二维码" class="headerlink" title="相册识别二维码"></a>相册识别二维码</h2><blockquote>
-<p>识别二维码图片的方法相当简单：</p>
+<p>iOS8之后系统提供的识别二维码图片的方法相当简单</p>
 </blockquote>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取二维码</span></span><br><span class="line"><span class="built_in">UIImage</span> *sourceImage ＝ ...;</span><br><span class="line"><span class="built_in">CIContext</span> *context = [<span class="built_in">CIContext</span> contextWithOptions:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">CIDetector</span> *detector = [<span class="built_in">CIDetector</span> detectorOfType:<span class="built_in">CIDetectorTypeQRCode</span> context:context options:@&#123;<span class="built_in">CIDetectorAccuracy</span>:<span class="built_in">CIDetectorAccuracyHigh</span>&#125;];</span><br><span class="line"><span class="built_in">CIImage</span> *image = [<span class="built_in">CIImage</span> imageWithCGImage:sourceImage.CGImage];</span><br><span class="line"><span class="built_in">NSArray</span> *array = [detector featuresInImage:image];</span><br><span class="line"><span class="built_in">CIQRCodeFeature</span> *feature = [array firstObject];</span><br><span class="line"><span class="built_in">NSString</span> *result = feature.messageString;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"result:%@"</span>, result);</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -384,8 +384,8 @@
 <p>指定回调方法，监测保存是否成功</p>
 </blockquote>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span> *)image didFinishSavingWithError:(<span class="built_in">NSError</span> *)error contextInfo:(<span class="keyword">void</span> *)contextInfo &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string;</span><br><span class="line">    <span class="keyword">if</span>(!error)&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save success"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save failed"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看一哈效果图：<br><img src="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/QRCodeSacn.png" alt="二维码的识别与生成"></p>
-<p>ok，就这些吧。Demo地址：<a href="https://github.com/gonghonglou/QRCodeDemo" target="_blank" rel="external">https://github.com/gonghonglou/QRCodeDemo</a></p>
+<p>看一哈效果图<br><img src="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/QRCodeSacn.png" alt="二维码的识别与生成"></p>
+<p>ok，就这些吧。<br>Demo地址：<a href="https://github.com/gonghonglou/QRCodeDemo" target="_blank" rel="external">https://github.com/gonghonglou/QRCodeDemo</a></p>
 <p>写到这里估计涉及了二维码操作的大部分内容，期望对诸君有所帮助。</p>
 <p>祝大家敲码愉快！</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><ul>
