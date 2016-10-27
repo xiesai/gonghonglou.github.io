@@ -72,7 +72,7 @@
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FsearchAFNetworking.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FpodInstall.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png">
-<meta property="og:updated_time" content="2016-07-05T10:41:36.000Z">
+<meta property="og:updated_time" content="2016-10-27T11:52:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的库依赖管理工具CocoaPods">
 <meta name="twitter:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
@@ -299,16 +299,22 @@
 <pre><code>$ sudo gem update --system
 </code></pre><p>执行如下命令安装CocoaPods：</p>
 <pre><code>$ sudo gem install cocoapods
-</code></pre><p>如果执行上述命令后没有反应，那是因为Ruby的软件源 <a href="https://rubygems.org" target="_blank" rel="external">https://rubygems.org</a> 使用的是亚马逊的云服务而被墙了（GFW的伟大。。。）<br>可以用淘宝的Ruby镜像来访问cocoapods，依次执行如下命令将官方的Ruby源替换成国内淘宝的源：</p>
-<pre><code>$ gem sources --remove https://rubygems.org/
-$ gem sources -a https://ruby.taobao.org/
+</code></pre><p>如果执行上述命令后没有反应，那是因为Ruby的软件源 <a href="https://rubygems.org" target="_blank" rel="external">https://rubygems.org</a> 使用的是亚马逊的云服务而被墙了（GFW的伟大。。。）<br>可以用淘宝的Ruby镜像来访问cocoapods，依次执行如下命令将官方的Ruby源替换成国内淘宝的源</p>
+<pre><code># $ gem sources --remove https://rubygems.org/
+# $ gem sources -a https://ruby.taobao.org/
 </code></pre><p>执行如下命令验证Ruby镜像的确是taobao的：</p>
-<pre><code>$ gem sources -l
+<pre><code># $ gem sources -l
 </code></pre><p>出现如下文字才说明上面的命令是执行成功的：</p>
-<pre><code>*** CURRENT SOURCES ***
-
-https://ruby.taobao.org/
-</code></pre><p>此时，再次执行gem命令安装CocoaPods：</p>
+<pre><code># *** CURRENT SOURCES ***
+#
+# https://ruby.taobao.org/
+</code></pre><p>######——10.27更新 以下————————————————<br>ruby.taobao.org 停止更新了，使用 cocoapods 的同学，请更新到 <a href="https://gems.ruby-china.org/" target="_blank" rel="external">ruby china</a> 的源。更新方法：<br>使用如下命令查看镜像源：</p>
+<pre><code>$ gem sources -l
+</code></pre><p>更改镜像源：</p>
+<pre><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
+</code></pre><p>######——10.27更新 以上————————————————</p>
+<p>此时，再次执行gem命令安装CocoaPods：</p>
 <pre><code>$ sudo gem install cocoapods
 $ pod setup
 </code></pre><p>稍等片刻 即可安装成功。    </p>
