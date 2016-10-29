@@ -1,0 +1,825 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="与佳期的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 copy paste，你可以通过在 info.plst 文件里选择 Localization native development region 来设置不同语言。
+
+可是如果你想在软件内选择设置语言，为软件添加多语言选择功能就需要一番折腾了，倒也简单，只不过还是有几个坑的。以下是一篇详细介绍为软件配置多语言选项的博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中关于软件内多语言配置">
+<meta property="og:url" content="http://gonghonglou.com/2016/10/29/setlanguage/index.html">
+<meta property="og:site_name" content="与佳期的个人博客">
+<meta property="og:description" content="Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 copy paste，你可以通过在 info.plst 文件里选择 Localization native development region 来设置不同语言。
+
+可是如果你想在软件内选择设置语言，为软件添加多语言选择功能就需要一番折腾了，倒也简单，只不过还是有几个坑的。以下是一篇详细介绍为软件配置多语言选项的博客">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/info_language.png">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/set_project.png">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/localizable.png">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/Localization.png">
+<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png">
+<meta property="og:updated_time" content="2016-10-29T14:53:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS中关于软件内多语言配置">
+<meta name="twitter:description" content="Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 copy paste，你可以通过在 info.plst 文件里选择 Localization native development region 来设置不同语言。
+
+可是如果你想在软件内选择设置语言，为软件添加多语言选择功能就需要一番折腾了，倒也简单，只不过还是有几个坑的。以下是一篇详细介绍为软件配置多语言选项的博客">
+<meta name="twitter:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/info_language.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6245606597867865000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> iOS中关于软件内多语言配置 | 与佳期的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">与佳期的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">登白薠兮骋望，与佳期兮夕张。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS中关于软件内多语言配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-29T22:18:38+08:00" content="2016-10-29">
+              2016-10-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/29/setlanguage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/setlanguage/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 <code>copy</code> <code>paste</code>，你可以通过在 <code>info.plst</code> 文件里选择 <code>Localization native development region</code> 来设置不同语言。</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/info_language.png" alt="info.plst"></p>
+<p>可是如果你想在软件内选择设置语言，为软件添加多语言选择功能就需要一番折腾了，倒也简单，只不过还是有几个坑的。以下是一篇详细介绍为软件配置多语言选项的博客，走起 ➜ ➜ ➜</p>
+<h2 id="配置Progect"><a href="#配置Progect" class="headerlink" title="配置Progect"></a>配置Progect</h2><h3 id="添加语言"><a href="#添加语言" class="headerlink" title="添加语言"></a>添加语言</h3><p>如下图，点击 <code>PROGECT</code> -&gt; <code>info</code> -&gt; <code>Localizations</code> 这里默认只有 <code>English</code> 点击下方的加号可以添加你想要的语言，比如这里添加的中文 Chinese(Simplifid) 。</p>
+<blockquote>
+<p>注意： <code>zh-Hans</code> 是简体中文， <code>zh-Hant</code> 是繁体中文。</p>
+</blockquote>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/set_project.png" alt="配置Progect"></p>
+<h3 id="新建-strings-配置文件"><a href="#新建-strings-配置文件" class="headerlink" title="新建 .strings 配置文件"></a>新建 .strings 配置文件</h3><p>1、<code>Command + N</code> 新建 <code>Strings File</code> 文件，命令为 <code>RDLocalizable</code> ，会生成一份 <code>RDLocalizable.strings</code> 文件。 </p>
+<p>2、选中<code>RDLocalizable.strings</code> 文件，如下图操作，点击  <code>Localize...</code> 按钮，左侧弹框中选择语言。</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/localizable.png" alt="Localize..."></p>
+<p>3、之后右侧会如下图显示，勾选上你想要的语言即可（<code>Base</code> 无用）</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/Localization.png" alt="Localization"></p>
+<p>4、当勾选两门语言后，会发现<code>RDLocalizable.strings</code> 文件可以展开并存在两个配置文件，一份英文，一份中文。<br>分别在两个文件内输入对应的语言，比如在英文文件里输入：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"收录"</span> = <span class="string">"Collect"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"订阅"</span> = <span class="string">"Subscribe"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"我的"</span> = <span class="string">"Mine"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>中文文件里输入：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"收录"</span> = <span class="string">"收录"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"订阅"</span> = <span class="string">"订阅"</span><span class="comment">;</span></span><br><span class="line"><span class="string">"我的"</span> = <span class="string">"我的"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>前边对应 键(key) ，后边对各个语言的 值(value)。看后面的  <strong> 使用方法 </strong>  就会明白了。</p>
+<p>至此，对工程的配置已经完成。接下来要做的就是获取软件语言、设置语言、监听语言改变。。。</p>
+<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png" alt=""></p>
+<h2 id="创建多语言设置工具类"><a href="#创建多语言设置工具类" class="headerlink" title="创建多语言设置工具类"></a>创建多语言设置工具类</h2><p>因为该工具类比较简单，直接将代码贴出来吧，后面会介绍一些坑。因为是一个继承于 <code>NSObject</code> 的工具类，都是使用类方法实现功能，以便类名直接调用。</p>
+<p>头文件.h<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  RDLocalizableController.h</span></span><br><span class="line"><span class="comment">//  rder</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by gonghonglou on 2016/10/29.</span></span><br><span class="line"><span class="comment">//  Copyright © 2016年 gonghonglou. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RDLanguageKey @<span class="string">"userLanguage"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RDCHINESE @<span class="string">"zh-Hans"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RDENGLISH @<span class="string">"en"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RDNotificationLanguageChanged @<span class="string">"rdLanguageChanged"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RDLocalizedString(key)  [[RDLocalizableController bundle] localizedStringForKey:(key) value:@<span class="string">""</span> table:@<span class="string">"RDLocalizable"</span>]</span></span><br><span class="line"></span><br><span class="line">@interface RDLocalizableController : NSObject</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  获取当前资源文件</span><br><span class="line"> */</span></span><br><span class="line">+ (NSBundle *)bundle;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  初始化语言文件</span><br><span class="line"> */</span></span><br><span class="line">+ (<span class="keyword">void</span>)initUserLanguage;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  获取应用当前语言</span><br><span class="line"> */</span></span><br><span class="line">+ (NSString *)userLanguage;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  设置当前语言</span><br><span class="line"> */</span></span><br><span class="line">+ (<span class="keyword">void</span>)setUserlanguage:(NSString *)language;</span><br><span class="line"></span><br><span class="line">@<span class="built_in">end</span></span><br></pre></td></tr></table></figure></p>
+<p>实现文件.m<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  RDLocalizableController.m</span></span><br><span class="line"><span class="comment">//  rder</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  Created by gonghonglou on 2016/10/29.</span></span><br><span class="line"><span class="comment">//  Copyright © 2016年 gonghonglou. All rights reserved.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">"RDLocalizableController.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> RDLocalizableController *currentLanguage;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">RDLocalizableController</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">NSBundle</span> *bundle = <span class="literal">nil</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前资源文件</span></span><br><span class="line">+ (<span class="built_in">NSBundle</span> *)bundle&#123;</span><br><span class="line">    <span class="keyword">return</span> bundle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化语言文件</span></span><br><span class="line">+ (<span class="keyword">void</span>)initUserLanguage&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *languageString = [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] valueForKey:RDLanguageKey];</span><br><span class="line">    <span class="keyword">if</span>(languageString.length == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="comment">// 获取系统当前语言版本</span></span><br><span class="line">        <span class="built_in">NSArray</span> *languagesArray = [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] objectForKey:<span class="string">@"AppleLanguages"</span>];</span><br><span class="line">        languageString = languagesArray.firstObject;</span><br><span class="line">        [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setValue:languageString forKey:<span class="string">@"userLanguage"</span>];</span><br><span class="line">        [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] synchronize];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 避免缓存会出现 zh-Hans-CN 及其他语言的的情况</span></span><br><span class="line">    <span class="keyword">if</span> ([[RDLocalizableController chinese] containsObject:languageString]) &#123;</span><br><span class="line">        languageString = [[RDLocalizableController chinese] firstObject]; <span class="comment">// 中文</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> ([[RDLocalizableController english] containsObject:languageString]) &#123;</span><br><span class="line">        languageString = [[RDLocalizableController english] firstObject]; <span class="comment">// 英文</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        languageString = [[RDLocalizableController chinese] firstObject]; <span class="comment">// 其他默认为中文</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取文件路径</span></span><br><span class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:languageString ofType:<span class="string">@"lproj"</span>];</span><br><span class="line">    <span class="comment">// 生成bundle</span></span><br><span class="line">    bundle = [<span class="built_in">NSBundle</span> bundleWithPath:path];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 英文类型数组</span></span><br><span class="line">+ (<span class="built_in">NSArray</span> *)english &#123;</span><br><span class="line">    <span class="keyword">return</span> @[<span class="string">@"en"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中文类型数组</span></span><br><span class="line">+ (<span class="built_in">NSArray</span> *)chinese&#123;</span><br><span class="line">    <span class="keyword">return</span> @[<span class="string">@"zh-Hans"</span>, <span class="string">@"zh-Hant"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取应用当前语言</span></span><br><span class="line">+ (<span class="built_in">NSString</span> *)userLanguage &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *languageString = [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] valueForKey:RDLanguageKey];</span><br><span class="line">    <span class="keyword">return</span> languageString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置当前语言</span></span><br><span class="line">+ (<span class="keyword">void</span>)setUserlanguage:(<span class="built_in">NSString</span> *)language &#123;</span><br><span class="line">    <span class="keyword">if</span>([[<span class="keyword">self</span> userLanguage] isEqualToString:language]) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 改变bundle的值</span></span><br><span class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:language ofType:<span class="string">@"lproj"</span>];</span><br><span class="line">    bundle = [<span class="built_in">NSBundle</span> bundleWithPath:path];</span><br><span class="line">    <span class="comment">// 持久化</span></span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] setValue:language forKey:RDLanguageKey];</span><br><span class="line">    [[<span class="built_in">NSUserDefaults</span> standardUserDefaults] synchronize];</span><br><span class="line">    </span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] postNotificationName:RDNotificationLanguageChanged object:currentLanguage];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<p>使用方法：</p>
+<p>1、在 <code>AppDelegate</code> 的 <code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code> 方法里初始化该工具类，并监听通知：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语言初始化</span></span><br><span class="line"><span class="selector-attr">[RDLocalizableController initUserLanguage]</span>;</span><br><span class="line"><span class="comment">// 监控语言切换</span></span><br><span class="line"><span class="selector-attr">[[NSNotificationCenter defaultCenter]</span> <span class="selector-tag">addObserver</span><span class="selector-pseudo">:self</span> <span class="selector-tag">selector</span>:@<span class="selector-tag">selector</span>(<span class="attribute">languageChange</span>:) <span class="selector-tag">name</span><span class="selector-pseudo">:RDNotificationLanguageChanged</span> <span class="selector-tag">object</span><span class="selector-pseudo">:nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>2、记得在 <code>- (void)applicationWillTerminate:(UIApplication *)application</code>方法里删除通知：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[[NSNotificationCenter defaultCenter]</span> <span class="selector-tag">removeObserver</span><span class="selector-pseudo">:self</span> <span class="selector-tag">name</span><span class="selector-pseudo">:RDNotificationLanguageChanged</span> <span class="selector-tag">object</span><span class="selector-pseudo">:nil</span>];</span><br></pre></td></tr></table></figure></p>
+<p>3、实现通知方法：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">languageChange</span><span class="selector-pseudo">:(NSNotification</span> *)<span class="selector-tag">note</span>&#123;</span><br><span class="line">    <span class="comment">// 在该方法里实现重新初始化 rootViewController 的行为，并且所有带有文字的页面都要重新渲染</span></span><br><span class="line">    <span class="comment">// 比如：[UIApplication sharedApplication].keyWindow.rootViewController = ...;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、使用 <code>RDLocalizedString(&lt;#key#&gt;)</code>方法 给所有文字添加本地化语言方法：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">label<span class="meta">.text</span> = RDLocalizedString(@<span class="string">"收录"</span>)<span class="comment">;</span></span><br><span class="line">[<span class="keyword">button </span>setTitle:RDLocalizedString(@<span class="string">"订阅"</span>) forState:UIControlStateNormal]<span class="comment">;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>5、更改语言方法：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置中文</span></span><br><span class="line"><span class="selector-attr">[RDLocalizableController setUserlanguage:RDCHINESE]</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置英文</span></span><br><span class="line"><span class="selector-attr">[RDLocalizableController setUserlanguage:RDENGLISH]</span>;</span><br></pre></td></tr></table></figure></p>
+<p>至此，对于软件内多语言设置的功能就已经可以实现了。接下来是对遇到的几个坑的说明。</p>
+<h2 id="多语言设置的「坑」"><a href="#多语言设置的「坑」" class="headerlink" title="多语言设置的「坑」"></a>多语言设置的「坑」</h2><h3 id="关于更改语言后重新初始化页面"><a href="#关于更改语言后重新初始化页面" class="headerlink" title="关于更改语言后重新初始化页面"></a>关于更改语言后重新初始化页面</h3><p>语言更改后，要重新渲染view，所以应该在更改语言之后回到根目录。不仅页面需要初始化，如果页面数据在 <code>viewModel</code> 里，那么该 <code>viewModel</code> 也应当初始化，因为字体是 <code>RDLocalizedString(&lt;#key#&gt;)</code> 这个方法从 <code>.strings</code> 配置文件里取出来的，更改语言后必须重新取一次。</p>
+<p>当然也不是一定要留在根目录，有几种页面友好的解决方案：</p>
+<p>1、更改语言功能一般会放在「我的」页面 <code>push</code> 出来的某一级页面，可以初始化 <code>rootViewController</code> 并且将之前 <code>push</code> 出来的几级 <code>viewController</code> 手动添加到 <code>mineViewController.navigationController.viewControllers</code> 这个数组中。这样页面就不会产生太大的错落感。</p>
+<p>2、在每一个页面写一个检测语言改变的通知的方法。当接受到通知后就将该页面重新布局一次以更改字体。</p>
+<p>PS：在这个问题上，感觉支付宝比微信做的界面跳转友好的多。。。</p>
+<h3 id="关于本地化语言的宏定义-RDLocalizedString-lt-key-gt"><a href="#关于本地化语言的宏定义-RDLocalizedString-lt-key-gt" class="headerlink" title="关于本地化语言的宏定义 RDLocalizedString(&lt;#key#&gt;)"></a>关于本地化语言的宏定义 <code>RDLocalizedString(&lt;#key#&gt;)</code></h3><p>系统自带的方法是：<code>NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;)</code>，这也是一份宏定义：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">#def</span>ine NSLocalizedString(key, comment) \</span><br><span class="line">	    [NSBundle<span class="selector-class">.mainBundle</span> localizedStringForKey:(key) value:@<span class="string">""</span> <span class="selector-tag">table</span>:nil]</span><br></pre></td></tr></table></figure></p>
+<p>能看到它调用的是 <code>NSBundle.mainBundle</code> ，而我们在更改语言的工具类里的 <code>bundle</code> 已经更改了。<br>所以系统的 <code>NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;)</code> 已经失效，必须重写一份宏定义：<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define RDLocalizedString(<span class="built_in">key</span>)  [[RDLocalizableController bundle] localizedStringForKey:(<span class="built_in">key</span>) <span class="built_in">value</span>:@<span class="string">""</span> table:@<span class="string">"RDLocalizable"</span>]</span><br></pre></td></tr></table></figure></p>
+<p>1、必须使用自己的类名来调用类方法 <code>[RDLocalizableController bundle]</code> 以获取自己的  <code>bundle</code></p>
+<p>2、<code>table</code> 后的参数为 <code>.strings</code> 文件的文件名，若你创建的文件名为 <code>Localizable.strings</code> ，则该参数可为 <code>nil</code> ，系统默认按 <code>Localizable.strings</code> 查找。否则必须配置文件名，且只是文件名，不加 <code>.stringd</code> 后缀。</p>
+<h3 id="关于初始化语言-RDLocalizableController-initUserLanguage"><a href="#关于初始化语言-RDLocalizableController-initUserLanguage" class="headerlink" title="关于初始化语言 [RDLocalizableController initUserLanguage]"></a>关于初始化语言 <code>[RDLocalizableController initUserLanguage]</code></h3><p>在 <code>initUserLanguage</code> 方法中有这样一段代码来做判断</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (<span class="comment">[<span class="comment">[RDLocalizableController chinese]</span> containsObject:languageString]</span>) &#123;</span><br><span class="line">    languageString = <span class="comment">[<span class="comment">[RDLocalizableController chinese]</span> firstObject]</span>; // 中文</span><br><span class="line">&#125; else if (<span class="comment">[<span class="comment">[RDLocalizableController english]</span> containsObject:languageString]</span>) &#123;</span><br><span class="line">    languageString = <span class="comment">[<span class="comment">[RDLocalizableController english]</span> firstObject]</span>; // 英文</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    languageString = <span class="comment">[<span class="comment">[RDLocalizableController chinese]</span> firstObject]</span>; // 其他默认为中文</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>各位可能会对这个判断比较疑惑，在这之前已经有判断了：先获取用户设置的语言，有则使用用户设置的语言，没有则使用系统语言。</p>
+<p>然而因为某些原因用户设置过的语言（如：<code>zh-Hans</code>）会在另一个相同工程运行之后将该语言更改为<code>zh-Hans-CZ</code>；或者用户将系统语言设置为日本语或其他语言。</p>
+<p>出现以上情况时 <code>RDLocalizedString(&lt;#key#&gt;)</code> 这个方法从 <code>.strings</code> 配置文件里是去不到对应的字体，就会返回空。<br>后果轻则页面一片空白了，重则直接 crash ，如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSArray *<span class="built_in">array</span> = @[RDLocalizedString(@<span class="string">"收录"</span>), RDLocalizedString(@<span class="string">"订阅"</span>), RDLocalizedString(@<span class="string">"我的"</span>)]; <span class="comment">// 数组不能存空</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="就想使用-NSLocalizedString-lt-key-gt-lt-comment-gt-方法"><a href="#就想使用-NSLocalizedString-lt-key-gt-lt-comment-gt-方法" class="headerlink" title="就想使用 NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;) 方法"></a>就想使用 NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;) 方法</h2><p>1、有一种极端情况，比如：软件需要配置多国语言，很多很多的那一种。。。在 <code>.strings</code> 文件里配置了许多国家的语言。然而在软件内部只提供中文、英文等某几种语言，其他语言根据系统语言自适应。不想在 <code>initUserLanguage</code> 方法里做一大堆的乱七八糟的判断。只要在 <code>initUserLanguage</code> 的判断方法 <code>else</code> 里使用系统语言：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	languageString = [[NSUserDefaults standardUserDefaults] <span class="string">objectForKey:</span>@<span class="string">"AppleLanguages"</span>][<span class="number">0</span>]; <span class="comment">// 其他默认为系统语言</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、另一种情况，比如：每次使用 <code>RDLocalizedString(&lt;#key#&gt;)</code> 方法都要做引用 <code>#import &quot;RDLocalizableController.h&quot;</code> 好麻烦。<br>当然你可以把 <code>#import &quot;RDLocalizableController.h&quot;</code> 放到 <code>.pch</code> 文件里，哦，顺便提一下 <code>.pch</code> 文件会拖慢启动时间 </p>
+<p>3、还有一种情况，比如：就想使用 <code>NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;)</code> 方法，还可以解决以上两种情况</p>
+<p>还是有方法使用 <code>NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;)</code> 的。<br>使用 <code>Category</code> 为 <code>NSBundle</code> 类扩展一个设置语言的方法，并且使用 <code>runtime</code> 为 <code>NSBundle</code> 替换 <code>localizedStringForKey</code> 方法。并将替换的 <code>bundle</code> 与 <code>[NSBundle mainBundle]</code> 关联。目的就是将更改的字体传给 <code>NSLocalizedString(&lt;#key#&gt;, &lt;#comment#&gt;)</code> 映射的 <code>localizedStringForKey</code> 方法返回的 <code>bundle</code> ，使得更改的字体应用到系统上。 </p>
+<p>好吧，show you the code:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"NSBundle+RDLanguage.h"</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;objc/runtime.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">NSString</span> *RDBundleKey = <span class="string">@"RDLanguageKey"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">BundleEx</span> : <span class="title">NSBundle</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">BundleEx</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSString</span> *)localizedStringForKey:(<span class="built_in">NSString</span> *)key value:(<span class="built_in">NSString</span> *)value table:(<span class="built_in">NSString</span> *)tableName &#123;</span><br><span class="line">    <span class="built_in">NSBundle</span> *bundle = objc_getAssociatedObject(<span class="keyword">self</span>, &amp;RDBundleKey);</span><br><span class="line">    <span class="keyword">if</span> (bundle) &#123;</span><br><span class="line">        <span class="keyword">return</span> [bundle localizedStringForKey:key value:value table:tableName];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="keyword">super</span> localizedStringForKey:key value:value table:tableName];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSBundle</span> (<span class="title">RDLanguage</span>)</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)setLanguage:(<span class="built_in">NSString</span> *)language &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        object_setClass([<span class="built_in">NSBundle</span> mainBundle], [BundleEx class]);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">id</span> value = language ? [<span class="built_in">NSBundle</span> bundleWithPath:[[<span class="built_in">NSBundle</span> mainBundle] pathForResource:language ofType:<span class="string">@"lproj"</span>]] : <span class="literal">nil</span>;</span><br><span class="line">    objc_setAssociatedObject([<span class="built_in">NSBundle</span> mainBundle], &amp;RDBundleKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+<p>以上代码是 <code>NSBundle</code> 的 <code>Category</code>。</p>
+<p>在 <code>RDLocalizableController</code> 类的 <code>+ (void)setUserlanguage:(NSString *)language</code> 方法里，本地化存储语言之后，发送通知之前调用如下方法：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[NSBundle setLanguage:language]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：使用这种方法要确保你的 <code>.strings</code> 的文件名为 <code>Localizable.strings</code><br>否则还是要重新设置宏定义：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">#def</span>ine NSLocalizedString(key, comment) \</span><br><span class="line">	    [NSBundle<span class="selector-class">.mainBundle</span> localizedStringForKey:(key) value:@<span class="string">""</span> <span class="selector-tag">table</span>:@“RDLocalizable”]</span><br></pre></td></tr></table></figure></p>
+<p>这样的话该宏定义会有一个警告，毕竟系统已经定义过了的，而且你还要到处重定义。。。又犯了上面第二种情况的尴尬。</p>
+<p>到这里，该篇博客就结尾了，希望能帮助到各位一二<br>祝大家工作愉快，勤勉Coding</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li><p>小白出手，请多指教。如言有误，还望斧正！</p>
+</li>
+<li><p>转载请保留原文地址<a href="http://gonghonglou.com/2016/10/29/setlanguage">http://gonghonglou.com/2016/10/29/setlanguage</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/24/QRCode/" rel="next" title="iOS中关于二维码的识别与生成">
+                <i class="fa fa-chevron-left"></i> iOS中关于二维码的识别与生成
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/29/setlanguage/"
+           data-title="iOS中关于软件内多语言配置" data-url="http://gonghonglou.com/2016/10/29/setlanguage/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="与佳期" />
+          <p class="site-author-name" itemprop="name">与佳期</p>
+          <p class="site-description motion-element" itemprop="description">登白薠兮骋望，与佳期兮夕张。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-github"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Progect"><span class="nav-number">1.</span> <span class="nav-text">配置Progect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加语言"><span class="nav-number">1.1.</span> <span class="nav-text">添加语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建-strings-配置文件"><span class="nav-number">1.2.</span> <span class="nav-text">新建 .strings 配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建多语言设置工具类"><span class="nav-number">2.</span> <span class="nav-text">创建多语言设置工具类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多语言设置的「坑」"><span class="nav-number">3.</span> <span class="nav-text">多语言设置的「坑」</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于更改语言后重新初始化页面"><span class="nav-number">3.1.</span> <span class="nav-text">关于更改语言后重新初始化页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于本地化语言的宏定义-RDLocalizedString-lt-key-gt"><span class="nav-number">3.2.</span> <span class="nav-text">关于本地化语言的宏定义 RDLocalizedString(<#key#>)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于初始化语言-RDLocalizableController-initUserLanguage"><span class="nav-number">3.3.</span> <span class="nav-text">关于初始化语言 [RDLocalizableController initUserLanguage]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#就想使用-NSLocalizedString-lt-key-gt-lt-comment-gt-方法"><span class="nav-number">4.</span> <span class="nav-text">就想使用 NSLocalizedString(<#key#>, <#comment#>) 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">与佳期</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gonghonglou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
