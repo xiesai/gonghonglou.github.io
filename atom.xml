@@ -365,7 +365,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-10-27T11:59:48.000Z</updated>
+    <updated>2016-10-29T08:38:33.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
@@ -384,19 +384,19 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
 &lt;pre&gt;&lt;code&gt;# *** CURRENT SOURCES ***
 #
 # https://ruby.taobao.org/
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;——10-27更新-以下————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以下————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以下————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以下————————————————&lt;/h4&gt;&lt;p&gt;ruby.taobao.org 停止更新了，使用 cocoapods 的同学，请更新到 &lt;a href=&quot;https://gems.ruby-china.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ruby china&lt;/a&gt; 的源。更新方法：&lt;br&gt;使用如下命令查看镜像源：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ gem sources -l
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更改镜像源：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;——10-27更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以上————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以上————————————————&lt;/h4&gt;&lt;p&gt;此时，再次执行gem命令安装CocoaPods：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时，再次执行gem命令安装CocoaPods：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem install cocoapods
 $ pod setup
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;稍等片刻 即可安装成功。    &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注： &lt;a href=&quot;http://guides.cocoapods.org/terminal/commands.html#pod_setup&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;pod setup&lt;/code&gt;&lt;/a&gt; 是Cocoapods将它的信息下载到 &lt;code&gt;~/.cocoapods/repos&lt;/code&gt; 目录下。即使在安装时不执行此命令，在初次执行 &lt;code&gt;pod install&lt;/code&gt; 命令时，系统也会自动执行 &lt;code&gt;pod setup&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;升级CocoaPods&quot;&gt;&lt;a href=&quot;#升级CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;升级CocoaPods&quot;&gt;&lt;/a&gt;升级CocoaPods&lt;/h2&gt;&lt;p&gt;升级CocoaPods非常简单，使用Ruby的gem命令：&lt;/p&gt;
+&lt;h4 id=&quot;——10-27更新-以下————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以下————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以下————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以下————————————————&lt;/h4&gt;&lt;p&gt;ruby.taobao.org 停止更新了，使用 cocoapods 的同学，请更新到 &lt;a href=&quot;https://gems.ruby-china.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ruby china&lt;/a&gt; 的源。更新方法：&lt;br&gt;使用如下命令查看镜像源：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gem sources -l
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更改镜像源：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;——10-27更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以上————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;升级CocoaPods&quot;&gt;&lt;a href=&quot;#升级CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;升级CocoaPods&quot;&gt;&lt;/a&gt;升级CocoaPods&lt;/h2&gt;&lt;p&gt;升级CocoaPods非常简单，使用Ruby的gem命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update cocoapods           // 更新至最新版
 $ sudo gem update cocoapods --pre     // 或者 更新至预览版
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然执行如下命令也可以更新：&lt;/p&gt;

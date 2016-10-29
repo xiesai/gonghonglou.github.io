@@ -72,7 +72,7 @@
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FsearchAFNetworking.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FpodInstall.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png">
-<meta property="og:updated_time" content="2016-10-27T11:59:48.000Z">
+<meta property="og:updated_time" content="2016-10-29T08:38:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的库依赖管理工具CocoaPods">
 <meta name="twitter:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
@@ -308,19 +308,19 @@
 <pre><code># *** CURRENT SOURCES ***
 #
 # https://ruby.taobao.org/
-</code></pre><h4 id="——10-27更新-以下————————————————"><a href="#——10-27更新-以下————————————————" class="headerlink" title="——10.27更新 以下————————————————"></a>——10.27更新 以下————————————————</h4><p>ruby.taobao.org 停止更新了，使用 cocoapods 的同学，请更新到 <a href="https://gems.ruby-china.org/" target="_blank" rel="external">ruby china</a> 的源。更新方法：<br>使用如下命令查看镜像源：</p>
-<pre><code>$ gem sources -l
-</code></pre><p>更改镜像源：</p>
-<pre><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
-</code></pre><h4 id="——10-27更新-以上————————————————"><a href="#——10-27更新-以上————————————————" class="headerlink" title="——10.27更新 以上————————————————"></a>——10.27更新 以上————————————————</h4><p>此时，再次执行gem命令安装CocoaPods：</p>
+</code></pre><p>此时，再次执行gem命令安装CocoaPods：</p>
 <pre><code>$ sudo gem install cocoapods
 $ pod setup
 </code></pre><p>稍等片刻 即可安装成功。    </p>
 <blockquote>
 <p>注： <a href="http://guides.cocoapods.org/terminal/commands.html#pod_setup" target="_blank" rel="external"><code>pod setup</code></a> 是Cocoapods将它的信息下载到 <code>~/.cocoapods/repos</code> 目录下。即使在安装时不执行此命令，在初次执行 <code>pod install</code> 命令时，系统也会自动执行 <code>pod setup</code></p>
 </blockquote>
-<h2 id="升级CocoaPods"><a href="#升级CocoaPods" class="headerlink" title="升级CocoaPods"></a>升级CocoaPods</h2><p>升级CocoaPods非常简单，使用Ruby的gem命令：</p>
+<h4 id="——10-27更新-以下————————————————"><a href="#——10-27更新-以下————————————————" class="headerlink" title="——10.27更新 以下————————————————"></a>——10.27更新 以下————————————————</h4><p>ruby.taobao.org 停止更新了，使用 cocoapods 的同学，请更新到 <a href="https://gems.ruby-china.org/" target="_blank" rel="external">ruby china</a> 的源。更新方法：<br>使用如下命令查看镜像源：</p>
+<pre><code>$ gem sources -l
+</code></pre><p>更改镜像源：</p>
+<pre><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
+</code></pre><h4 id="——10-27更新-以上————————————————"><a href="#——10-27更新-以上————————————————" class="headerlink" title="——10.27更新 以上————————————————"></a>——10.27更新 以上————————————————</h4><h2 id="升级CocoaPods"><a href="#升级CocoaPods" class="headerlink" title="升级CocoaPods"></a>升级CocoaPods</h2><p>升级CocoaPods非常简单，使用Ruby的gem命令：</p>
 <pre><code>$ sudo gem update cocoapods           // 更新至最新版
 $ sudo gem update cocoapods --pre     // 或者 更新至预览版
 </code></pre><p>当然执行如下命令也可以更新：</p>
