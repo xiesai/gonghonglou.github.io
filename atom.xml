@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2016-10-29T14:53:35.000Z</updated>
+  <updated>2016-10-29T14:57:03.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2016/10/29/setlanguage/"/>
     <id>http://gonghonglou.com/2016/10/29/setlanguage/</id>
     <published>2016-10-29T14:18:38.000Z</published>
-    <updated>2016-10-29T14:53:35.000Z</updated>
+    <updated>2016-10-29T14:57:03.000Z</updated>
     
     <content type="html">&lt;p&gt;Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 &lt;code&gt;copy&lt;/code&gt; &lt;code&gt;paste&lt;/code&gt;，你可以通过在 &lt;code&gt;info.plst&lt;/code&gt; 文件里选择 &lt;code&gt;Localization native development region&lt;/code&gt; 来设置不同语言。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/info_language.png&quot; alt=&quot;info.plst&quot;&gt;&lt;/p&gt;
@@ -73,7 +73,7 @@
 &lt;p&gt;在 &lt;code&gt;RDLocalizableController&lt;/code&gt; 类的 &lt;code&gt;+ (void)setUserlanguage:(NSString *)language&lt;/code&gt; 方法里，本地化存储语言之后，发送通知之前调用如下方法：&lt;br&gt;&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;[NSBundle setLanguage:language]&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;注意：使用这种方法要确保你的 &lt;code&gt;.strings&lt;/code&gt; 的文件名为 &lt;code&gt;Localizable.strings&lt;/code&gt;&lt;br&gt;否则还是要重新设置宏定义：&lt;br&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;#def&lt;/span&gt;ine NSLocalizedString(key, comment) \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    [NSBundle&lt;span class=&quot;selector-class&quot;&gt;.mainBundle&lt;/span&gt; localizedStringForKey:(key) value:@&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;table&lt;/span&gt;:@“RDLocalizable”]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;这样的话该宏定义会有一个警告，毕竟系统已经定义过了的，而且你还要到处重定义。。。又犯了上面第二种情况的尴尬。&lt;/p&gt;
-&lt;p&gt;到这里，该篇博客就结尾了，希望能帮助到各位一二&lt;br&gt;祝大家工作愉快，勤勉Coding&lt;/p&gt;
+&lt;p&gt;到这里，该篇博客就结尾了，希望能帮助到各位一二&lt;br&gt;祝大家生活愉快，勤勉Coding&lt;/p&gt;
 &lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
 &lt;/li&gt;

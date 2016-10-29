@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/localizable.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/setlanguage/Localization.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/cheaptalk.png">
-<meta property="og:updated_time" content="2016-10-29T14:53:35.000Z">
+<meta property="og:updated_time" content="2016-10-29T14:57:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中关于软件内多语言配置">
 <meta name="twitter:description" content="Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 copy paste，你可以通过在 info.plst 文件里选择 Localization native development region 来设置不同语言。
@@ -344,7 +344,7 @@
 <p>在 <code>RDLocalizableController</code> 类的 <code>+ (void)setUserlanguage:(NSString *)language</code> 方法里，本地化存储语言之后，发送通知之前调用如下方法：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[NSBundle setLanguage:language]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <p>注意：使用这种方法要确保你的 <code>.strings</code> 的文件名为 <code>Localizable.strings</code><br>否则还是要重新设置宏定义：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">#def</span>ine NSLocalizedString(key, comment) \</span><br><span class="line">	    [NSBundle<span class="selector-class">.mainBundle</span> localizedStringForKey:(key) value:@<span class="string">""</span> <span class="selector-tag">table</span>:@“RDLocalizable”]</span><br></pre></td></tr></table></figure></p>
 <p>这样的话该宏定义会有一个警告，毕竟系统已经定义过了的，而且你还要到处重定义。。。又犯了上面第二种情况的尴尬。</p>
-<p>到这里，该篇博客就结尾了，希望能帮助到各位一二<br>祝大家工作愉快，勤勉Coding</p>
+<p>到这里，该篇博客就结尾了，希望能帮助到各位一二<br>祝大家生活愉快，勤勉Coding</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
 <li><p>小白出手，请多指教。如言有误，还望斧正！</p>
 </li>
