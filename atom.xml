@@ -451,12 +451,13 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-10-29T08:38:33.000Z</updated>
+    <updated>2016-11-09T03:52:35.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
-&lt;p&gt;我们只需要将所需要的第三方库声明到一个名为&lt;code&gt;Podfile&lt;/code&gt;文件中，然后执行&lt;code&gt;Pod install&lt;/code&gt;命令就OK了，CocoaPods就会自动去下载我们所需要库，并为我的工程设置好相应的系统依赖和编译参数。&lt;/p&gt;
+&lt;p&gt;我们只需要将所需要的第三方库声明到一个名为&lt;code&gt;Podfile&lt;/code&gt;文件中，然后执行&lt;code&gt;Pod install&lt;/code&gt;命令就OK了，CocoaPods就会自动去下载我们所需要库，并为我的工程设置好相应的系统依赖和编译参数。 &lt;/p&gt;
 &lt;p&gt;只能说，好用到哭～&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/cocoapods/cocoapods-icon.png&quot; alt=&quot;CocoaPods&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;安装CocoaPods&quot;&gt;&lt;a href=&quot;#安装CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;安装CocoaPods&quot;&gt;&lt;/a&gt;安装CocoaPods&lt;/h2&gt;&lt;p&gt;CocoaPods依赖于Ruby环境，刚好Mac下自带Ruby，使用Ruby的gem命令即可安装CocoaPods。&lt;br&gt;为防止因gem太老而引发问题，建议执行如下命令先更新gem：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update --system
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行如下命令安装CocoaPods：&lt;/p&gt;
@@ -481,13 +482,16 @@ $ pod setup
 &lt;pre&gt;&lt;code&gt;$ gem sources -l
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更改镜像源：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-or $ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
+or
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;——10-27更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以上————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;升级CocoaPods&quot;&gt;&lt;a href=&quot;#升级CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;升级CocoaPods&quot;&gt;&lt;/a&gt;升级CocoaPods&lt;/h2&gt;&lt;p&gt;升级CocoaPods非常简单，使用Ruby的gem命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update cocoapods           // 更新至最新版
-$ sudo gem update cocoapods --pre     // 或者 更新至预览版
+or
+$ sudo gem update cocoapods --pre     // 更新至预览版
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然执行如下命令也可以更新：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem install cocoapods           // 更新至最新版
-$ sudo gem install cocoapods --pre     // 或者 更新至预览版
+or
+$ sudo gem install cocoapods --pre     // 更新至预览版
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;注：OS X 10.11之后升级CocoaPods会有问题。解决方案参见下一篇博客：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/UpdatePodsQue&quot;&gt;解决OS X 10.11之后CocoaPods的升级问题&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
