@@ -451,7 +451,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-11-09T03:52:35.000Z</updated>
+    <updated>2016-11-09T06:46:58.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
