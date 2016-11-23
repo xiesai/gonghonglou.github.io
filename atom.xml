@@ -451,7 +451,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-11-09T06:46:58.000Z</updated>
+    <updated>2016-11-23T16:21:33.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
@@ -483,7 +483,7 @@ $ pod setup
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;更改镜像源：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 or
-$ gem sources --add https://gems.ruby-china.org/ --remove https://rube.taobao.org/
+$ gem sources --add https://gems.ruby-china.org/ --remove https://ruby.taobao.org/
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;——10-27更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——10-27更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——10.27更新 以上————————————————&quot;&gt;&lt;/a&gt;——10.27更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;升级CocoaPods&quot;&gt;&lt;a href=&quot;#升级CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;升级CocoaPods&quot;&gt;&lt;/a&gt;升级CocoaPods&lt;/h2&gt;&lt;p&gt;升级CocoaPods非常简单，使用Ruby的gem命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update cocoapods           // 更新至最新版
 or
