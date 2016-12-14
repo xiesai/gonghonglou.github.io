@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2016-12-01T07:48:40.000Z</updated>
+  <updated>2016-10-31T15:52:06.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,34 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>关于 RDER</title>
-    <link href="http://gonghonglou.com/2016/11/30/aboutRDER/"/>
-    <id>http://gonghonglou.com/2016/11/30/aboutRDER/</id>
-    <published>2016-11-30T15:08:51.000Z</published>
-    <updated>2016-12-01T07:48:40.000Z</updated>
-    
-    <content type="html">&lt;p&gt;花了将近一个月的时间写了一款 RSS 订阅软件 —— RDER，这是我的第一款上线 APP。&lt;br&gt;每天晚上写一点，每天晚上写一点&lt;br&gt;所以知道我为什么每天两点多睡觉了吗「手动傲娇」&lt;br&gt;然而最近晚上不敲代码都是三点睡「药丸」    &lt;/p&gt;
-&lt;p&gt;写这款软件的初衷是因为我自己想要一个收录技术文章与博客的软件，方便自己平时收集阅读在网上遇到的技术博客。我想和我一样的码农们应该都少不了看技术文章、关注技术博客，所以干脆就做到上线吧，也好熟悉一下 App Store 上线流程。&lt;/p&gt;
-&lt;p&gt;所以这是一款便于收藏文章与博客的软件。功能大致为：&lt;br&gt;1、在其他软件内发现了钟意的文章都可以复制链接在 RDER 内收录。&lt;br&gt;2、RDER 内输入博客 RSS 地址可以添加订阅并实时监控博客更新信息。&lt;br&gt;3、对收录及订阅做收藏、标记等各种操作。&lt;/p&gt;
-&lt;p&gt;尽可能添加了便于用户操作的手势，包括左滑、更多按钮、3D touch等。&lt;/p&gt;
-&lt;p&gt;Version1.0 为婴儿版，后续版本更新会添加账户存储、本地缓存、Safari 扩展插件（便捷收录、长文截图）等功能。&lt;/p&gt;
-&lt;p&gt;为这款软件还装模作样的走了一趟测试环境，&lt;br&gt;多谢@Yu小Rong、@夏悠若、@顿顿、@wolverine、@大白 … 参与内测&lt;/p&gt;
-&lt;p&gt;写在最后：求支持「抱拳」&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;花了将近一个月的时间写了一款 RSS 订阅软件 —— RDER，这是我的第一款上线 APP。&lt;br&gt;每天晚上写一点，每天晚上写一点&lt;br&gt;所以知道我为什么每天两点多睡觉了吗「手动傲娇」&lt;br&gt;然而最近晚上不敲代码都是三点睡「药丸」    &lt;/p&gt;
-&lt;p&gt;写这款软件的初衷是因
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>iOS应用程序语言本地化及应用内语言设置</title>
@@ -305,14 +277,14 @@
     <link href="http://gonghonglou.com/2016/05/10/ChongmingCycling/"/>
     <id>http://gonghonglou.com/2016/05/10/ChongmingCycling/</id>
     <published>2016-05-10T03:06:35.000Z</published>
-    <updated>2016-07-05T02:39:11.000Z</updated>
+    <updated>2016-12-14T08:30:52.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;事件：&lt;/strong&gt;环崇明岛骑行&lt;br&gt;&lt;strong&gt;人物：&lt;/strong&gt;博主、博主的小伙伴&lt;br&gt;&lt;strong&gt;时间：&lt;/strong&gt;五一小假&lt;br&gt;&lt;strong&gt;地点：&lt;/strong&gt;崇明岛&lt;br&gt;&lt;strong&gt;正文：&lt;/strong&gt;现在发是不有点晚了？ 闭嘴！&lt;/p&gt;
 &lt;p&gt;列位权当是篇环崇明岛骑行的攻略来看也未尝不可。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_2370.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;博主的车子，算是一款入门级的山地车－－捷安特 ATX 850，油压碟刹还是蛮爽的😄&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_2370.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;博主的车子，算是一款入门级的山地车－－捷安特 ATX 850，油压碟刹还是蛮爽的😄&lt;/p&gt;
 &lt;h1 id=&quot;30号&quot;&gt;&lt;a href=&quot;#30号&quot; class=&quot;headerlink&quot; title=&quot;30号&quot;&gt;&lt;/a&gt;30号&lt;/h1&gt;&lt;p&gt;早上约八点半左右从浦东出发至石洞口码头，45km/2h。坐十一点的轮渡（每小时一航班）到崇明岛南门码头，拍了几张照吃过午饭大概有一点钟正式开始了环崇明岛的骑行。&lt;/p&gt;
 &lt;p&gt;直接上陈海公路，一条宽阔的省道。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_2575.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_2575.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;不过骑起来并不舒服，因为路特别宽所以不挡风，骑行中稍微有些风都会明显感觉到阻力，且经常有上坡。大约一直在22km/h～25km/h之间的速度巡航。&lt;/p&gt;
 &lt;p&gt;其实陈海公路相当长一段距离都是不允许非机动车行驶的。当然可以选择团城公路来走，只不过团成公路车辆要多一些难免提不起速度来。&lt;/p&gt;
 &lt;p&gt;距离南门港大概有三四十公里的地方到了堡镇，休息了半个小时，再上车的时候。。。那个屁股。。。那个疼。。。。&lt;/p&gt;
@@ -320,16 +292,16 @@
 &lt;p&gt;在这条路上出了个小状况，有一段路小伙伴在前面破风，我跟的比较近而且没有太关心前方路况，小伙伴的车子突然躲过一辆停在路边的三轮车时我没来得急反应一车撞翻过去。。。不过还好只是一些擦伤不算太严重🤕️ 只是膝盖的碰伤导致那个下午剩下的路程骑起来比较吃力。&lt;strong&gt;&lt;em&gt;所以要告诫骑友们骑行中尽量保持精力集中，注意前方路况尤其是在有伙伴在前破风时。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;五点钟左右抵达陈家镇，因为到的略早一点所以很快就找到了旅馆。&lt;strong&gt;&lt;em&gt;提醒骑友们留宿的话尽量到镇中心、县中心且稍早一点找宾馆，节假日房源还是挺紧张的。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;1号&quot;&gt;&lt;a href=&quot;#1号&quot; class=&quot;headerlink&quot; title=&quot;1号&quot;&gt;&lt;/a&gt;1号&lt;/h1&gt;&lt;p&gt;早晨八点左右吃过早饭赶往东滩湿地，路上又到三个同行的骑友，其中一个还是骑过川藏，环过海南岛的前辈呢。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_2649.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_2649.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;十几公里的路程，从陈家镇半小时就能到东滩。拍了几张照：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_2610.jpg&quot; alt=&quot;&quot;&gt;小湖边的座驾&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_2639.jpg&quot; alt=&quot;&quot;&gt;天空下的兄弟俩&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_2610.jpg&quot; alt=&quot;&quot;&gt;小湖边的座驾&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_2639.jpg&quot; alt=&quot;&quot;&gt;天空下的兄弟俩&lt;/p&gt;
 &lt;p&gt;最遗憾的便是我们绕了一大圈的路就为了去海边一看，结果到了海边大坝的地方却被野生自然保护区的门卫拦住了，距离海边不过几百米。。。大坝还挡住了我们远眺的视线。。。&lt;/p&gt;
 &lt;p&gt;继续环岛的路程，从东滩赶往北沿公路，剩下的便是一直沿着北沿公路骑直到陈海公路回南门港了。因为天气预报说2号早上有雨，所以我们决定直接骑到南门港留宿，1号一天便骑了140公里！&lt;/p&gt;
 &lt;p&gt;北沿公路骑起来还是相当爽的，上午大概在25km/h～30km/h巡航，下午因为要赶到南门港加上北沿公路路况相当好所以一直在35km/h左右巡航，简直酸爽！&lt;/p&gt;
 &lt;p&gt;不过当拐到陈海公路后因为逆风、上坡再加上已经连续骑了一百多公里，所以这段路就苦逼了。。。&lt;/p&gt;
 &lt;p&gt;这是我们环岛的轨迹：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/IMG_26611.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_IMG_26611.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;环岛总路线：&lt;br&gt;从南门港沿陈海公路一路向东南方向到陈家镇，&lt;br&gt;住一晚第二天到都东滩狂了一圈，&lt;br&gt;然后沿北沿公路向西北方向拐到陈海公路，&lt;br&gt;再沿陈海公路到南门港。&lt;/p&gt;
 &lt;h1 id=&quot;2号&quot;&gt;&lt;a href=&quot;#2号&quot; class=&quot;headerlink&quot; title=&quot;2号&quot;&gt;&lt;/a&gt;2号&lt;/h1&gt;&lt;p&gt;早上坐十点半的轮渡回上海，再经约45km/2h的路程到家。&lt;/p&gt;
 &lt;p&gt;五一环崇明岛骑行，第一次远途骑行正式结束，感觉良好！&lt;/p&gt;
@@ -354,7 +326,7 @@
     <link href="http://gonghonglou.com/2016/04/01/BuildTomcat/"/>
     <id>http://gonghonglou.com/2016/04/01/BuildTomcat/</id>
     <published>2016-04-01T08:27:06.000Z</published>
-    <updated>2016-12-14T08:13:52.000Z</updated>
+    <updated>2016-12-14T08:22:28.000Z</updated>
     
     <content type="html">&lt;p&gt;因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。&lt;/p&gt;
 &lt;h3 id=&quot;Java环境&quot;&gt;&lt;a href=&quot;#Java环境&quot; class=&quot;headerlink&quot; title=&quot;Java环境&quot;&gt;&lt;/a&gt;Java环境&lt;/h3&gt;&lt;p&gt;点击下载：&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdk-7u79-macosx-x64.dmg&lt;/a&gt;&lt;/p&gt;
@@ -376,13 +348,13 @@ $ ./shutdown.sh       // 关闭服务器
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这是因为权限问题，执行如下命令即可解决：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ chmod u+x *.sh    //表示对当前目录下的*.sh文件的所有者增加可执行权限
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再次执行开启服务器命令即可。成功开启服务器后，浏览器打开 &lt;a href=&quot;http://localhost:8080&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:8080&lt;/a&gt; 出现如下界面表示开启成功：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/localhost.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/BuildTomcat_localhost.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如上图点击&lt;code&gt;Manager App&lt;/code&gt;登录需要账号密码，点击&lt;code&gt;取消&lt;/code&gt;会有解释。&lt;br&gt;即打开&lt;code&gt;/usr/local/apache-tomcat-7.0.68/conf&lt;/code&gt;目录下的&lt;code&gt;tomcat-users.xml&lt;/code&gt;文件，在下方添加配置用户名密码如：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;role rolename=&amp;quot;manager-gui&amp;quot;/&amp;gt;
 &amp;lt;user username=&amp;quot;tomcat_name&amp;quot; password=&amp;quot;tomcat_password&amp;quot; roles=&amp;quot;manager-gui&amp;quot;/&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Sequel-Pro&quot;&gt;&lt;a href=&quot;#Sequel-Pro&quot; class=&quot;headerlink&quot; title=&quot;Sequel Pro&quot;&gt;&lt;/a&gt;Sequel Pro&lt;/h3&gt;&lt;p&gt;点击下载mysql的图形化工具：&lt;a href=&quot;http://sequelpro.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequel-pro-1.1.1.dmg&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;安装成功后打开，设置如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/sequel.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/BuildTomcat_sequel.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Name&lt;/code&gt;随意，MySQL初始用户名为&lt;code&gt;root&lt;/code&gt; 密码为空，因为初始并没有数据库所以&lt;code&gt;Database&lt;/code&gt;也为空。&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Connect&lt;/code&gt;进入后&lt;/p&gt;
 &lt;p&gt;1：左上角选择&lt;code&gt;Add Database...&lt;/code&gt;，填入一个名字如&lt;code&gt;troy&lt;/code&gt;，点击&lt;code&gt;add&lt;/code&gt;&lt;/p&gt;
@@ -481,13 +453,13 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2016-11-23T16:21:33.000Z</updated>
+    <updated>2016-12-14T08:32:57.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
 &lt;p&gt;我们只需要将所需要的第三方库声明到一个名为&lt;code&gt;Podfile&lt;/code&gt;文件中，然后执行&lt;code&gt;Pod install&lt;/code&gt;命令就OK了，CocoaPods就会自动去下载我们所需要库，并为我的工程设置好相应的系统依赖和编译参数。 &lt;/p&gt;
 &lt;p&gt;只能说，好用到哭～&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/cocoapods/cocoapods-icon.png&quot; alt=&quot;CocoaPods&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/CocoaPods_icon.png&quot; alt=&quot;CocoaPods&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;安装CocoaPods&quot;&gt;&lt;a href=&quot;#安装CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;安装CocoaPods&quot;&gt;&lt;/a&gt;安装CocoaPods&lt;/h2&gt;&lt;p&gt;CocoaPods依赖于Ruby环境，刚好Mac下自带Ruby，使用Ruby的gem命令即可安装CocoaPods。&lt;br&gt;为防止因gem太老而引发问题，建议执行如下命令先更新gem：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update --system
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;执行如下命令安装CocoaPods：&lt;/p&gt;
@@ -555,7 +527,7 @@ in addition to the gem? [Yn]
 &lt;pre&gt;&lt;code&gt;0.39.0
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;使用CocoaPods&quot;&gt;&lt;a href=&quot;#使用CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;使用CocoaPods&quot;&gt;&lt;/a&gt;使用CocoaPods&lt;/h2&gt;&lt;h4 id=&quot;搜索第三方库&quot;&gt;&lt;a href=&quot;#搜索第三方库&quot; class=&quot;headerlink&quot; title=&quot;搜索第三方库&quot;&gt;&lt;/a&gt;搜索第三方库&lt;/h4&gt;&lt;p&gt;为判断某第三方库（如AFNetworking）是否支持CocoaPods，执行如下命令来搜索：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ pod search AFNetworking
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若如下图所示，则可用CocoaPods管理AFNetworking&lt;br&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FsearchAFNetworking.png&quot; alt=&quot;searchAFNetworking&quot;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若如下图所示，则可用CocoaPods管理AFNetworking&lt;br&gt;&lt;img src=&quot;http://gonghonglou.com/images/CocoaPods_searchAFNetworking.png&quot; alt=&quot;searchAFNetworking&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;创建Podfile的文件&quot;&gt;&lt;a href=&quot;#创建Podfile的文件&quot; class=&quot;headerlink&quot; title=&quot;创建Podfile的文件&quot;&gt;&lt;/a&gt;创建&lt;code&gt;Podfile&lt;/code&gt;的文件&lt;/h4&gt;&lt;p&gt;CocoaPods就可以根据&lt;code&gt;Podfile&lt;/code&gt;文件里的内容来帮你下载你所需要的库。&lt;a href=&quot;https://guides.cocoapods.org/using/the-podfile.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击前往&lt;/a&gt;CocoaPods官方对&lt;code&gt;Podfile&lt;/code&gt;文件的介绍。&lt;br&gt;终端&lt;code&gt;cd&lt;/code&gt;到你的项目所在目录下，创建&lt;code&gt;Podfile&lt;/code&gt;文件：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ vim Podfile
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按下&lt;code&gt;i&lt;/code&gt;键进入输入状态，在&lt;code&gt;Podfile&lt;/code&gt;文件里输入以下文字：&lt;/p&gt;
@@ -571,7 +543,7 @@ end
 &lt;/blockquote&gt;
 &lt;p&gt;终端&lt;code&gt;cd&lt;/code&gt;到你的项目所在目录下执行如下命令来利用CocoPods下载第三方库：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ pod install
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如下图所示则下载成功：&lt;br&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FpodInstall.png&quot; alt=&quot;pod install&quot;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如下图所示则下载成功：&lt;br&gt;&lt;img src=&quot;http://gonghonglou.com/images/CocoaPods_podInstall.png&quot; alt=&quot;pod install&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;提示：[!] Please close any current Xcode sessions and use &lt;code&gt;Your_App_Name.xcworkspace&lt;/code&gt; for this project from now on.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -594,7 +566,7 @@ end
 &lt;pre&gt;&lt;code&gt;$ pod install --verbose --no-repo-update
 &lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
 &lt;h2 id=&quot;发布自己的开源框架到CocoaPods&quot;&gt;&lt;a href=&quot;#发布自己的开源框架到CocoaPods&quot; class=&quot;headerlink&quot; title=&quot;发布自己的开源框架到CocoaPods&quot;&gt;&lt;/a&gt;发布自己的开源框架到CocoaPods&lt;/h2&gt;&lt;p&gt;你需要如下图创建一个Framework来打造你自己的开源框架&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/CocoaPods%2FFramework.png&quot; alt=&quot;Framework&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/CocoaPods_Framework.png&quot; alt=&quot;Framework&quot;&gt;&lt;/p&gt;
 &lt;p&gt;发布自己的开源框架到CocoaPods同样需要一个类似&lt;code&gt;Podfile&lt;/code&gt;的文件来告诉CocoaPods我们开源库的名称、版本、作者、描述、地址、所需的framework、依赖库等，这个文件叫&lt;code&gt;Your_Framework_Name.podspec&lt;/code&gt;，开始创建这个文件&lt;/p&gt;
 &lt;p&gt;终端&lt;code&gt;cd&lt;/code&gt;到工程目录下，执行如下命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ pod spec create Your_Framework_Name
@@ -721,15 +693,15 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/03/03/dateandweek/"/>
     <id>http://gonghonglou.com/2016/03/03/dateandweek/</id>
     <published>2016-03-03T03:47:11.000Z</published>
-    <updated>2016-08-04T02:24:57.000Z</updated>
+    <updated>2016-12-14T08:35:47.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间练手模拟校园app写了个Demo，其中在写课程表的界面时，加上了当前日期，为了让日期与星期对应也是前后折腾了好几次，主要还是对日期的情况思考的不够全面吧（比如判断每月天数和月初月末的交替），不过最终还是完成需求。最后意外发现简便方法，写下来分享。    &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;对校园app的Demo有兴趣的话，请移驾GitHub:  &lt;a href=&quot;https://github.com/gonghonglou/QLU-BlogDemo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;QLU-BlogDemo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;p&gt;首先看一下模样吧（如图中红框所示）&lt;br&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/dateandweek%2Fdateweek.png&quot; alt=&quot;课程表&quot;&gt;&lt;br&gt;最基本的：获取当前日期的方法&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;p&gt;首先看一下模样吧（如图中红框所示）&lt;br&gt;&lt;img src=&quot;http://gonghonglou.com/images/dateandweek_dateweek.png&quot; alt=&quot;课程表&quot;&gt;&lt;br&gt;最基本的：获取当前日期的方法&lt;/p&gt;
 &lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取当前时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSDate&lt;/span&gt; *senddate = [&lt;span class=&quot;built_in&quot;&gt;NSDate&lt;/span&gt; date];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSDateFormatter&lt;/span&gt; *dateformatter = [[&lt;span class=&quot;built_in&quot;&gt;NSDateFormatter&lt;/span&gt; alloc] init];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[dateformatter setDateFormat:&lt;span class=&quot;string&quot;&gt;@&quot;yyy&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *yearString = [dateformatter stringFromDate:senddate];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[dateformatter setDateFormat:&lt;span class=&quot;string&quot;&gt;@&quot;MM&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *monthString = [dateformatter stringFromDate:senddate];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[dateformatter setDateFormat:&lt;span class=&quot;string&quot;&gt;@&quot;dd&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *dayString = [dateformatter stringFromDate:senddate];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[dateformatter setDateFormat:&lt;span class=&quot;string&quot;&gt;@&quot;EEE&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *weekString = [dateformatter stringFromDate:senddate];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;-%@&quot;&lt;/span&gt;,weekString);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; year = [yearString intValue];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;-%d&quot;&lt;/span&gt;, year);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; month = [monthString intValue];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;--%d&quot;&lt;/span&gt;, month);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; day = [dayString intValue];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;---%d&quot;&lt;/span&gt;, day);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;看打印结果：&lt;br&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/dateandweek%2F985173.png&quot; alt=&quot;打印结果&quot;&gt;&lt;br&gt;然后就是把获取到的日期放到对应星期上去了,需要格外注意的要判断的几点：&lt;/p&gt;
+&lt;p&gt;看打印结果：&lt;br&gt;&lt;img src=&quot;http://gonghonglou.com/images/dateandweek_985173.png&quot; alt=&quot;打印结果&quot;&gt;&lt;br&gt;然后就是把获取到的日期放到对应星期上去了,需要格外注意的要判断的几点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不同月的天数&lt;/li&gt;
 &lt;li&gt;月底时，显示下个月月初的日期&lt;/li&gt;
@@ -814,10 +786,10 @@ $ git push origin --tags
   
   <entry>
     <title>Mac上搭建基于GitHub的Hexo博客</title>
-    <link href="http://gonghonglou.com/2016/02/03/firstblog/"/>
-    <id>http://gonghonglou.com/2016/02/03/firstblog/</id>
+    <link href="http://gonghonglou.com/2016/02/03/macGithubHexo/"/>
+    <id>http://gonghonglou.com/2016/02/03/macGithubHexo/</id>
     <published>2016-02-03T06:50:14.000Z</published>
-    <updated>2016-11-10T07:20:34.000Z</updated>
+    <updated>2016-12-14T08:36:09.000Z</updated>
     
     <content type="html">&lt;p&gt;这是一篇详细文章来讲述用Mac搭建Hexo博客于Github上的完整历程， 也是踩了无数的坑搭起来的，现在写下些经验来分享，希望能帮大家少踩些坑。&lt;/p&gt;
 &lt;p&gt;曾买过一款阿里的云虚拟主机，后来才发现不能自己装软件只能上传网站程序，除非另买&lt;a href=&quot;https://www.aliyun.com/easybuy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECS&lt;/a&gt;，对于第一个月的实习工资还没拿到手的我想想还是算了，先用Wordpress搭起来玩玩吧。然而在上传网站程序中几次失败，本就觉得没劲，遂一怒转向Github。好了，废话少说，开始吧。&lt;/p&gt;
@@ -834,7 +806,7 @@ $ git push origin --tags
 &lt;p&gt;&lt;code&gt;blog&lt;/code&gt;是你建立的文件夹名称。cd到&lt;code&gt;blog&lt;/code&gt;文件夹下，执行如下命令，安装npm：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;执行如下命令，开启hexo服务器：&lt;br&gt;&lt;figure class=&quot;highlight cos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo &lt;span class=&quot;keyword&quot;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;此时，浏览器中打开网址&lt;a href=&quot;http://0.0.0.0:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;，能看到如下页面：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2Fhexo4000.png&quot; alt=&quot;http://localhost:4000&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/ChongmingCycling_hexo4000.png&quot; alt=&quot;http://localhost:4000&quot;&gt;&lt;/p&gt;
 &lt;p&gt;本地设置好后，接下来开始关联Github。&lt;/p&gt;
 &lt;h2 id=&quot;关联Github&quot;&gt;&lt;a href=&quot;#关联Github&quot; class=&quot;headerlink&quot; title=&quot;关联Github&quot;&gt;&lt;/a&gt;关联Github&lt;/h2&gt;&lt;h3 id=&quot;1-创建仓库&quot;&gt;&lt;a href=&quot;#1-创建仓库&quot; class=&quot;headerlink&quot; title=&quot;1.创建仓库&quot;&gt;&lt;/a&gt;1.创建仓库&lt;/h3&gt;&lt;p&gt;登录你的Github帐号，新建仓库，名为&lt;code&gt;用户名.github.io&lt;/code&gt;固定写法，如&lt;code&gt;gonghonglou.github.io&lt;/code&gt;即下图中&lt;code&gt;1&lt;/code&gt;所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2FgithubName.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
