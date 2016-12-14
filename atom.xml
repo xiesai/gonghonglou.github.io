@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2016-10-31T15:52:06.000Z</updated>
+  <updated>2016-12-01T07:48:40.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于 RDER</title>
+    <link href="http://gonghonglou.com/2016/11/30/aboutRDER/"/>
+    <id>http://gonghonglou.com/2016/11/30/aboutRDER/</id>
+    <published>2016-11-30T15:08:51.000Z</published>
+    <updated>2016-12-01T07:48:40.000Z</updated>
+    
+    <content type="html">&lt;p&gt;花了将近一个月的时间写了一款 RSS 订阅软件 —— RDER，这是我的第一款上线 APP。&lt;br&gt;每天晚上写一点，每天晚上写一点&lt;br&gt;所以知道我为什么每天两点多睡觉了吗「手动傲娇」&lt;br&gt;然而最近晚上不敲代码都是三点睡「药丸」    &lt;/p&gt;
+&lt;p&gt;写这款软件的初衷是因为我自己想要一个收录技术文章与博客的软件，方便自己平时收集阅读在网上遇到的技术博客。我想和我一样的码农们应该都少不了看技术文章、关注技术博客，所以干脆就做到上线吧，也好熟悉一下 App Store 上线流程。&lt;/p&gt;
+&lt;p&gt;所以这是一款便于收藏文章与博客的软件。功能大致为：&lt;br&gt;1、在其他软件内发现了钟意的文章都可以复制链接在 RDER 内收录。&lt;br&gt;2、RDER 内输入博客 RSS 地址可以添加订阅并实时监控博客更新信息。&lt;br&gt;3、对收录及订阅做收藏、标记等各种操作。&lt;/p&gt;
+&lt;p&gt;尽可能添加了便于用户操作的手势，包括左滑、更多按钮、3D touch等。&lt;/p&gt;
+&lt;p&gt;Version1.0 为婴儿版，后续版本更新会添加账户存储、本地缓存、Safari 扩展插件（便捷收录、长文截图）等功能。&lt;/p&gt;
+&lt;p&gt;为这款软件还装模作样的走了一趟测试环境，&lt;br&gt;多谢@Yu小Rong、@夏悠若、@顿顿、@wolverine、@大白 … 参与内测&lt;/p&gt;
+&lt;p&gt;写在最后：求支持「抱拳」&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;花了将近一个月的时间写了一款 RSS 订阅软件 —— RDER，这是我的第一款上线 APP。&lt;br&gt;每天晚上写一点，每天晚上写一点&lt;br&gt;所以知道我为什么每天两点多睡觉了吗「手动傲娇」&lt;br&gt;然而最近晚上不敲代码都是三点睡「药丸」    &lt;/p&gt;
+&lt;p&gt;写这款软件的初衷是因
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>iOS应用程序语言本地化及应用内语言设置</title>
@@ -326,7 +354,7 @@
     <link href="http://gonghonglou.com/2016/04/01/BuildTomcat/"/>
     <id>http://gonghonglou.com/2016/04/01/BuildTomcat/</id>
     <published>2016-04-01T08:27:06.000Z</published>
-    <updated>2016-07-23T07:58:12.000Z</updated>
+    <updated>2016-12-14T08:13:52.000Z</updated>
     
     <content type="html">&lt;p&gt;因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。&lt;/p&gt;
 &lt;h3 id=&quot;Java环境&quot;&gt;&lt;a href=&quot;#Java环境&quot; class=&quot;headerlink&quot; title=&quot;Java环境&quot;&gt;&lt;/a&gt;Java环境&lt;/h3&gt;&lt;p&gt;点击下载：&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdk-7u79-macosx-x64.dmg&lt;/a&gt;&lt;/p&gt;
@@ -334,12 +362,14 @@
 &lt;h3 id=&quot;MySQL数据库&quot;&gt;&lt;a href=&quot;#MySQL数据库&quot; class=&quot;headerlink&quot; title=&quot;MySQL数据库&quot;&gt;&lt;/a&gt;MySQL数据库&lt;/h3&gt;&lt;p&gt;点击下载：&lt;a href=&quot;https://dev.mysql.com/downloads/file/?id=461482&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mysql-5.6.29-osx10.8-x86_64&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;下载之后同样一路点击安装即可，默认的安装路径为 &lt;code&gt;/usr/local/mysql-5.6.29-osx10.8-x86_64&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;此时，在系统偏好设置的最下方如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/mysql.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://gonghonglou.com/images/BuildTomcat_mysql.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;p&gt;点击MySQL，然后点击 &lt;code&gt;Start MySQL Server&lt;/code&gt; 开启数据库服务&lt;/p&gt;
+&lt;p&gt;/Users/user/Desktop/BuildTomcat:mysql.png&lt;/p&gt;
 &lt;h3 id=&quot;阿帕奇服务器&quot;&gt;&lt;a href=&quot;#阿帕奇服务器&quot; class=&quot;headerlink&quot; title=&quot;阿帕奇服务器&quot;&gt;&lt;/a&gt;阿帕奇服务器&lt;/h3&gt;&lt;p&gt;点击下载：&lt;a href=&quot;http://tomcat.apache.org/download-70.cgi&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;apache-tomcat-7.0.68.zip&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载解压后放到任一目录中，我选择的是MySQL的默认安装目录下 &lt;code&gt;/usr/local/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;终端 &lt;code&gt;cd&lt;/code&gt; 到阿帕奇服务器所在目录的 &lt;code&gt;bin&lt;/code&gt; 目录下，执行如下命令：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ ./startup.sh        // 开启服务器
+&lt;pre&gt;&lt;code&gt;$ ./startup.sh        // 开启服务器/Users/user/Desktop/mysql.png
+
 $ ./shutdown.sh       // 关闭服务器
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新下载的tomcat在启动时会报错：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;./startup.sh: Permission denied

@@ -73,10 +73,10 @@ Java环境点击下载：jdk-7u79-macosx-x64.dmg
 下载之后一路点击安装即可
 MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
 下载之后同样一路点击安装即可，默认的安">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/mysql.png">
+<meta property="og:image" content="http://gonghonglou.com/images/BuildTomcat_mysql.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/localhost.png">
 <meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/sequel.png">
-<meta property="og:updated_time" content="2016-07-23T07:58:12.000Z">
+<meta property="og:updated_time" content="2016-12-14T08:13:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
 <meta name="twitter:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
@@ -84,7 +84,7 @@ Java环境点击下载：jdk-7u79-macosx-x64.dmg
 下载之后一路点击安装即可
 MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
 下载之后同样一路点击安装即可，默认的安">
-<meta name="twitter:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/mysql.png">
+<meta name="twitter:image" content="http://gonghonglou.com/images/BuildTomcat_mysql.png">
 
 
 
@@ -303,12 +303,14 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
 <h3 id="MySQL数据库"><a href="#MySQL数据库" class="headerlink" title="MySQL数据库"></a>MySQL数据库</h3><p>点击下载：<a href="https://dev.mysql.com/downloads/file/?id=461482" target="_blank" rel="external">mysql-5.6.29-osx10.8-x86_64</a> </p>
 <p>下载之后同样一路点击安装即可，默认的安装路径为 <code>/usr/local/mysql-5.6.29-osx10.8-x86_64</code></p>
 <p>此时，在系统偏好设置的最下方如下图所示：</p>
-<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/apachetomcat/mysql.png" alt=""> </p>
+<p><img src="http://gonghonglou.com/images/BuildTomcat_mysql.png" alt=""> </p>
 <p>点击MySQL，然后点击 <code>Start MySQL Server</code> 开启数据库服务</p>
+<p>/Users/user/Desktop/BuildTomcat:mysql.png</p>
 <h3 id="阿帕奇服务器"><a href="#阿帕奇服务器" class="headerlink" title="阿帕奇服务器"></a>阿帕奇服务器</h3><p>点击下载：<a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">apache-tomcat-7.0.68.zip</a></p>
 <p>下载解压后放到任一目录中，我选择的是MySQL的默认安装目录下 <code>/usr/local/</code></p>
 <p>终端 <code>cd</code> 到阿帕奇服务器所在目录的 <code>bin</code> 目录下，执行如下命令：</p>
-<pre><code>$ ./startup.sh        // 开启服务器
+<pre><code>$ ./startup.sh        // 开启服务器/Users/user/Desktop/mysql.png
+
 $ ./shutdown.sh       // 关闭服务器
 </code></pre><p>新下载的tomcat在启动时会报错：</p>
 <pre><code>./startup.sh: Permission denied
@@ -455,7 +457,7 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
