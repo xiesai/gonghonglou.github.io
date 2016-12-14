@@ -67,18 +67,18 @@
 <meta property="og:site_name" content="与佳期的个人博客">
 <meta property="og:description" content="这是一篇详细文章来讲述用Mac搭建Hexo博客于Github上的完整历程， 也是踩了无数的坑搭起来的，现在写下些经验来分享，希望能帮大家少踩些坑。
 曾买过一款阿里的云虚拟主机，后来才发现不能自己装软件只能上传网站程序，除非另买ECS，对于第一个月的实习工资还没拿到手的我想想还是算了，先用Wordpress搭起来玩玩吧。然而在上传网站程序中几次失败，本就觉得没劲，遂一怒转向Github。好了，废话少">
-<meta property="og:image" content="http://gonghonglou.com/images/ChongmingCycling_hexo4000.png">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2FgithubName.png">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2Fyumingjiexi.png">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/update-hexo-folder.png">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/two-cname.png">
-<meta property="og:image" content="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/coding-pages.png">
-<meta property="og:updated_time" content="2016-12-14T08:36:09.000Z">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_hexo4000.png">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_githubName.png">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_yumingjiexi.png">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_update-hexo-folder.png">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_two-cname.png">
+<meta property="og:image" content="http://gonghonglou.com/images/macGithubHexo_coding-pages.png">
+<meta property="og:updated_time" content="2016-12-14T09:00:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上搭建基于GitHub的Hexo博客">
 <meta name="twitter:description" content="这是一篇详细文章来讲述用Mac搭建Hexo博客于Github上的完整历程， 也是踩了无数的坑搭起来的，现在写下些经验来分享，希望能帮大家少踩些坑。
 曾买过一款阿里的云虚拟主机，后来才发现不能自己装软件只能上传网站程序，除非另买ECS，对于第一个月的实习工资还没拿到手的我想想还是算了，先用Wordpress搭起来玩玩吧。然而在上传网站程序中几次失败，本就觉得没劲，遂一怒转向Github。好了，废话少">
-<meta name="twitter:image" content="http://gonghonglou.com/images/ChongmingCycling_hexo4000.png">
+<meta name="twitter:image" content="http://gonghonglou.com/images/macGithubHexo_hexo4000.png">
 
 
 
@@ -306,10 +306,10 @@
 <p><code>blog</code>是你建立的文件夹名称。cd到<code>blog</code>文件夹下，执行如下命令，安装npm：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
 <p>执行如下命令，开启hexo服务器：<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">s</span></span><br></pre></td></tr></table></figure></p>
 <p>此时，浏览器中打开网址<a href="http://0.0.0.0:4000" target="_blank" rel="external">http://localhost:4000</a>，能看到如下页面：</p>
-<p><img src="http://gonghonglou.com/images/ChongmingCycling_hexo4000.png" alt="http://localhost:4000"></p>
+<p><img src="http://gonghonglou.com/images/macGithubHexo_hexo4000.png" alt="http://localhost:4000"></p>
 <p>本地设置好后，接下来开始关联Github。</p>
 <h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><h3 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h3><p>登录你的Github帐号，新建仓库，名为<code>用户名.github.io</code>固定写法，如<code>gonghonglou.github.io</code>即下图中<code>1</code>所示：</p>
-<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2FgithubName.png" alt=""></p>
+<p><img src="http://gonghonglou.com/images/macGithubHexo_githubName.png" alt="](http://localhost:4000"></p>
 <p>本地的<code>blog</code>文件夹下内容为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_config<span class="selector-class">.yml</span>	</span><br><span class="line">db<span class="selector-class">.json</span> </span><br><span class="line">node_modules </span><br><span class="line">package<span class="selector-class">.json</span></span><br><span class="line">scaffolds</span><br><span class="line">source</span><br><span class="line">themes</span><br></pre></td></tr></table></figure></p>
 <p>终端cd到<code>blog</code>文件夹下，<code>vim</code>打开<code>_config.yml</code>，命令如下：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vim _config.yml</span><br></pre></td></tr></table></figure></p>
 <p>打开后往下滑到最后，修改成下边的样子：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/gonghonglou/gonghonglou.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
@@ -361,22 +361,22 @@ npm install hexo --save
 <p>记录类型：CNAME</p>
 <p>主机记录：将域名解析为example.com（不带www），填写@或者不填写</p>
 <p>记录值：gonghonglou.github.io.    (不要忘记最后的<code>.</code>，<code>gonghonglou</code>改为你自己的用户名)，点击保存即可，如下图：</p>
-<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog%2Fyumingjiexi.png" alt="域名解析"></p>
+<p><img src="http://gonghonglou.com/images/macGithubHexo_yumingjiexi.png" alt="域名解析](http://localhost:4000"></p>
 <p>此时，点击访问<a href="http://gonghonglou.com">http://gonghonglou.com</a>和访问<a href="http://gonghonglou.github.io" target="_blank" rel="external">http://gonghonglou.github.io</a>效果一致。</p>
 <p>大功告成！</p>
 <h4 id="——11-10更新-以下————————————————"><a href="#——11-10更新-以下————————————————" class="headerlink" title="——11.10更新 以下————————————————"></a>——11.10更新 以下————————————————</h4><h4 id="1、解决-deploy-后博客空白问题"><a href="#1、解决-deploy-后博客空白问题" class="headerlink" title="1、解决 deploy 后博客空白问题"></a>1、解决 deploy 后博客空白问题</h4><p>昨晚更新了一下 blog 做了个部署，结果blog就挂了，打开 <code>gonghonglou.com</code> 页面显示一片空白。然而 <code>hexo s</code> 开启本地服务器 <code>localhost:4000</code> 访问是没问题的。<br>上网查了一下，原来是 GitHub Pages 禁止了 <code>source/vendors</code> 目录的访问。Github 在 11 月 3 日更新了版本。其中包括升级了 Jekyll 到 3.3。Jekyll 为了加快构建速度，忽略 <code>vendor</code> 和 <code>node_modules</code> 文件夹。所以部署到 GitHub 后，识别不到本地下的的这个文件夹 <code>blog/themes/next/source/vendor</code>，你只需要给这个文件夹换个名字再重新部署一次就 OK 了。<code>nexT</code> 在 GitHub 上的 isusses 已经给出了解决方案：<a href="https://github.com/iissnan/hexo-theme-next/issues/1214" target="_blank" rel="external">#1214
 </a></p>
-<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/update-hexo-folder.png" alt="#1214"></p>
+<p><img src="http://gonghonglou.com/images/macGithubHexo_update-hexo-folder.png" alt="#1214"></p>
 <p>还有另一种解决方案就是升级 <code>nexT</code> 主题，cd 到 <code>blog/themes/next/</code> 下执行命令 <code>git pull</code> 更新。<br>然而，有可能升级后多说评论等第三方工具会失效，慎用。</p>
 <h4 id="2、将个人博客同时部署到-GitHub-和-Coding"><a href="#2、将个人博客同时部署到-GitHub-和-Coding" class="headerlink" title="2、将个人博客同时部署到 GitHub 和 Coding"></a>2、将个人博客同时部署到 GitHub 和 Coding</h4><p>1、首先到 <a href="https://coding.net" target="_blank" rel="external">Coding</a> 上注册并开一个项目，项目名称和用户个性后缀相同（方便二级域名访问博客），拿到项目的 https 地址</p>
 <p>2、打开本地 <code>blog</code> 目录下的 <code>_config.yml</code> 文件，修改如下<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: </span><br><span class="line">            <span class="attribute">github</span>: <span class="attribute">https</span>:<span class="comment">//github.com/gonghonglou/gonghonglou.github.io.git</span></span><br><span class="line">            <span class="attribute">coding</span>: <span class="attribute">https</span>:<span class="comment">//git.coding.net/gonghonglou/gonghonglou.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
 <p>3、cd 到本地 <code>blog/source</code> 目录下执行如下命令新建 <code>Staticfile</code> 文件<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>touch Staticfile  <span class="comment">#名字必须是Staticfile</span></span><br></pre></td></tr></table></figure></p>
 <p>原因是 coding.net 需要以这个文件来作为静态文件部署的标志，就是说看到这个 Staticfile 就知道按照静态文件来发布。</p>
 <p>4、执行发布命令 <code>hexo g</code> 、 <code>hexo d</code>  </p>
-<p>5、个人域名添加两条 <code>CNAME</code> 解析。将 <code>gonghonglou.github.io.</code> 解析为 [海外] ，将 <code>gonghonglou.coding.me.</code> 解析为 [默认]<br><img src="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/two-cname.png" alt=""></p>
+<p>5、个人域名添加两条 <code>CNAME</code> 解析。将 <code>gonghonglou.github.io.</code> 解析为 [海外] ，将 <code>gonghonglou.coding.me.</code> 解析为 [默认]<br><img src="http://gonghonglou.com/images/macGithubHexo_two-cname.png" alt=""></p>
 <p>这样就是为了从国内访问 <code>gonghonglou.com</code> 就是访问 Coding 上的博客项目，从国外访问 <code>gonghonglou.com</code> 就是访问 GitHub 上的博客项目。</p>
 <p>6、到 Coding 上的博客项目主页，点击 <code>Pages服务</code> 输入部署分支 <code>master</code> 立即开启</p>
-<p><img src="http://7xn9bi.com1.z0.glb.clouddn.com/firstblog/coding-pages.png" alt=""></p>
+<p><img src="http://gonghonglou.com/images/macGithubHexo_coding-pages.png" alt=""></p>
 <p>这样就可以访问自己在 Coding 上的个人博客了 <a href="http://gonghonglou.coding.me/gonghonglou" target="_blank" rel="external">gonghonglou.coding.me/gonghonglou</a> 如果像这样你的用户后缀名与博客项目名称相同你还可以省略项目名称直接访问 <a href="http://gonghonglou.coding.me" target="_blank" rel="external">gonghonglou.coding.me</a> </p>
 <p>7、添加域名绑定，输入个人域名就 OK 了，可能需要耐心等待几分钟，这样在国内访问自己的博客就快得多了。</p>
 <p>试了一下在国内访问 <a href="http://gonghonglou.com">gonghonglou.com</a> 拦不住 要飞起来了😂</p>
