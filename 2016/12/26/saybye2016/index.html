@@ -59,32 +59,27 @@
 
 
 
-<meta name="description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
+<meta name="description" content="嘿，不觉间 2016 马上就要结束了，所以，这一年你都干了啥？
+2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，然后，从一名学生变成了员工！
+怀念毕业了，才发现真的会怀念学生时代。
+早晨拖着身子爬起来上课，然而课上少有听讲，就那样浪费着时间蚕食着生命，可那也是我的大学生活啊，不再有的挥霍时光。到学校食堂吃饭，乌泱泱的人群，打饭都要先占座，可以的，那也是我怀念的。每学期的宿舍聚餐、班级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
-<meta property="og:url" content="http://gonghonglou.com/2016/04/01/BuildTomcat/index.html">
+<meta property="og:title" content="Say Bye 2016">
+<meta property="og:url" content="http://gonghonglou.com/2016/12/26/saybye2016/index.html">
 <meta property="og:site_name" content="与佳期的个人博客">
-<meta property="og:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
-<meta property="og:image" content="http://gonghonglou.com/images/BuildTomcat_mysql.png">
-<meta property="og:image" content="http://gonghonglou.com/images/BuildTomcat_localhost.png">
-<meta property="og:image" content="http://gonghonglou.com/images/BuildTomcat_sequel.png">
-<meta property="og:updated_time" content="2016-12-14T08:22:28.000Z">
+<meta property="og:description" content="嘿，不觉间 2016 马上就要结束了，所以，这一年你都干了啥？
+2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，然后，从一名学生变成了员工！
+怀念毕业了，才发现真的会怀念学生时代。
+早晨拖着身子爬起来上课，然而课上少有听讲，就那样浪费着时间蚕食着生命，可那也是我的大学生活啊，不再有的挥霍时光。到学校食堂吃饭，乌泱泱的人群，打饭都要先占座，可以的，那也是我怀念的。每学期的宿舍聚餐、班级">
+<meta property="og:image" content="http://gonghonglou.com/images/saybye2016_DSC_1867.jpg">
+<meta property="og:updated_time" content="2016-12-26T15:14:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
-<meta name="twitter:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
-<meta name="twitter:image" content="http://gonghonglou.com/images/BuildTomcat_mysql.png">
+<meta name="twitter:title" content="Say Bye 2016">
+<meta name="twitter:description" content="嘿，不觉间 2016 马上就要结束了，所以，这一年你都干了啥？
+2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，然后，从一名学生变成了员工！
+怀念毕业了，才发现真的会怀念学生时代。
+早晨拖着身子爬起来上课，然而课上少有听讲，就那样浪费着时间蚕食着生命，可那也是我的大学生活啊，不再有的挥霍时光。到学校食堂吃饭，乌泱泱的人群，打饭都要先占座，可以的，那也是我怀念的。每学期的宿舍聚餐、班级">
+<meta name="twitter:image" content="http://gonghonglou.com/images/saybye2016_DSC_1867.jpg">
 
 
 
@@ -102,7 +97,7 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
   };
 </script>
 
-  <title> Mac上搭建Apache Tomcat ＋ MySQL | 与佳期的个人博客 </title>
+  <title> Say Bye 2016 | 与佳期的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -232,7 +227,7 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
             
             
               
-                Mac上搭建Apache Tomcat ＋ MySQL
+                Say Bye 2016
               
             
           </h1>
@@ -244,8 +239,8 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-01T16:27:06+08:00" content="2016-04-01">
-              2016-04-01
+            <time itemprop="dateCreated" datetime="2016-12-26T18:29:37+08:00" content="2016-12-26">
+              2016-12-26
             </time>
           </span>
 
@@ -258,8 +253,8 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
                   </a>
                 </span>
 
@@ -274,8 +269,8 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/01/BuildTomcat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/BuildTomcat/" itemprop="commentsCount"></span>
+                <a href="/2016/12/26/saybye2016/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/26/saybye2016/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -297,67 +292,39 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
       
 
       
-        <p>因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。</p>
-<h3 id="Java环境"><a href="#Java环境" class="headerlink" title="Java环境"></a>Java环境</h3><p>点击下载：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">jdk-7u79-macosx-x64.dmg</a></p>
-<p>下载之后一路点击安装即可</p>
-<h3 id="MySQL数据库"><a href="#MySQL数据库" class="headerlink" title="MySQL数据库"></a>MySQL数据库</h3><p>点击下载：<a href="https://dev.mysql.com/downloads/file/?id=461482" target="_blank" rel="external">mysql-5.6.29-osx10.8-x86_64</a> </p>
-<p>下载之后同样一路点击安装即可，默认的安装路径为 <code>/usr/local/mysql-5.6.29-osx10.8-x86_64</code></p>
-<p>此时，在系统偏好设置的最下方如下图所示：</p>
-<p><img src="http://gonghonglou.com/images/BuildTomcat_mysql.png" alt=""> </p>
-<p>点击MySQL，然后点击 <code>Start MySQL Server</code> 开启数据库服务</p>
-<p>/Users/user/Desktop/BuildTomcat:mysql.png</p>
-<h3 id="阿帕奇服务器"><a href="#阿帕奇服务器" class="headerlink" title="阿帕奇服务器"></a>阿帕奇服务器</h3><p>点击下载：<a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">apache-tomcat-7.0.68.zip</a></p>
-<p>下载解压后放到任一目录中，我选择的是MySQL的默认安装目录下 <code>/usr/local/</code></p>
-<p>终端 <code>cd</code> 到阿帕奇服务器所在目录的 <code>bin</code> 目录下，执行如下命令：</p>
-<pre><code>$ ./startup.sh        // 开启服务器/Users/user/Desktop/mysql.png
-
-$ ./shutdown.sh       // 关闭服务器
-</code></pre><p>新下载的tomcat在启动时会报错：</p>
-<pre><code>./startup.sh: Permission denied
-</code></pre><p>这是因为权限问题，执行如下命令即可解决：</p>
-<pre><code>$ chmod u+x *.sh    //表示对当前目录下的*.sh文件的所有者增加可执行权限
-</code></pre><p>再次执行开启服务器命令即可。成功开启服务器后，浏览器打开 <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 出现如下界面表示开启成功：</p>
-<p><img src="http://gonghonglou.com/images/BuildTomcat_localhost.png" alt=""></p>
-<p>如上图点击<code>Manager App</code>登录需要账号密码，点击<code>取消</code>会有解释。<br>即打开<code>/usr/local/apache-tomcat-7.0.68/conf</code>目录下的<code>tomcat-users.xml</code>文件，在下方添加配置用户名密码如：</p>
-<pre><code>&lt;role rolename=&quot;manager-gui&quot;/&gt;
-&lt;user username=&quot;tomcat_name&quot; password=&quot;tomcat_password&quot; roles=&quot;manager-gui&quot;/&gt;
-</code></pre><h3 id="Sequel-Pro"><a href="#Sequel-Pro" class="headerlink" title="Sequel Pro"></a>Sequel Pro</h3><p>点击下载mysql的图形化工具：<a href="http://sequelpro.com" target="_blank" rel="external">sequel-pro-1.1.1.dmg</a> </p>
-<p>安装成功后打开，设置如下：</p>
-<p><img src="http://gonghonglou.com/images/BuildTomcat_sequel.png" alt=""></p>
-<p><code>Name</code>随意，MySQL初始用户名为<code>root</code> 密码为空，因为初始并没有数据库所以<code>Database</code>也为空。</p>
-<p>点击<code>Connect</code>进入后</p>
-<p>1：左上角选择<code>Add Database...</code>，填入一个名字如<code>troy</code>，点击<code>add</code></p>
-<p>2：<code>Sequel Pro</code>菜单栏选择<code>Database</code>–&gt;<code>User Accounts...</code>,给 root 用户添加用户名密码，点击<code>Apply</code></p>
-<p>这样在下次登录时就要把<code>Password</code>和<code>Database</code>填上再连接</p>
-<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><p>将自己的<code>.sql</code>文件用<code>Sequel Pro</code>打开并运行，这样在数据库中就有了数据</p>
-<p>将自己的<code>.war</code>的<code>jar</code>包添加到<code>/usr/local/apache-tomcat-7.0.68/webapps</code>目录下，这样就有了执行程序</p>
-<p>终端 <code>cd</code> 到阿帕奇服务器所在目录的 <code>bin</code> 目录下，开启服务器可执行如下任一命令：</p>
-<pre><code>$ ./startup.sh         // 单纯开启服务器
-
-$ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
-</code></pre><p>到这里本地服务器就开启了</p>
-<p>执行如下命令，查看服务器在局域网中的地址：</p>
-<pre><code>$ ifconfig
-</code></pre><p>这样你的手机等设备也可以连接到本地服务器了</p>
-<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><ol>
-<li><p>jdk-7u79-macosx-x64.dmg<br> java环境</p>
-</li>
-<li><p>mysql-5.6.29-osx10.9-x86_64.dmg<br> mysql数据库</p>
-</li>
-<li><p>apache-tomcat-7.0.68.zip<br> 阿帕奇服务器</p>
-</li>
-<li><p>sequel-pro-1.1.1.dmg<br> mysql的图形化工具</p>
-</li>
-<li><p>troy_2016-03-25.sql<br> sql语句，放在 Sequel Pro中执行，生成数据）</p>
-</li>
-<li><p>rest.war<br> 运行程序，放在 apache-tomcat-7.0.68/webapps 目录下</p>
-</li>
-<li><p>开启服务器</p>
-</li>
-<li><p>愉快的玩耍</p>
-</li>
-</ol>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>转载请保留原文地址：<a href="http://gonghonglou.com/2016/04/01/BuildTomcat">http://gonghonglou.com/2016/04/01/BuildTomcat</a></p>
+        <p>嘿，不觉间 2016 马上就要结束了，<br>所以，这一年你都干了啥？</p>
+<p>2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，<br>然后，从一名学生变成了员工！</p>
+<h2 id="怀念"><a href="#怀念" class="headerlink" title="怀念"></a>怀念</h2><p>毕业了，才发现真的会怀念学生时代。</p>
+<p>早晨拖着身子爬起来上课，然而课上少有听讲，就那样浪费着时间蚕食着生命，可那也是我的大学生活啊，不再有的挥霍时光。<br>到学校食堂吃饭，乌泱泱的人群，打饭都要先占座，可以的，那也是我怀念的。<br>每学期的宿舍聚餐、班级聚会、元旦晚会，终究会怀念身处群体中的日子，和身处公司不同。真心希望有一天会在社会团体中找到校园中的集体感，大概就像 Nicholas Tse 描述的 PO 那样的团体吧，如果是自己建立的就最完美了，Fighting ！<br>做学生时没有发现，原来这个社会对于学生的照顾这么多，电话费、住宿费、食堂、车票、景区门票等等等等这些有形的和那些无形的对于「学生」这一称号，每每感受到这一点在小小怀念学生时代之外都会多少感概这个社会还是很美好的，嗯。<br>毕业后每当看到朋友圈有人晒出学校照片都会特别感概真想回去看看，当初吃够了的商业街现在也是很怀念扬州炒饼和如意捞的火锅小料。 </p>
+<p>期待未知年后的大学聚会，我们校园一聚。</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>2016 年 1 月 11 日实习入职，马上我也要工作满一年了呢。当时找工作时收到了几份 offer ，最终选择了卓骥（现在的公司），也很幸运遇到了卓骥： </p>
+<p>1、实习入职的第二天就开始负责写 iPad 项目重构版的网络请求库。<br>2、实习结束回学校前的一个月开始接手整个 iPad 项目的重构版本。<br>3、正式入职后花费了四个月的时间完成了 iPad 项目重构的大部分内容。<br>4、紧接着接手了公司所有 iOS 业务（ iPad 和 iTouch 端）。<br>5、之后很快将会进行 iTouch 项目的重构</p>
+<p>这些都让我觉得：当初的选择没错。     </p>
+<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>2016，应该是我技术道路的正式开端，因为这些，所以还不算荒废：</p>
+<p>1、算上这篇，今年该是写了十二篇博客。不像那些大 V 的博客对于求学者有较高的技术学习和参考价值，迄今为止「与佳期的个人博客」的主要内容或者功能应该是给自己的技术总结吧。切身体会对于很多技术，代码实现和博客输出还是有很大差距的，开始写某项技术博客前以为对该项技术已经掌握了，开始后和结束后才发现自己 too young too simple ，每篇技术博客写下来都觉得获益匪浅能学到更多知识，即便这样我也深知还仅是皮毛而已。继续努力吧，希望以后自己的博客输出也能在技术深度上对别人有所帮助和影响。<br>2、顺利完成毕业设计，还要感谢马根老师（我的学术指导老师）我的毕业设计也是做的 iOS 的一款跳蚤市场类软件。<br>3、完成了公司 iPad 项目重构版的网络请求库的开发。熟悉了网络请求、数据解析和部分缓存操作。<br>4、完成了公司 iPad 的重构项目，主要代码成绩就是这个了，花费了约四五个月的时间，大部分的技术成长也都在这里了，从控件使用、页面布局、业务实现到设计模式、工程架构。<br>5、接手公司所有 iOS 业务（ iPad 和 iTouch 端）。主要成长了 Debug 的能力吧以及对公司业务的熟悉。<br>6、上线了一款个人 App：<a href="https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">RDER</a>，大概有七八千行代码，虽然软件简单但是一点一滴都是自己细心雕琢的，因为这款软件也了解了关于一款软件上线的所有流程，而且用到了 relam ，和 sqlite 有了比较。</p>
+<p>以上，今年大概写了有近十万行代码。</p>
+<h2 id="幸运"><a href="#幸运" class="headerlink" title="幸运"></a>幸运</h2><p>一直都觉得自己少有努力，更多是幸运。 </p>
+<p>大一大二浑浑噩噩度过了两年，大二末总觉得该做点什么，所以办了个兼职中心，起名「曙光」。希望更多和我一样在大学迷茫的同学们能够因此看到方向，至少生活不再荒诞。然而最终也没办成个样子，现在看来那种职业生活的确不是我喜欢的，所以没有成样子也是有原因的。可也正因为这个兼职中心才让我遇到了马根老师（还要多谢班主任盛莉老师的引荐），遇到了编程，遇到了 iOS ，遇到了自己真正喜欢的东西。</p>
+<p>大三到大四有近一年的时间都待在马老师的实验室里，机电楼 C 228。这间实验并不是开放实验室，偶尔有班级过来做实验的时间我就会带电脑到图书馆，所以大部分时间实验室只有我一个人在，偶尔晚上马老师也在。早上八九点钟吃过早饭到实验室，然后午饭、晚饭，晚上大概十点半十一点回宿舍，就这样日复一日匆匆过了一年。没有无聊反而一直很充实。那时候打开浏览器真的就感觉“徜徉在（互联网的）知识的海洋里”，那是我上了十几年学第一次有“知识的海洋”的概念。<br>经过物联网 -&gt; 计算机 -&gt; 前端 -&gt; iOS -&gt; Objective-C 这一层层，要学的知识仍然像“海洋”一样望不到头，每天都是鼓足干劲的学习这些编程技术，从最基础的编程基础开始，for 循环、页面布局、多线程、数据库、网络编程、设计模式、开源代码……每阶段都有学不完的技术。当然也不是一直热情高涨，最受打击的应该是在继续学习的路上，对于刚开始一块崭新技术的迷惑，比如多线程和数据库，刚开始接触的时候真的是一脸懵逼，切身体会在那种时候一份基础系统的学习资料有多重要，一份好的技术博客或者技术文档有多重要！</p>
+<p>总感觉自己是幸运的：<br>幸运的在大学快结束的时候找到了自己喜欢的东西；<br>幸运的来到上海在上海海事大学和上海大学秋季招聘会上拿到了几份 offer ；<br>幸运的在这几份 offer 里遇见的现在的公司—卓骥，才有了上边的“这些都让我觉得：当初的选择没错。”     </p>
+<p>幸运的父母都在上海可以住在一起；<br>幸运的和父母住在一起不必负担房租；<br>幸运的和父母住在一起连生活费都省了。<br>因为这接连的三个幸运才能把钱攒起来一分不剩的花在了自己任性花的地方。而且我一直觉得迈入社会的第一年是我们人生负担最小收入最低的一年，如果说是要轻奢生活不虑积蓄，那这一年应该是最合适的时间了，所以我做了一名合格的月光族，有（了）钱任性所以真的是一分不剩。。。 </p>
+<h2 id="遗憾"><a href="#遗憾" class="headerlink" title="遗憾"></a>遗憾</h2><p>1、生活上，以往的宿舍聚餐。</p>
+<p>离开学校的前一天晚上宿舍最后一次聚餐，我们拿着班里分得的班费找了一家烧烤狠搓了一顿，胡吃海喝侃天侃地。那天聊了好多，以往的宿舍聚餐因为酒量原因和吃货基因大家很少喝酒只顾吃吃吃，这应该就是最遗憾的了。<br>只有喝了酒大家才能推心置腹吧，所以那晚喝了酒，曾经你让我不爽我让你不快的事如今都成了加深我们情义的助力。我们吹牛打屁的聊着的时候顿顿带了一波节奏，人高马大的他竟然落了几滴猫尿，我看到后立马大笑指着他：“卧槽，你竟然…” 然后突然哽咽，同样泪流不止。<br>那天喝的很真心。</p>
+<p>小插曲：第二天起床就吐了还带着块块血色，肠胃一直不好上次喝酒吐了一夜胆汁，这次竟然吐了血，吓坏了。可是毕业离校不想让室友们担心所以装作无事。此事过了个把月知乎上看到那个笑话才会回忆起，那晚喝过酒回宿舍好像顺便买了个西瓜。<br>哈，哈哈哈哈……</p>
+<p>2、技术上，遇到编程的时间太晚。</p>
+<p>在大三初开始接触编程，上学期一直在入门 Java ，因为是刚入门所以进度很慢。看了一学期的 Java 大概熟悉了编程语言基础，对于移动端有 iOS 和 Android 两大阵营，都想学可是显然时间来不及，所以选择了逼格略高且逼格高就是我所爱的 iOS 。即便如此，学习 iOS 的时间也只有大三下学期到大四上学期，15 年大约十月底十一月就开始找工作了。<br>所以学习 iOS 的时间真的是太短，编程生涯开始的太晚。如果可以早一年甚至两年的话至少在毕业时对于应聘这件事会游刃有余的多吧。</p>
+<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>有了大学技术起步晚的遗憾，现在怎么能不早点做打算。</p>
+<p>年初的时候大概有了自己的第一个“五年计划”：两年上海，两年北京，2020 年的时候稳定于杭州。至于届时是买房买车平淡安稳的上班生活还是破釜沉舟不甘平庸的技术创业，就在下一个“五年计划”里决定吧，无论哪种，对这五年来说主要目的就是技术积累。然而在毕业的那段时间还是感觉又落入了类大学迷茫期的循环，接下来的五年除了积累技术还应该往什么方向思考。<br>大学：除了学习学习还能干嘛？<br>毕业：除了技术技术还能干嘛？<br>在接下来的五年能否像大学末期幸运的找到兴趣职业那样也幸运的找到兴趣事业呢？而且既然有了上边的技术遗憾当然是想越早发现越早准备的好。</p>
+<p>现在，马上就到年底了心里也大概有了底，虽然不够坚信但至少有了大致的方向。我们都很脆弱当然想尽量避免事业的打击，还好还有一段时间可以慢慢谋取，还好这一点在技术上是有优势的。<br>16 年就要结束了，接下来就是 “1+2”，此处省略三年的时间……</p>
+<p>总要有一些更实际有生活的计划：        </p>
+<ul>
+<li>旅行：<br>1、三月份去趟黄山，2、五月份骑行青海湖，3、十月份去趟拉萨</li>
+<li>读书：<br>1、技术书籍，2、龙应台的书， 3、其他一些小说</li>
+<li>技术：<br>1、维护更新 <a href="https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">RDER</a> ，2、写一款第三方微博客户端，3、更新技术博客，4、写一款牛逼的工具类 App（如果来得及）        </li>
+</ul>
+<p>呼～工作量还真不小，时间真的蛮紧张，撸开袖子，干吧！ </p>
+<p>相信天空和大海</p>
+<p><img src="http://gonghonglou.com/images/saybye2016_DSC_1867.jpg" alt=""></p>
 
       
     </div>
@@ -375,17 +342,13 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/UpdatePodsQue/" rel="next" title="解决OS X 10.11之后CocoaPods的升级问题">
-                <i class="fa fa-chevron-left"></i> 解决OS X 10.11之后CocoaPods的升级问题
+              <a href="/2016/10/29/setlanguage/" rel="next" title="iOS应用程序语言本地化及应用内语言设置">
+                <i class="fa fa-chevron-left"></i> iOS应用程序语言本地化及应用内语言设置
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/10/ChongmingCycling/" rel="prev" title="记环崇明岛骑行">
-                记环崇明岛骑行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -411,8 +374,8 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/01/BuildTomcat/"
-           data-title="Mac上搭建Apache Tomcat ＋ MySQL" data-url="http://gonghonglou.com/2016/04/01/BuildTomcat/">
+      <div class="ds-thread" data-thread-key="2016/12/26/saybye2016/"
+           data-title="Say Bye 2016" data-url="http://gonghonglou.com/2016/12/26/saybye2016/">
       </div>
     
   </div>
@@ -534,7 +497,7 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java环境"><span class="nav-number">1.</span> <span class="nav-text">Java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阿帕奇服务器"><span class="nav-number">3.</span> <span class="nav-text">阿帕奇服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequel-Pro"><span class="nav-number">4.</span> <span class="nav-text">Sequel Pro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加数据"><span class="nav-number">5.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下"><span class="nav-number">6.</span> <span class="nav-text">总结一下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#怀念"><span class="nav-number">1.</span> <span class="nav-text">怀念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择"><span class="nav-number">2.</span> <span class="nav-text">选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">3.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幸运"><span class="nav-number">4.</span> <span class="nav-text">幸运</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗憾"><span class="nav-number">5.</span> <span class="nav-text">遗憾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计划"><span class="nav-number">6.</span> <span class="nav-text">计划</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
