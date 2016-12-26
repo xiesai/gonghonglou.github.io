@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2016-12-26T15:14:19.000Z</updated>
+  <updated>2016-12-26T15:43:06.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2016/12/26/saybye2016/"/>
     <id>http://gonghonglou.com/2016/12/26/saybye2016/</id>
     <published>2016-12-26T10:29:37.000Z</published>
-    <updated>2016-12-26T15:14:19.000Z</updated>
+    <updated>2016-12-26T15:43:06.000Z</updated>
     
     <content type="html">&lt;p&gt;嘿，不觉间 2016 马上就要结束了，&lt;br&gt;所以，这一年你都干了啥？&lt;/p&gt;
 &lt;p&gt;2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，&lt;br&gt;然后，从一名学生变成了员工！&lt;/p&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;1、实习入职的第二天就开始负责写 iPad 项目重构版的网络请求库。&lt;br&gt;2、实习结束回学校前的一个月开始接手整个 iPad 项目的重构版本。&lt;br&gt;3、正式入职后花费了四个月的时间完成了 iPad 项目重构的大部分内容。&lt;br&gt;4、紧接着接手了公司所有 iOS 业务（ iPad 和 iTouch 端）。&lt;br&gt;5、之后很快将会进行 iTouch 项目的重构&lt;/p&gt;
 &lt;p&gt;这些都让我觉得：当初的选择没错。     &lt;/p&gt;
 &lt;h2 id=&quot;成绩&quot;&gt;&lt;a href=&quot;#成绩&quot; class=&quot;headerlink&quot; title=&quot;成绩&quot;&gt;&lt;/a&gt;成绩&lt;/h2&gt;&lt;p&gt;2016，应该是我技术道路的正式开端，因为这些，所以还不算荒废：&lt;/p&gt;
-&lt;p&gt;1、算上这篇，今年该是写了十二篇博客。不像那些大 V 的博客对于求学者有较高的技术学习和参考价值，迄今为止「与佳期的个人博客」的主要内容或者功能应该是给自己的技术总结吧。切身体会对于很多技术，代码实现和博客输出还是有很大差距的，开始写某项技术博客前以为对该项技术已经掌握了，开始后和结束后才发现自己 too young too simple ，每篇技术博客写下来都觉得获益匪浅能学到更多知识，即便这样我也深知还仅是皮毛而已。继续努力吧，希望以后自己的博客输出也能在技术深度上对别人有所帮助和影响。&lt;br&gt;2、顺利完成毕业设计，还要感谢马根老师（我的学术指导老师）我的毕业设计也是做的 iOS 的一款跳蚤市场类软件。&lt;br&gt;3、完成了公司 iPad 项目重构版的网络请求库的开发。熟悉了网络请求、数据解析和部分缓存操作。&lt;br&gt;4、完成了公司 iPad 的重构项目，主要代码成绩就是这个了，花费了约四五个月的时间，大部分的技术成长也都在这里了，从控件使用、页面布局、业务实现到设计模式、工程架构。&lt;br&gt;5、接手公司所有 iOS 业务（ iPad 和 iTouch 端）。主要成长了 Debug 的能力吧以及对公司业务的熟悉。&lt;br&gt;6、上线了一款个人 App：&lt;a href=&quot;https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;amp;ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RDER&lt;/a&gt;，大概有七八千行代码，虽然软件简单但是一点一滴都是自己细心雕琢的，因为这款软件也了解了关于一款软件上线的所有流程，而且用到了 relam ，和 sqlite 有了比较。&lt;/p&gt;
+&lt;p&gt;1、算上这篇，今年该是写了十二篇博客。不像那些大 V 的博客对于求学者有较高的技术学习和参考价值，迄今为止「与佳期的个人博客」的主要内容或者功能应该是给自己的技术总结吧。切身体会对于很多技术，代码实现和博客输出还是有很大差距的，开始写某项技术博客前以为对该项技术已经掌握了，开始后和结束后才发现自己 too young too simple ，每篇技术博客写下来都觉得获益匪浅能学到更多知识，即便这样我也深知还仅是皮毛而已。继续努力吧，希望以后自己的博客输出也能在技术深度上对别人有所帮助和影响。&lt;br&gt;2、顺利完成毕业设计，还要感谢马根老师（我的学术指导老师）我的毕业设计也是做的 iOS 的一款跳蚤市场类软件。&lt;br&gt;3、完成了公司 iPad 项目重构版的网络请求库的开发。熟悉了网络请求、数据解析和部分缓存操作。&lt;br&gt;4、完成了公司 iPad 的重构项目，主要代码成绩就是这个了，花费了约四五个月的时间，大部分的技术成长也都在这里了，从控件使用、页面布局、业务实现到设计模式、工程架构。&lt;br&gt;5、接手公司所有 iOS 业务（ iPad 和 iTouch 端）。主要成长了 Debug 的能力吧以及对公司业务的熟悉。&lt;br&gt;6、上线了一款个人 App：&lt;a href=&quot;https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;amp;ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RDER&lt;/a&gt;，一款轻量极简的 RSS 订阅软件。大概有七八千行代码，虽然软件简单但是一点一滴都是自己细心雕琢的，因为这款软件也了解了关于一款软件上线的所有流程，而且用到了 relam ，和 sqlite 有了比较。&lt;/p&gt;
 &lt;p&gt;以上，今年大概写了有近十万行代码。&lt;/p&gt;
 &lt;h2 id=&quot;幸运&quot;&gt;&lt;a href=&quot;#幸运&quot; class=&quot;headerlink&quot; title=&quot;幸运&quot;&gt;&lt;/a&gt;幸运&lt;/h2&gt;&lt;p&gt;一直都觉得自己少有努力，更多是幸运。 &lt;/p&gt;
 &lt;p&gt;大一大二浑浑噩噩度过了两年，大二末总觉得该做点什么，所以办了个兼职中心，起名「曙光」。希望更多和我一样在大学迷茫的同学们能够因此看到方向，至少生活不再荒诞。然而最终也没办成个样子，现在看来那种职业生活的确不是我喜欢的，所以没有成样子也是有原因的。可也正因为这个兼职中心才让我遇到了马根老师（还要多谢班主任盛莉老师的引荐），遇到了编程，遇到了 iOS ，遇到了自己真正喜欢的东西。&lt;/p&gt;
