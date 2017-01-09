@@ -73,10 +73,10 @@ Java环境点击下载：jdk-7u79-macosx-x64.dmg
 下载之后一路点击安装即可
 MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
 下载之后同样一路点击安装即可，默认的安">
-<meta property="og:image" content="http://image.gonghonglou.com/BuildTomcat/mysql.png">
-<meta property="og:image" content="http://image.gonghonglou.com/BuildTomcat/localhost.png">
-<meta property="og:image" content="http://image.gonghonglou.com/BuildTomcat/sequel.png">
-<meta property="og:updated_time" content="2017-01-09T12:32:39.000Z">
+<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/mysql.png">
+<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/localhost.png">
+<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/sequel.png">
+<meta property="og:updated_time" content="2017-01-09T15:32:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
 <meta name="twitter:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
@@ -84,7 +84,7 @@ Java环境点击下载：jdk-7u79-macosx-x64.dmg
 下载之后一路点击安装即可
 MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
 下载之后同样一路点击安装即可，默认的安">
-<meta name="twitter:image" content="http://image.gonghonglou.com/BuildTomcat/mysql.png">
+<meta name="twitter:image" content="http://image.gonghonglou.com/apachetomcat/mysql.png">
 
 
 
@@ -303,7 +303,7 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
 <h3 id="MySQL数据库"><a href="#MySQL数据库" class="headerlink" title="MySQL数据库"></a>MySQL数据库</h3><p>点击下载：<a href="https://dev.mysql.com/downloads/file/?id=461482" target="_blank" rel="external">mysql-5.6.29-osx10.8-x86_64</a> </p>
 <p>下载之后同样一路点击安装即可，默认的安装路径为 <code>/usr/local/mysql-5.6.29-osx10.8-x86_64</code></p>
 <p>此时，在系统偏好设置的最下方如下图所示：</p>
-<p><img src="http://image.gonghonglou.com/BuildTomcat/mysql.png" alt=""> </p>
+<p><img src="http://image.gonghonglou.com/apachetomcat/mysql.png" alt=""> </p>
 <p>点击MySQL，然后点击 <code>Start MySQL Server</code> 开启数据库服务</p>
 <p>/Users/user/Desktop/BuildTomcat:mysql.png</p>
 <h3 id="阿帕奇服务器"><a href="#阿帕奇服务器" class="headerlink" title="阿帕奇服务器"></a>阿帕奇服务器</h3><p>点击下载：<a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">apache-tomcat-7.0.68.zip</a></p>
@@ -317,13 +317,13 @@ $ ./shutdown.sh       // 关闭服务器
 </code></pre><p>这是因为权限问题，执行如下命令即可解决：</p>
 <pre><code>$ chmod u+x *.sh    //表示对当前目录下的*.sh文件的所有者增加可执行权限
 </code></pre><p>再次执行开启服务器命令即可。成功开启服务器后，浏览器打开 <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 出现如下界面表示开启成功：</p>
-<p><img src="http://image.gonghonglou.com/BuildTomcat/localhost.png" alt=""></p>
+<p><img src="http://image.gonghonglou.com/apachetomcat/localhost.png" alt=""></p>
 <p>如上图点击<code>Manager App</code>登录需要账号密码，点击<code>取消</code>会有解释。<br>即打开<code>/usr/local/apache-tomcat-7.0.68/conf</code>目录下的<code>tomcat-users.xml</code>文件，在下方添加配置用户名密码如：</p>
 <pre><code>&lt;role rolename=&quot;manager-gui&quot;/&gt;
 &lt;user username=&quot;tomcat_name&quot; password=&quot;tomcat_password&quot; roles=&quot;manager-gui&quot;/&gt;
 </code></pre><h3 id="Sequel-Pro"><a href="#Sequel-Pro" class="headerlink" title="Sequel Pro"></a>Sequel Pro</h3><p>点击下载mysql的图形化工具：<a href="http://sequelpro.com" target="_blank" rel="external">sequel-pro-1.1.1.dmg</a> </p>
 <p>安装成功后打开，设置如下：</p>
-<p><img src="http://image.gonghonglou.com/BuildTomcat/sequel.png" alt=""></p>
+<p><img src="http://image.gonghonglou.com/apachetomcat/sequel.png" alt=""></p>
 <p><code>Name</code>随意，MySQL初始用户名为<code>root</code> 密码为空，因为初始并没有数据库所以<code>Database</code>也为空。</p>
 <p>点击<code>Connect</code>进入后</p>
 <p>1：左上角选择<code>Add Database...</code>，填入一个名字如<code>troy</code>，点击<code>add</code></p>

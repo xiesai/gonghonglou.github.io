@@ -69,14 +69,14 @@
 <meta property="og:description" content="ReactiveCocoa 是一个Objective-C 框架，受 Functional Reactive Programming的启发。它提供了一系列用来组合和转换值流的API。
 如果你早已熟悉了函数响应式编程或者知道ReactiveCocoa的基本前提，看看Documentation这个文件夹里的framework overview等文件更深一步来了解它是怎样在实践中工作的。
 介绍Reacti">
-<meta property="og:image" content="http://image.gonghonglou.com/MeetingReactiveCocoa_cheaptalk.png">
-<meta property="og:updated_time" content="2017-01-09T12:22:07.000Z">
+<meta property="og:image" content="http://image.gonghonglou.com/cheaptalk.png">
+<meta property="og:updated_time" content="2017-01-09T15:33:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识ReactiveCocoa">
 <meta name="twitter:description" content="ReactiveCocoa 是一个Objective-C 框架，受 Functional Reactive Programming的启发。它提供了一系列用来组合和转换值流的API。
 如果你早已熟悉了函数响应式编程或者知道ReactiveCocoa的基本前提，看看Documentation这个文件夹里的framework overview等文件更深一步来了解它是怎样在实践中工作的。
 介绍Reacti">
-<meta name="twitter:image" content="http://image.gonghonglou.com/MeetingReactiveCocoa_cheaptalk.png">
+<meta name="twitter:image" content="http://image.gonghonglou.com/cheaptalk.png">
 
 
 
@@ -296,7 +296,7 @@
 <p>例如，一个文本框能够根据它的改变被绑定到最后一次的值，而不是使用额外的代码每秒去监控时钟和更新文本框。这点跟KVO很像，不过是使用了block，而非<code>-observeValueForKeyPath:ofObject:change:context:</code></p>
 <p>信号也可以进行异步操作，就像<a href="https://en.wikipedia.org/wiki/Futures_and_promises" target="_blank" rel="external">futures and promises</a>。这极大的简化了异步软件中网络连接的代码。</p>
 <p>RAC的重大优势之一就是它提供信号(<code>signal</code>)这种方式来统一的处理所有异步的行为，包括代理方法、block 回调、target-action 机制、通知和KVO。</p>
-<p><img src="http://image.gonghonglou.com/MeetingReactiveCocoa_cheaptalk.png" alt=""> </p>
+<p><img src="http://image.gonghonglou.com/cheaptalk.png" alt=""> </p>
 <p>这里是简单的例子：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当self.username改变时，打印新的名字到控制台</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// RACObserve(self, username)创建一个新的RACSignal，当前self.username的值发生改变时，发送新值给newName</span></span><br><span class="line"><span class="comment">// -subscribeNext: 当信号发送值时将触发block</span></span><br><span class="line">[RACObserve(<span class="keyword">self</span>, username) subscribeNext:^(<span class="built_in">NSString</span> *newName) &#123;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, newName);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
 <p>与KVO 通知不同的是信号能够进行统一的链式操作：</p>
