@@ -77,11 +77,11 @@
 先上几张二维码压压惊……
 
 识别二维码摄">
-<meta property="og:image" content="http://image.gonghonglou.com/QRCode_creatcode.png">
-<meta property="og:image" content="http://image.gonghonglou.com/QRCode_rectOfInterest.jpeg">
-<meta property="og:image" content="http://image.gonghonglou.com/QRCode_cheaptalk.png">
-<meta property="og:image" content="http://image.gonghonglou.com/QRCode_QRCodeSacn.png">
-<meta property="og:updated_time" content="2017-01-09T12:23:06.000Z">
+<meta property="og:image" content="http://image.gonghonglou.com/QRCode/creatcode.png">
+<meta property="og:image" content="http://image.gonghonglou.com/QRCode/rectOfInterest.jpeg">
+<meta property="og:image" content="http://image.gonghonglou.com/QRCode/cheaptalk.png">
+<meta property="og:image" content="http://image.gonghonglou.com/QRCode/QRCodeSacn.png">
+<meta property="og:updated_time" content="2017-01-09T12:45:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中关于二维码的识别与生成">
 <meta name="twitter:description" content="提起二维码 QR Code 想必大家都不再陌生，“扫一扫加好友”、“扫一扫付款”等已是我们日常生活中司空见惯的情形。   
@@ -91,7 +91,7 @@
 先上几张二维码压压惊……
 
 识别二维码摄">
-<meta name="twitter:image" content="http://image.gonghonglou.com/QRCode_creatcode.png">
+<meta name="twitter:image" content="http://image.gonghonglou.com/QRCode/creatcode.png">
 
 
 
@@ -309,7 +309,7 @@
 <p>关于二维码生成的原理，感兴趣的话各位可以移驾 <a href="http://7xn9bi.com1.z0.glb.clouddn.com/QRCode/mineqrcode.jpeg" target="_blank" rel="external">二维码的生成细节和原理</a> 以做参考。</p>
 <p>注：文中识别与生成二维码的方法同样适用于条形码。</p>
 <p>先上几张二维码压压惊……</p>
-<p><img src="http://image.gonghonglou.com/QRCode_creatcode.png" alt="我的二维码"></p>
+<p><img src="http://image.gonghonglou.com/QRCode/creatcode.png" alt="我的二维码"></p>
 <h1 id="识别二维码"><a href="#识别二维码" class="headerlink" title="识别二维码"></a>识别二维码</h1><h2 id="摄像头扫描二维码"><a href="#摄像头扫描二维码" class="headerlink" title="摄像头扫描二维码"></a>摄像头扫描二维码</h2><p>iOS7之后苹果推出系统原生API来支持通过扫描获取二维码的功能，较其它 <a href="https://github.com/ZBar/ZBar" target="_blank" rel="external">ZBar</a>、<a href="https://github.com/zxing/zxing" target="_blank" rel="external">ZXing</a> 等第三方库有明显的性能优势。</p>
 <p>首先，你需要弄清楚要用到的以下对象分别起到什么作用：</p>
 <p>1、 <code>AVCaptureDevice</code>：<br>捕获数据的物理设备，如：摄像机、麦克风。 开关灯属性<code>torchMode</code>就是由它管理的。</p>
@@ -322,9 +322,9 @@
 <li>将输出流设置在主线程中，其代理方法会执行一次。设置在其他线程的话，代理会执行多次且次数不可控制。</li>
 <li>可以通过设置<code>AVFoundation</code>的<code>rectOfInterest</code>属性来设定扫描区域，该属性默认取值是<code>CGRectMake(0, 0, 1, 1)</code>即全屏扫描<br><code>x</code>、<code>y</code>、<code>width</code>、<code>height</code>的取值范围都是<code>0～1</code>，且原点在屏幕右上角，所以和我们正常理解的<code>CGRect</code>相比<code>x</code>和<code>y</code>对调，<code>width</code>和<code>height</code>对调。</li>
 </ul>
-<p>如图：<img src="http://image.gonghonglou.com/QRCode_rectOfInterest.jpeg" alt=""></p>
+<p>如图：<img src="http://image.gonghonglou.com/QRCode/rectOfInterest.jpeg" alt=""></p>
 <p>5、 <code>AVCaptureVideoPreviewLayerCALayer</code>：<br>预览图层，显示相机拍摄到的画面。正因为它是<code>CALayer</code>的子类，为了将它添加到屏幕上，我们需要额外添加一个<code>UIView</code>，在这个<code>UIView</code>的<code>layer上</code>添加<code>AVCaptureVideoPreviewLayerCALayer</code>，否则它会覆盖住所有的控件（除非你把所有的控件都在添加这个视图之后添加）。</p>
-<p><img src="http://image.gonghonglou.com/QRCode_cheaptalk.png" alt=""> </p>
+<p><img src="http://image.gonghonglou.com/QRCode/cheaptalk.png" alt=""> </p>
 <blockquote>
 <p><code>AVCaptureSession</code> 设置开始与结束扫描</p>
 </blockquote>
@@ -385,7 +385,7 @@
 <p><code>UIImageWriteToSavedPhotosAlbum</code> 方法的指定回调，监测保存是否成功</p>
 </blockquote>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#pragma mark -  指定回调方法</span></span><br><span class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span> *)image didFinishSavingWithError:(<span class="built_in">NSError</span> *)error contextInfo:(<span class="keyword">void</span> *)contextInfo &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string;</span><br><span class="line">    <span class="keyword">if</span>(!error)&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save success"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"save failed"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看一哈效果图<br><img src="http://image.gonghonglou.com/QRCode_QRCodeSacn.png" alt="二维码的识别与生成"></p>
+<p>看一哈效果图<br><img src="http://image.gonghonglou.com/QRCode/QRCodeSacn.png" alt="二维码的识别与生成"></p>
 <p>ok，就这些吧。<br>Demo地址：<a href="https://github.com/gonghonglou/QRCodeDemo" target="_blank" rel="external">https://github.com/gonghonglou/QRCodeDemo</a></p>
 <p>写到这里估计涉及了二维码操作的大部分内容，期望对诸君有所帮助。</p>
 <p>祝大家敲码愉快！</p>

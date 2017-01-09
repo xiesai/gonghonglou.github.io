@@ -69,17 +69,17 @@
 <meta property="og:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
 有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如-fno-objc-arc等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……
 我们只需要将所需要的第三方库声明到一个名为Podfile文件中，然后执行Pod">
-<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods_icon.png">
-<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods_searchAFNetworking.png">
-<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods_podInstall.png">
-<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods_Framework.png">
-<meta property="og:updated_time" content="2017-01-09T12:18:23.000Z">
+<meta property="og:image" content="http://image.gonghonglou.com/cocoapods/cocoapods-icon.png">
+<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/searchAFNetworking.png">
+<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/podInstall.png">
+<meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/Framework.png">
+<meta property="og:updated_time" content="2017-01-09T12:37:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的库依赖管理工具CocoaPods">
 <meta name="twitter:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
 有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如-fno-objc-arc等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……
 我们只需要将所需要的第三方库声明到一个名为Podfile文件中，然后执行Pod">
-<meta name="twitter:image" content="http://image.gonghonglou.com/CocoaPods_icon.png">
+<meta name="twitter:image" content="http://image.gonghonglou.com/cocoapods/cocoapods-icon.png">
 
 
 
@@ -296,7 +296,7 @@
 <p>有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如<code>-fno-objc-arc</code>等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……</p>
 <p>我们只需要将所需要的第三方库声明到一个名为<code>Podfile</code>文件中，然后执行<code>Pod install</code>命令就OK了，CocoaPods就会自动去下载我们所需要库，并为我的工程设置好相应的系统依赖和编译参数。 </p>
 <p>只能说，好用到哭～</p>
-<p><img src="http://image.gonghonglou.com/CocoaPods_icon.png" alt="CocoaPods"></p>
+<p><img src="http://image.gonghonglou.com/cocoapods/cocoapods-icon.png" alt="CocoaPods"></p>
 <h2 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h2><p>CocoaPods依赖于Ruby环境，刚好Mac下自带Ruby，使用Ruby的gem命令即可安装CocoaPods。<br>为防止因gem太老而引发问题，建议执行如下命令先更新gem：</p>
 <pre><code>$ sudo gem update --system
 </code></pre><p>执行如下命令安装CocoaPods：</p>
@@ -364,7 +364,7 @@ in addition to the gem? [Yn]
 <pre><code>0.39.0
 </code></pre><h2 id="使用CocoaPods"><a href="#使用CocoaPods" class="headerlink" title="使用CocoaPods"></a>使用CocoaPods</h2><h4 id="搜索第三方库"><a href="#搜索第三方库" class="headerlink" title="搜索第三方库"></a>搜索第三方库</h4><p>为判断某第三方库（如AFNetworking）是否支持CocoaPods，执行如下命令来搜索：</p>
 <pre><code>$ pod search AFNetworking
-</code></pre><p>若如下图所示，则可用CocoaPods管理AFNetworking<br><img src="http://image.gonghonglou.com/CocoaPods_searchAFNetworking.png" alt="searchAFNetworking"></p>
+</code></pre><p>若如下图所示，则可用CocoaPods管理AFNetworking<br><img src="http://image.gonghonglou.com/CocoaPods/searchAFNetworking.png" alt="searchAFNetworking"></p>
 <h4 id="创建Podfile的文件"><a href="#创建Podfile的文件" class="headerlink" title="创建Podfile的文件"></a>创建<code>Podfile</code>的文件</h4><p>CocoaPods就可以根据<code>Podfile</code>文件里的内容来帮你下载你所需要的库。<a href="https://guides.cocoapods.org/using/the-podfile.html" target="_blank" rel="external">点击前往</a>CocoaPods官方对<code>Podfile</code>文件的介绍。<br>终端<code>cd</code>到你的项目所在目录下，创建<code>Podfile</code>文件：</p>
 <pre><code>$ vim Podfile
 </code></pre><p>按下<code>i</code>键进入输入状态，在<code>Podfile</code>文件里输入以下文字：</p>
@@ -380,7 +380,7 @@ end
 </blockquote>
 <p>终端<code>cd</code>到你的项目所在目录下执行如下命令来利用CocoPods下载第三方库：</p>
 <pre><code>$ pod install
-</code></pre><p>如下图所示则下载成功：<br><img src="http://image.gonghonglou.com/CocoaPods_podInstall.png" alt="pod install"></p>
+</code></pre><p>如下图所示则下载成功：<br><img src="http://image.gonghonglou.com/CocoaPods/podInstall.png" alt="pod install"></p>
 <blockquote>
 <p>提示：[!] Please close any current Xcode sessions and use <code>Your_App_Name.xcworkspace</code> for this project from now on.</p>
 </blockquote>
@@ -403,7 +403,7 @@ end
 <pre><code>$ pod install --verbose --no-repo-update
 </code></pre></blockquote>
 <h2 id="发布自己的开源框架到CocoaPods"><a href="#发布自己的开源框架到CocoaPods" class="headerlink" title="发布自己的开源框架到CocoaPods"></a>发布自己的开源框架到CocoaPods</h2><p>你需要如下图创建一个Framework来打造你自己的开源框架</p>
-<p><img src="http://image.gonghonglou.com/CocoaPods_Framework.png" alt="Framework"></p>
+<p><img src="http://image.gonghonglou.com/CocoaPods/Framework.png" alt="Framework"></p>
 <p>发布自己的开源框架到CocoaPods同样需要一个类似<code>Podfile</code>的文件来告诉CocoaPods我们开源库的名称、版本、作者、描述、地址、所需的framework、依赖库等，这个文件叫<code>Your_Framework_Name.podspec</code>，开始创建这个文件</p>
 <p>终端<code>cd</code>到工程目录下，执行如下命令：</p>
 <pre><code>$ pod spec create Your_Framework_Name
