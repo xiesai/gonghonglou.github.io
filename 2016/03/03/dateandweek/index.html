@@ -73,9 +73,9 @@
 对校园app的Demo有兴趣的话，请移驾GitHub:  QLU-BlogDemo
 
 正文首先看一下模样吧（如图中红框所示）最基本">
-<meta property="og:image" content="http://gonghonglou.com/images/dateandweek_dateweek.png">
-<meta property="og:image" content="http://gonghonglou.com/images/dateandweek_985173.png">
-<meta property="og:updated_time" content="2016-12-14T08:35:47.000Z">
+<meta property="og:image" content="http://image.gonghonglou.com/dateandweek_dateweek.png">
+<meta property="og:image" content="http://image.gonghonglou.com/dateandweek_985173.png">
+<meta property="og:updated_time" content="2017-01-09T12:18:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发tips之日期与星期的对应">
 <meta name="twitter:description" content="前言前段时间练手模拟校园app写了个Demo，其中在写课程表的界面时，加上了当前日期，为了让日期与星期对应也是前后折腾了好几次，主要还是对日期的情况思考的不够全面吧（比如判断每月天数和月初月末的交替），不过最终还是完成需求。最后意外发现简便方法，写下来分享。    
@@ -83,7 +83,7 @@
 对校园app的Demo有兴趣的话，请移驾GitHub:  QLU-BlogDemo
 
 正文首先看一下模样吧（如图中红框所示）最基本">
-<meta name="twitter:image" content="http://gonghonglou.com/images/dateandweek_dateweek.png">
+<meta name="twitter:image" content="http://image.gonghonglou.com/dateandweek_dateweek.png">
 
 
 
@@ -300,9 +300,9 @@
 <ul>
 <li>对校园app的Demo有兴趣的话，请移驾GitHub:  <a href="https://github.com/gonghonglou/QLU-BlogDemo" target="_blank" rel="external">QLU-BlogDemo</a></li>
 </ul>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先看一下模样吧（如图中红框所示）<br><img src="http://gonghonglou.com/images/dateandweek_dateweek.png" alt="课程表"><br>最基本的：获取当前日期的方法</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先看一下模样吧（如图中红框所示）<br><img src="http://image.gonghonglou.com/dateandweek_dateweek.png" alt="课程表"><br>最基本的：获取当前日期的方法</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前时间</span></span><br><span class="line"><span class="built_in">NSDate</span> *senddate = [<span class="built_in">NSDate</span> date];</span><br><span class="line"><span class="built_in">NSDateFormatter</span> *dateformatter = [[<span class="built_in">NSDateFormatter</span> alloc] init];</span><br><span class="line">[dateformatter setDateFormat:<span class="string">@"yyy"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *yearString = [dateformatter stringFromDate:senddate];</span><br><span class="line">[dateformatter setDateFormat:<span class="string">@"MM"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *monthString = [dateformatter stringFromDate:senddate];</span><br><span class="line">[dateformatter setDateFormat:<span class="string">@"dd"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *dayString = [dateformatter stringFromDate:senddate];</span><br><span class="line">[dateformatter setDateFormat:<span class="string">@"EEE"</span>];</span><br><span class="line">    </span><br><span class="line"><span class="built_in">NSString</span> *weekString = [dateformatter stringFromDate:senddate];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"-%@"</span>,weekString);</span><br><span class="line"><span class="keyword">int</span> year = [yearString intValue];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"-%d"</span>, year);</span><br><span class="line"><span class="keyword">int</span> month = [monthString intValue];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"--%d"</span>, month);</span><br><span class="line"><span class="keyword">int</span> day = [dayString intValue];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"---%d"</span>, day);</span><br></pre></td></tr></table></figure>
-<p>看打印结果：<br><img src="http://gonghonglou.com/images/dateandweek_985173.png" alt="打印结果"><br>然后就是把获取到的日期放到对应星期上去了,需要格外注意的要判断的几点：</p>
+<p>看打印结果：<br><img src="http://image.gonghonglou.com/dateandweek_985173.png" alt="打印结果"><br>然后就是把获取到的日期放到对应星期上去了,需要格外注意的要判断的几点：</p>
 <ul>
 <li>不同月的天数</li>
 <li>月底时，显示下个月月初的日期</li>
@@ -520,8 +520,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
