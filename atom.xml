@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-01-09T15:35:30.000Z</updated>
+  <updated>2017-03-14T02:28:11.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2016/12/26/saybye2016/"/>
     <id>http://gonghonglou.com/2016/12/26/saybye2016/</id>
     <published>2016-12-26T10:29:37.000Z</published>
-    <updated>2017-01-09T15:35:30.000Z</updated>
+    <updated>2017-03-14T02:28:11.000Z</updated>
     
     <content type="html">&lt;p&gt;嘿，不觉间 2016 马上就要结束了，&lt;br&gt;所以，这一年你都干了啥？&lt;/p&gt;
 &lt;p&gt;2016 年，最大的变动就是毕了业，十六年的求学历程 结束了，&lt;br&gt;然后，从一名学生变成了员工！&lt;/p&gt;
@@ -54,7 +54,7 @@
 &lt;/ul&gt;
 &lt;p&gt;呼～工作量还真不小，时间真的蛮紧张，撸开袖子，干吧！ &lt;/p&gt;
 &lt;p&gt;相信天空和大海，对于你，全是未来！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.gonghonglou.com/saybye2016/DSC_1867.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.gonghonglou.com/saybye2016/FullSizeRender.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -844,7 +844,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/02/03/firstblog/"/>
     <id>http://gonghonglou.com/2016/02/03/firstblog/</id>
     <published>2016-02-03T06:50:14.000Z</published>
-    <updated>2017-01-09T12:39:53.000Z</updated>
+    <updated>2017-03-14T02:16:33.000Z</updated>
     
     <content type="html">&lt;p&gt;这是一篇详细文章来讲述用Mac搭建Hexo博客于Github上的完整历程， 也是踩了无数的坑搭起来的，现在写下些经验来分享，希望能帮大家少踩些坑。&lt;/p&gt;
 &lt;p&gt;曾买过一款阿里的云虚拟主机，后来才发现不能自己装软件只能上传网站程序，除非另买&lt;a href=&quot;https://www.aliyun.com/easybuy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECS&lt;/a&gt;，对于第一个月的实习工资还没拿到手的我想想还是算了，先用Wordpress搭起来玩玩吧。然而在上传网站程序中几次失败，本就觉得没劲，遂一怒转向Github。好了，废话少说，开始吧。&lt;/p&gt;
@@ -935,7 +935,7 @@ npm install hexo --save
 &lt;p&gt;这样就可以访问自己在 Coding 上的个人博客了 &lt;a href=&quot;http://gonghonglou.coding.me/gonghonglou&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gonghonglou.coding.me/gonghonglou&lt;/a&gt; 如果像这样你的用户后缀名与博客项目名称相同你还可以省略项目名称直接访问 &lt;a href=&quot;http://gonghonglou.coding.me&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gonghonglou.coding.me&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;7、添加域名绑定，输入个人域名就 OK 了，可能需要耐心等待几分钟，这样在国内访问自己的博客就快得多了。&lt;/p&gt;
 &lt;p&gt;试了一下在国内访问 &lt;a href=&quot;http://gonghonglou.com&quot;&gt;gonghonglou.com&lt;/a&gt; 拦不住 要飞起来了😂&lt;/p&gt;
-&lt;h4 id=&quot;——11-10更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——11-10更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——11.10更新 以上————————————————&quot;&gt;&lt;/a&gt;——11.10更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;以上便是我搭建&lt;a href=&quot;http://gonghonglou.com&quot;&gt;与佳期个人博客(gonghonglou.com)&lt;/a&gt;的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
+&lt;h4 id=&quot;——11-10更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——11-10更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——11.10更新 以上————————————————&quot;&gt;&lt;/a&gt;——11.10更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;以上便是我搭建&lt;a href=&quot;http://gonghonglou.com&quot;&gt;与佳期的个人博客(gonghonglou.com)&lt;/a&gt;的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
 &lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/02/03/firstblog&quot;&gt;http://gonghonglou.com/2016/02/03/firstblog&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://hexo.io/docs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo官网&lt;/a&gt;&lt;/li&gt;
