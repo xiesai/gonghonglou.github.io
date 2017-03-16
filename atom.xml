@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-03-14T03:46:27.000Z</updated>
+  <updated>2017-03-14T02:28:11.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,31 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>About RDER</title>
-    <link href="http://gonghonglou.com/2017/03/14/rder/"/>
-    <id>http://gonghonglou.com/2017/03/14/rder/</id>
-    <published>2017-03-14T03:37:19.000Z</published>
-    <updated>2017-03-14T03:46:27.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;amp;ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RDER&lt;/a&gt; : 一款轻量极简的 RSS 订阅软件，同时具备收录文章及管理功能。&lt;/p&gt;
-&lt;p&gt;收录页面&lt;br&gt;• 输入网页地址收录文章&lt;br&gt;• 可对收录文章作标记、分享、置顶、收藏操作&lt;/p&gt;
-&lt;p&gt;订阅页面&lt;br&gt;• 输入 RSS 地址订阅博客&lt;br&gt;• 可对订阅博客作标记、分享、置顶操作&lt;br&gt;• 查看博主所有博客并可分享、收藏&lt;/p&gt;
-&lt;p&gt;我的页面&lt;br&gt;• 我的收藏、删除记录、阅读记录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://image.gonghonglou.com/rder/rder.PNG&quot; alt=&quot;RDER&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/rder/id1178545654?l=zh&amp;amp;ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RDER&lt;/a&gt; : 一款轻量极简的 RSS 
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>Say Bye 2016</title>
