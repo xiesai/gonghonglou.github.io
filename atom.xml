@@ -88,8 +88,8 @@
   
   <entry>
     <title>iOS应用程序语言本地化及应用内语言设置</title>
-    <link href="http://gonghonglou.com/2016/10/29/setlanguage/"/>
-    <id>http://gonghonglou.com/2016/10/29/setlanguage/</id>
+    <link href="http://gonghonglou.com/2016/10/29/set-language/"/>
+    <id>http://gonghonglou.com/2016/10/29/set-language/</id>
     <published>2016-10-29T14:18:38.000Z</published>
     <updated>2017-01-09T15:28:56.000Z</updated>
     
@@ -345,8 +345,8 @@
   
   <entry>
     <title>记环崇明岛骑行</title>
-    <link href="http://gonghonglou.com/2016/05/10/ChongmingCycling/"/>
-    <id>http://gonghonglou.com/2016/05/10/ChongmingCycling/</id>
+    <link href="http://gonghonglou.com/2016/05/10/chongming-cycling/"/>
+    <id>http://gonghonglou.com/2016/05/10/chongming-cycling/</id>
     <published>2016-05-10T03:06:35.000Z</published>
     <updated>2017-01-09T12:32:00.000Z</updated>
     
@@ -476,8 +476,8 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
   
   <entry>
     <title>解决OS X 10.11之后CocoaPods的升级问题</title>
-    <link href="http://gonghonglou.com/2016/04/01/UpdatePodsQue/"/>
-    <id>http://gonghonglou.com/2016/04/01/UpdatePodsQue/</id>
+    <link href="http://gonghonglou.com/2016/04/01/update-pods-que/"/>
+    <id>http://gonghonglou.com/2016/04/01/update-pods-que/</id>
     <published>2016-04-01T07:24:10.000Z</published>
     <updated>2017-01-09T12:46:42.000Z</updated>
     
@@ -678,8 +678,8 @@ $ git push origin --tags
   
   <entry>
     <title>初识ReactiveCocoa</title>
-    <link href="http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa/"/>
-    <id>http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa/</id>
+    <link href="http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/"/>
+    <id>http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/</id>
     <published>2016-03-17T15:12:45.000Z</published>
     <updated>2017-01-09T15:33:42.000Z</updated>
     
@@ -761,8 +761,8 @@ $ git push origin --tags
   
   <entry>
     <title>iOS开发tips之日期与星期的对应</title>
-    <link href="http://gonghonglou.com/2016/03/03/dateandweek/"/>
-    <id>http://gonghonglou.com/2016/03/03/dateandweek/</id>
+    <link href="http://gonghonglou.com/2016/03/03/date-week/"/>
+    <id>http://gonghonglou.com/2016/03/03/date-week/</id>
     <published>2016-03-03T03:47:11.000Z</published>
     <updated>2017-01-09T12:37:40.000Z</updated>
     
@@ -808,8 +808,8 @@ $ git push origin --tags
   
   <entry>
     <title>由丢失一部iPhone6引发的祸端</title>
-    <link href="http://gonghonglou.com/2016/03/03/protectappleid/"/>
-    <id>http://gonghonglou.com/2016/03/03/protectappleid/</id>
+    <link href="http://gonghonglou.com/2016/03/03/protect-apple-id/"/>
+    <id>http://gonghonglou.com/2016/03/03/protect-apple-id/</id>
     <published>2016-03-03T03:36:26.000Z</published>
     <updated>2017-01-09T12:45:09.000Z</updated>
     
