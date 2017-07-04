@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-03T08:39:44.000Z</updated>
+  <updated>2017-03-14T02:28:11.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,41 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>UITableViewCell计算行高的几种方式</title>
-    <link href="http://gonghonglou.com/2017/07/03/cell-height/"/>
-    <id>http://gonghonglou.com/2017/07/03/cell-height/</id>
-    <published>2017-07-03T07:03:59.000Z</published>
-    <updated>2017-07-03T08:39:44.000Z</updated>
-    
-    <content type="html">&lt;p&gt;iOS 的界面中，UITableView 应该是用的最多的控件之一了吧：微信列表、聊天记录、朋友圈、微博 time line。。。哪哪离不开 UITableView。而 UITableView 则是由 UITableViewCell 组成的，这些 cell 有的行高是固定的，大部分则需要根据内容自计算行高来展示。本篇博客则来介绍 UITableViewCell 计算行高的几种方式。&lt;/p&gt;
-&lt;h1 id=&quot;固定行高&quot;&gt;&lt;a href=&quot;#固定行高&quot; class=&quot;headerlink&quot; title=&quot;固定行高&quot;&gt;&lt;/a&gt;固定行高&lt;/h1&gt;&lt;p&gt;有相当一部分 UITableView 的行高是固定的，这种 cell 在代码书写和代码性能上相比而言就简单了许多，有以下两种方式设定 行高：&lt;/p&gt;
-&lt;h2 id=&quot;统一设定&quot;&gt;&lt;a href=&quot;#统一设定&quot; class=&quot;headerlink&quot; title=&quot;统一设定&quot;&gt;&lt;/a&gt;统一设定&lt;/h2&gt;&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.tableView.rowHeight = &lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;; &lt;span class=&quot;regexp&quot;&gt;//&lt;/span&gt; 系统自带的 cell 的行高大概就是 &lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这种方式最为简单，相对的对 tableView 的可控性也最弱，它会将 tableView 所有的 cell 高度统一设置为 44。&lt;/p&gt;
-&lt;h2 id=&quot;通过代理设定&quot;&gt;&lt;a href=&quot;#通过代理设定&quot; class=&quot;headerlink&quot; title=&quot;通过代理设定&quot;&gt;&lt;/a&gt;通过代理设定&lt;/h2&gt;&lt;p&gt;通过实现 UITableViewDelegate 方法，同样可以控制 tableView 的行高。&lt;/p&gt;
-&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;-&lt;/span&gt; (CGFloat)&lt;span class=&quot;selector-tag&quot;&gt;tableView&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:(UITableView&lt;/span&gt; *)&lt;span class=&quot;selector-tag&quot;&gt;tableView&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;heightForRowAtIndexPath&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:(NSIndexPath&lt;/span&gt; *)&lt;span class=&quot;selector-tag&quot;&gt;indexPath&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 1.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// return 44;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 2.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// if (tableView == self.tableView1) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 	return 44;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// &amp;#125; else &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 	return 88;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 3.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;if&lt;/span&gt; (indexPath.row == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return 44;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;selector-tag&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return 88;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;以上方法可以看出，采用这种实现代理的方法可以对不同的 tableView 、tableView 中不同的 section、row，进行判断分别设置，可控性更强。&lt;/p&gt;
-&lt;p&gt;当然，如果你的 tableView 的行高是统一的、固定的，那么最好采用第一种方法，直接设置 rowHeight，可以避免冗余的行高计算。&lt;/p&gt;
-&lt;h1 id=&quot;不定行高&quot;&gt;&lt;a href=&quot;#不定行高&quot; class=&quot;headerlink&quot; title=&quot;不定行高&quot;&gt;&lt;/a&gt;不定行高&lt;/h1&gt;&lt;p&gt;固定行高的 tableView 已经算是小儿科了，但是也属于 UITableViewCell 行高的范畴，所以还是简单提了一下。&lt;br&gt;那么，&lt;/p&gt;
-&lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2017/07/03/cell-height&quot;&gt;http://gonghonglou.com/2017/07/03/cell-height&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;iOS 的界面中，UITableView 应该是用的最多的控件之一了吧：微信列表、聊天记录、朋友圈、微博 time line。。。哪哪离不开 UITableView。而 UITableView 则是由 UITableViewCell 组成的，这些 cell 有的行高是固定的
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>Say Bye 2016</title>
