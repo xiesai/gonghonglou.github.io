@@ -70,7 +70,7 @@ iOS 的界面中，UITableView 应该是用的最多的控件之一了吧：微�
 <meta property="og:image" content="http://image.gonghonglou.com/CellHeight/cell_label_layout.png">
 <meta property="og:image" content="http://image.gonghonglou.com/CellHeight/cell_delegate.png">
 <meta property="og:image" content="http://image.gonghonglou.com/CellHeight/cell_label_fream.png">
-<meta property="og:updated_time" content="2017-07-05T09:15:00.000Z">
+<meta property="og:updated_time" content="2017-07-05T09:21:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableViewCell计算行高的几种方式">
 <meta name="twitter:description" content="当我还是小白时（比现在更白的时候）对于 UITableViewCell 的行高问题还是比较头疼的，当然这个算是 iOS 开发中相当基础的内容了，但是当时的我就想过，将 UITableViewCell 的行高问题解决了一定写一篇总结博客，所以就有了这篇博客。尽管拖了这。么。久。。。
@@ -352,7 +352,7 @@ iOS 的界面中，UITableView 应该是用的最多的控件之一了吧：微�
 </ul>
 <p>因为在数据处理上所花费的时间要远小于页面滚动时所消耗的时间。凡是涉及页面的操作都是相当耗费时间的，相比而言对于 cpu 在处理数据上的时间就可以忽略不计了，毕竟我们所要处理的数据都不会太大，如果数据过多的话可以做分次获取处理（下拉刷新操作），所以这里的缺点相对于上一种方法还是可以忍受的。</p>
 <h1 id="XIB-方式处理-UITableViewCell-的行高问题"><a href="#XIB-方式处理-UITableViewCell-的行高问题" class="headerlink" title="XIB 方式处理 UITableViewCell 的行高问题"></a>XIB 方式处理 UITableViewCell 的行高问题</h1><p>对于纯 Code 和 SB 方式的页面布局问题业界已经相爱相杀了很久，各有各的道理。我的观点是：哪种布局方式适合自己就好了，看个人喜好。相比于 SB 的“所见即所得”，快速布局等，我个人更喜欢纯 Code 的方式，对代码的可控性更强（亦不排除我个人是比较喜欢 Coding 的因素）。<br>不过，如果你是偏好 SB 的布局方式，采用 XIB 方式处理 UITableViewCell，那么你可以看看<a href="http://blog.sunnyxx.com/" target="_blank" rel="external">sunnyxx</a> 的 <a href="https://github.com/forkingdog/UITableView-FDTemplateLayoutCell" target="_blank" rel="external">UITableView-FDTemplateLayoutCell</a>（点击可查看<a href="https://github.com/forkingdog/UITableView-FDTemplateLayoutCell" target="_blank" rel="external">GitHub</a>）这种解决方案。<br>而且，本文的前一部分也参考了 <a href="http://blog.sunnyxx.com/" target="_blank" rel="external">sunnyxx</a> 的这篇博客 <a href="http://blog.sunnyxx.com/2015/05/17/cell-height-calculation/" target="_blank" rel="external">优化UITableViewCell高度计算的那些事
-</a></p>
+</a>，推荐阅读。</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><ul>
 <li><p>小白出手，请多指教。如言有误，还望斧正！</p>
 </li>
