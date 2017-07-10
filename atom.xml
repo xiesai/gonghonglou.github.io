@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-10T11:28:55.000Z</updated>
+  <updated>2017-07-10T13:52:30.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-10T11:28:55.000Z</updated>
+    <updated>2017-07-10T13:52:30.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -63,6 +63,8 @@
 &lt;li&gt;Mac 客户端：&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-%E5%B8%AE%E5%8A%A9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowsocksX&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;iOS 客户端：App Store 搜索「Wingy」或着「Shadowrocket」&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;如下图为 Shadowsocks Mac 客户端，填入服务器 IP 地址、上图中 Shadowsocks Server 端口号、加密方式、密码确定即可连接 VPS 的 Shadowsocks 服务，iOS 上的软件也是填写这些内容：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/ss_shadowsocks.png&quot; alt=&quot;Shadowsocks for Mac&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如此，便可以科学上网了，一键安装，就是这么简单～&lt;br&gt;接下来是略微专业一点的做法，需要了解一些 Linux 命令。&lt;/p&gt;
 &lt;h2 id=&quot;自己搭建-Shadowsocks-服务&quot;&gt;&lt;a href=&quot;#自己搭建-Shadowsocks-服务&quot; class=&quot;headerlink&quot; title=&quot;自己搭建 Shadowsocks 服务&quot;&gt;&lt;/a&gt;自己搭建 Shadowsocks 服务&lt;/h2&gt;&lt;p&gt;接下来，该是此篇博客最有趣的内容了：操作 Linux 服务器，搭建 Shadowsocks 服务。&lt;/p&gt;
 &lt;p&gt;首先如果你使用了上一种方式一键安装了 Shadowsocks，那么，在采用这种方式搭建服务前应当卸载上一个 Shadowsocks 服务，上一张图片所在网页的最下方会有一键卸载：&lt;code&gt;Unintsall Shadowsocks Server&lt;/code&gt;。如果不卸载该服务，会和接下来自己手动安装的 Shadowsocks 服务冲突。  &lt;/p&gt;
 &lt;p&gt;保险起见，你可以选择从头来过：重装系统。&lt;br&gt;这里又是开始～&lt;br&gt;如下图选择一款操作系统来安装：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_installNewOS.png&quot; alt=&quot;重装系统&quot;&gt;&lt;/p&gt;
