@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-05T09:40:18.000Z</updated>
+  <updated>2017-07-10T09:28:51.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,6 +14,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一小时轻松科学上网</title>
+    <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
+    <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
+    <published>2017-07-10T02:38:09.000Z</published>
+    <updated>2017-07-10T09:28:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，what？？发生了什么，访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
+&lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
+&quot;&gt;&lt;/p&gt;
+&lt;p&gt;正是因为这则公告，我失去了又一个科学上网的工具，干脆自己买 vps 搭一个。以下是几种服务的对比：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PPTP：&lt;br&gt;  – 优点：网上关于搭建 PPTP 服务的教程最多&lt;br&gt;  – 缺点：可能是因为 PPTP 不够安全，所以苹果禁用了这种服务的连接。就是说 Mac OX 和 iOS 系统上是不能使用这种服务的。 &lt;/li&gt;
+&lt;li&gt;L2TP、IKEv2、IPSec：&lt;br&gt;  – 优点：Mac OX 和 iOS 系统上可以使用&lt;br&gt;  – 缺点：使用系统添加此类服务的 VPN 配置无法实现智能分流，也就是 Shadowsocks 里的「自动代理模式」（PPTP 同样存在这个缺点）&lt;/li&gt;
+&lt;li&gt;Shadowsocks：&lt;br&gt;  – 优点：可以实现自动代理模式，实现国内国外线路智能分流。&lt;br&gt;  – 缺点：必须下载 Shadowsocks 客户端来使用该服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，为了自动代理，我选择了 Shadowsocks。简单来说就是在自己的服务器上搭建一个 Shadowsocks 服务，对外提供「IP 地址 + 端口号」和「密码」&lt;/p&gt;
+&lt;p&gt;实现的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器开机自动启动 Shadowsocks 服务&lt;/li&gt;
+&lt;li&gt;可配置多个账号（即：多个端口号 + 密码）&lt;/li&gt;
+&lt;li&gt;实现自动代理模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以我们需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;购买服务器（vps）&lt;/li&gt;
+&lt;li&gt;装载 Shadowsocks 服务&lt;/li&gt;
+&lt;li&gt;下载 iOS、Mac 客户端连接 vps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;购买-VPS&quot;&gt;&lt;a href=&quot;#购买-VPS&quot; class=&quot;headerlink&quot; title=&quot;购买 VPS&quot;&gt;&lt;/a&gt;购买 VPS&lt;/h1&gt;&lt;p&gt;在 &lt;a href=&quot;https://bwh1.net/index.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;搬瓦工&lt;/a&gt; 购买一款适合你的主机，单纯搭建 Shadowsocks 服务的话「10G VPS」已经完全够用了，一年 19.9 美元，网上搜一个 6% 的优惠码，折合人民币大概 130 块一年。&lt;br&gt;以下是图文步骤，你也可以参考详细教程：&lt;a href=&quot;http://banwagong.cn/gonglue.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;新手用户搬瓦工VPS购买图文指导教程&lt;/a&gt;&lt;br&gt;Order KVM or OpenVZ：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_home.png&quot; alt=&quot;Order KVM or OpenVZ&quot;&gt;&lt;/p&gt;
+&lt;p&gt;关于 KVM 和 OpenVZ的区别，可以参考这篇文章：&lt;a href=&quot;&quot;&gt;Linux VPS基本常识 - KVM与OpenVZ架构的区别
+&lt;/a&gt;，我买的是 KVM。&lt;br&gt;Order KVM：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_hosting.png&quot; alt=&quot;Order KVM&quot;&gt;&lt;/p&gt;
+&lt;p&gt;1、Billing Cycle：建议选择一年，这样比较划算&lt;br&gt;2、Location：地点随你喜好选择&lt;br&gt;3、Add to Cart：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_addtocart.png&quot; alt=&quot;Add to Cart&quot;&gt;&lt;/p&gt;
+&lt;p&gt;1、在网上搜索「搬瓦工 优惠码」找一个可用的优惠码，比如 &lt;code&gt;BWH1ZBPVK&lt;/code&gt; 可优惠 6%&lt;br&gt;2、Checkout：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_%20checkout.png&quot; alt=&quot;Checkout&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后填写你的个人信息，进行购买就好了，搬瓦工还支持支付宝支付。&lt;/p&gt;
+&lt;p&gt;购买成功后，在&lt;a href=&quot;https://bwh1.net/clientarea.php?action=products&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这个地址&lt;/a&gt;点击 &lt;code&gt;KiwiVM Control Panel&lt;/code&gt; 跳转至 KiwiVM 可管理你的主机：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_manger.png&quot; alt=&quot;manager&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后就可以看到你主机的详细信息了，并且搬瓦工已经帮你装好了 centos 系统：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_%20KiwiVM.png&quot; alt=&quot;KiwiVM&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;装载-Shadowsocks-服务&quot;&gt;&lt;a href=&quot;#装载-Shadowsocks-服务&quot; class=&quot;headerlink&quot; title=&quot;装载 Shadowsocks 服务&quot;&gt;&lt;/a&gt;装载 Shadowsocks 服务&lt;/h1&gt;&lt;p&gt;接下来，你有两种选择：    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一键安装&lt;br&gt;  – 优点：方便快捷&lt;br&gt;  – 缺点：不能添加账号，不能随意更改密码（只能重新生成）&lt;/li&gt;
+&lt;li&gt;自己搭建 Shadowsocks 服务&lt;br&gt;  – 优点：可以添加多个账号（任意增删端口号即可），可以修改密码&lt;br&gt;  – 缺点：ssh 连接服务器，执行一系列命令行命令（不过，这对于想要捣鼓捣鼓服务器的人来说，比如我，这也算是优点）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;一键安装&quot;&gt;&lt;a href=&quot;#一键安装&quot; class=&quot;headerlink&quot; title=&quot;一键安装&quot;&gt;&lt;/a&gt;一键安装&lt;/h2&gt;&lt;p&gt;如下图，点击 &lt;code&gt;Intsall Shadowsocks Server&lt;/code&gt; 即可：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_Shadowsocks.png&quot; alt=&quot;Intsall Shadowsocks Server&quot;&gt;&lt;/p&gt;
+&lt;p&gt;安装成功后如下图，会提供给我们：端口号、加密方式、密码，其中密码只能重新生成，不能更改。&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_ssServer.jpeg&quot; alt=&quot;Shadowsocks Server&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;下载-iOS、Mac-客户端连接-vps&quot;&gt;&lt;a href=&quot;#下载-iOS、Mac-客户端连接-vps&quot; class=&quot;headerlink&quot; title=&quot;下载 iOS、Mac 客户端连接 vps&quot;&gt;&lt;/a&gt;下载 iOS、Mac 客户端连接 vps&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Mac 客户端：&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-%E5%B8%AE%E5%8A%A9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowsocksX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;iOS 客户端：App Store 搜索「Wingy」或着「Shadowrocket」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;自己搭建-Shadowsocks-服务&quot;&gt;&lt;a href=&quot;#自己搭建-Shadowsocks-服务&quot; class=&quot;headerlink&quot; title=&quot;自己搭建 Shadowsocks 服务&quot;&gt;&lt;/a&gt;自己搭建 Shadowsocks 服务&lt;/h2&gt;&lt;p&gt;接下来，该是此篇博客最有趣的内容了：操作 Linux 服务器，搭建 Shadowsocks 服务。&lt;/p&gt;
+&lt;p&gt;首先如果你使用了上一种方式一键安装了 Shadowsocks，那么，在采用这种方式搭建服务前应当卸载上一个 Shadowsocks 服务，上一张图片所在网页的左下方会有一键卸载：&lt;code&gt;Unintsall Shadowsocks Server&lt;/code&gt;。如果不卸载该服务，会和接下来自己手动安装的 Shadowsocks 服务冲突。  &lt;/p&gt;
+&lt;p&gt;保险起见，你可以选择从头来过：重装系统，如下图选择一款操作系统来安装： &lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_installNewOS.png&quot; alt=&quot;重装系统&quot;&gt;&lt;/p&gt;
+&lt;p&gt;重装完成后，你会受到一封告知邮件，并且附有一份临时服务器登录密码。当然，你也可以点击上图中的 &lt;code&gt;Root password modification&lt;/code&gt; 重新生成一份密码。注意：生成密码前需要先 stop 服务器。&lt;/p&gt;
+&lt;p&gt;开启终端，使用 ssh 远程连接服务器：&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;ssh&lt;/span&gt; root&lt;span class=&quot;variable&quot;&gt;@you_server_ip&lt;/span&gt; -p you_server_port&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;you_server_ip：你的服务器 ip 地址，you_server_port：你的服务器端口号，回车输入 root 登录密码即可。&lt;br&gt;如果你之前 ssh 登录过服务器，又重装之后再次登录可能会有以下问题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&lt;br&gt;@       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @&lt;br&gt;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;执行如下命令，将 known_hosts 文件里包含你服务器 ip 地址那一段删掉即可成功连接：&lt;br&gt;&lt;figure class=&quot;highlight crystal&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vim ~&lt;span class=&quot;regexp&quot;&gt;/.ssh/known&lt;/span&gt;_hosts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;为方便之后 ssh 登录，可执行以下命令修改 root 密码：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;passwd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;回车输入两次新密码确认即可。&lt;/p&gt;
+&lt;h3 id=&quot;安装-Shadowsocks&quot;&gt;&lt;a href=&quot;#安装-Shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;安装 Shadowsocks&quot;&gt;&lt;/a&gt;安装 Shadowsocks&lt;/h3&gt;&lt;p&gt;安装 setuptools 和 pip ，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; python-setuptools &amp;amp;&amp;amp; easy_install pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装 Python-Gevent，用于提高性能，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; libevent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; python-devel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; gevent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;若执行第三行报错：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DEPRECATION: Python 2.6 is no longer supported by the Python core team, please upgrade your Python. A future version of pip will drop support for Python 2.6&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;说明，你的 Python 版本是 2.6，终端执行命令 &lt;code&gt;Python -V&lt;/code&gt; 查看 Python 版本&lt;/p&gt;
+&lt;p&gt;你可以执行以下命令简单升级 Python2.7&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; centos-&lt;span class=&quot;keyword&quot;&gt;release&lt;/span&gt;-SCL&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; python27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;. /opt/rh/python27/&lt;span class=&quot;keyword&quot;&gt;enable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然后执行命令 &lt;code&gt;Python -V&lt;/code&gt; 验证此时的 Python 版本。你也可以自行 Google 完全升级 Python 的方法。&lt;/p&gt;
+&lt;p&gt;安装 M2Crypto，用于加密的第三库，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install &lt;/span&gt;openssl-devel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;swig&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;pip &lt;span class=&quot;keyword&quot;&gt;install &lt;/span&gt;M2Crypto&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;安装 Shadowsocks 服务端，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; shadowsocks&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;配置-Shadowsocks&quot;&gt;&lt;a href=&quot;#配置-Shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;配置 Shadowsocks&quot;&gt;&lt;/a&gt;配置 Shadowsocks&lt;/h3&gt;&lt;p&gt;新建配置文件，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;shadowsocks.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编辑内容如下：&lt;br&gt;&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;you_server_ip&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;9000&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_address&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1080&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;password&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;you_server_password&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;timeout&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;method&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;rc4-md5&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;解释一下：&lt;br&gt;server：你的服务器 IP 地址&lt;br&gt;server_port：你的服务器端口号&lt;br&gt;local_address：本地代理地址&lt;br&gt;local_port：本地代理端口&lt;br&gt;password：你给你的服务器端口号设置的密码&lt;br&gt;timeout：超时断开，以秒为单位&lt;br&gt;method：加密方式。推荐使用 rc4-md5，比 aes-256-cfb 速度快&lt;/p&gt;
+&lt;p&gt;开始 Shadowsocks 服务，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssserver -c &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;shadowsocks.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;至此，使用 Shadowsocks 客户端就可以科学上网了。&lt;/p&gt;
+&lt;h4 id=&quot;配置多账号&quot;&gt;&lt;a href=&quot;#配置多账号&quot; class=&quot;headerlink&quot; title=&quot;配置多账号&quot;&gt;&lt;/a&gt;配置多账号&lt;/h4&gt;&lt;p&gt;执行编辑命令：&lt;code&gt;vi /etc/shadowsocks.json&lt;/code&gt;，将 shadowsocks.json 重新编辑为：&lt;br&gt;&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;server&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;you_server_ip&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_address&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;local_port&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1080&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;port_password&quot;&lt;/span&gt;:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;attr&quot;&gt;&quot;9000&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;9000password&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;attr&quot;&gt;&quot;9001&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;9001password&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;attr&quot;&gt;&quot;9002&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;9002password&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;timeout&quot;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;method&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;rc4-md5&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fast_open&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;解释一下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Explanation &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;server&lt;/td&gt;
+&lt;td&gt;服务器 IP 地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;server_port&lt;/td&gt;
+&lt;td&gt;服务器端口号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;local_address&lt;/td&gt;
+&lt;td&gt;本地代理地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;local_port&lt;/td&gt;
+&lt;td&gt;本地代理端口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;port_password&lt;/td&gt;
+&lt;td&gt;自己设定的服务器端口号及密码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;timeout&lt;/td&gt;
+&lt;td&gt;超时断开，以秒为单位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;method&lt;/td&gt;
+&lt;td&gt;加密方式（rc4-md5）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fast_open&lt;/td&gt;
+&lt;td&gt;是否使用TCP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;设置服务器开机启动&quot;&gt;&lt;a href=&quot;#设置服务器开机启动&quot; class=&quot;headerlink&quot; title=&quot;设置服务器开机启动&quot;&gt;&lt;/a&gt;设置服务器开机启动&lt;/h4&gt;&lt;p&gt;设置开机启动，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/rc.&lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将以下服务开启命令加入 rc.local 文件：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssserver -c &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;shadowsocks.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;保存退出即可。执行命令 &lt;code&gt;reboot&lt;/code&gt; 重启试试看～&lt;/p&gt;
+&lt;p&gt;至此，已经可以科学上网，秒开 Youtobe，1080无压力～&lt;/p&gt;
+&lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;p&gt;以上便是我搭建个人 VPS，实现科学上网的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
+&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2017/07/10/ss-vps&quot;&gt;http://gonghonglou.com/2017/07/10/ss-vps&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h1&gt;&lt;p&gt; &lt;a href=&quot;https://www.linpx.com/p/the-installation-and-configuration-of-ssserver-two.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安装SSserver和配置(二)&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，wha
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://gonghonglou.com/categories/Technology/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>UITableViewCell计算行高的几种方式</title>

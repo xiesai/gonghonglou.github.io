@@ -1,0 +1,900 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="与佳期的个人博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="之前一直在用 Green VPN，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，what？？发生了什么，访问 Green 官网 就看到这则「相遇有时，后会无期」的公告。
+我还能说什么，当然是选择原谅她。。。
+正是因为这则公告，我失去了又一个科学上网的工具，干脆自己买 vps 搭一个。以下是几种服务的对比：
+
+PPTP：  – 优点：网上关于搭建 PP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一小时轻松科学上网">
+<meta property="og:url" content="http://gonghonglou.com/2017/07/10/ss-vps/index.html">
+<meta property="og:site_name" content="与佳期的个人博客">
+<meta property="og:description" content="之前一直在用 Green VPN，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，what？？发生了什么，访问 Green 官网 就看到这则「相遇有时，后会无期」的公告。
+我还能说什么，当然是选择原谅她。。。
+正是因为这则公告，我失去了又一个科学上网的工具，干脆自己买 vps 搭一个。以下是几种服务的对比：
+
+PPTP：  – 优点：网上关于搭建 PP">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/Green_VPN.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_home.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_hosting.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_addtocart.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_%20checkout.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_manger.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_%20KiwiVM.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_Shadowsocks.png">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_ssServer.jpeg">
+<meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_installNewOS.png">
+<meta property="og:updated_time" content="2017-07-10T09:28:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一小时轻松科学上网">
+<meta name="twitter:description" content="之前一直在用 Green VPN，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，what？？发生了什么，访问 Green 官网 就看到这则「相遇有时，后会无期」的公告。
+我还能说什么，当然是选择原谅她。。。
+正是因为这则公告，我失去了又一个科学上网的工具，干脆自己买 vps 搭一个。以下是几种服务的对比：
+
+PPTP：  – 优点：网上关于搭建 PP">
+<meta name="twitter:image" content="http://image.gonghonglou.com/ssvps/Green_VPN.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6245606597867865000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 一小时轻松科学上网 | 与佳期的个人博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">与佳期的个人博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">登白薠兮骋望，与佳期兮夕张。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一小时轻松科学上网
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-10T10:38:09+08:00" content="2017-07-10">
+              2017-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/10/ss-vps/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/10/ss-vps/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前一直在用 <a href="https://www.greenjsq.me/" target="_blank" rel="external">Green VPN</a>，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，what？？发生了什么，访问 <a href="https://www.greenjsq.me/" target="_blank" rel="external">Green 官网</a> 就看到这则「相遇有时，后会无期」的公告。</p>
+<p>我还能说什么，当然是选择原谅她。。。<br><img src="http://image.gonghonglou.com/ssvps/Green_VPN.png" alt="相遇有时，后会无期
+"></p>
+<p>正是因为这则公告，我失去了又一个科学上网的工具，干脆自己买 vps 搭一个。以下是几种服务的对比：</p>
+<ul>
+<li>PPTP：<br>  – 优点：网上关于搭建 PPTP 服务的教程最多<br>  – 缺点：可能是因为 PPTP 不够安全，所以苹果禁用了这种服务的连接。就是说 Mac OX 和 iOS 系统上是不能使用这种服务的。 </li>
+<li>L2TP、IKEv2、IPSec：<br>  – 优点：Mac OX 和 iOS 系统上可以使用<br>  – 缺点：使用系统添加此类服务的 VPN 配置无法实现智能分流，也就是 Shadowsocks 里的「自动代理模式」（PPTP 同样存在这个缺点）</li>
+<li>Shadowsocks：<br>  – 优点：可以实现自动代理模式，实现国内国外线路智能分流。<br>  – 缺点：必须下载 Shadowsocks 客户端来使用该服务</li>
+</ul>
+<p>所以，为了自动代理，我选择了 Shadowsocks。简单来说就是在自己的服务器上搭建一个 Shadowsocks 服务，对外提供「IP 地址 + 端口号」和「密码」</p>
+<p>实现的功能：</p>
+<ul>
+<li>服务器开机自动启动 Shadowsocks 服务</li>
+<li>可配置多个账号（即：多个端口号 + 密码）</li>
+<li>实现自动代理模式</li>
+</ul>
+<p>所以我们需要：</p>
+<ul>
+<li>购买服务器（vps）</li>
+<li>装载 Shadowsocks 服务</li>
+<li>下载 iOS、Mac 客户端连接 vps</li>
+</ul>
+<h1 id="购买-VPS"><a href="#购买-VPS" class="headerlink" title="购买 VPS"></a>购买 VPS</h1><p>在 <a href="https://bwh1.net/index.php" target="_blank" rel="external">搬瓦工</a> 购买一款适合你的主机，单纯搭建 Shadowsocks 服务的话「10G VPS」已经完全够用了，一年 19.9 美元，网上搜一个 6% 的优惠码，折合人民币大概 130 块一年。<br>以下是图文步骤，你也可以参考详细教程：<a href="http://banwagong.cn/gonglue.html" target="_blank" rel="external">新手用户搬瓦工VPS购买图文指导教程</a><br>Order KVM or OpenVZ：<img src="http://image.gonghonglou.com/ssvps/bwg_home.png" alt="Order KVM or OpenVZ"></p>
+<p>关于 KVM 和 OpenVZ的区别，可以参考这篇文章：<a href="">Linux VPS基本常识 - KVM与OpenVZ架构的区别
+</a>，我买的是 KVM。<br>Order KVM：<img src="http://image.gonghonglou.com/ssvps/bwg_hosting.png" alt="Order KVM"></p>
+<p>1、Billing Cycle：建议选择一年，这样比较划算<br>2、Location：地点随你喜好选择<br>3、Add to Cart：<img src="http://image.gonghonglou.com/ssvps/bwg_addtocart.png" alt="Add to Cart"></p>
+<p>1、在网上搜索「搬瓦工 优惠码」找一个可用的优惠码，比如 <code>BWH1ZBPVK</code> 可优惠 6%<br>2、Checkout：<img src="http://image.gonghonglou.com/ssvps/bwg_%20checkout.png" alt="Checkout"></p>
+<p>然后填写你的个人信息，进行购买就好了，搬瓦工还支持支付宝支付。</p>
+<p>购买成功后，在<a href="https://bwh1.net/clientarea.php?action=products" target="_blank" rel="external">这个地址</a>点击 <code>KiwiVM Control Panel</code> 跳转至 KiwiVM 可管理你的主机：<img src="http://image.gonghonglou.com/ssvps/bwg_manger.png" alt="manager"></p>
+<p>然后就可以看到你主机的详细信息了，并且搬瓦工已经帮你装好了 centos 系统：<img src="http://image.gonghonglou.com/ssvps/bwg_%20KiwiVM.png" alt="KiwiVM"></p>
+<h1 id="装载-Shadowsocks-服务"><a href="#装载-Shadowsocks-服务" class="headerlink" title="装载 Shadowsocks 服务"></a>装载 Shadowsocks 服务</h1><p>接下来，你有两种选择：    </p>
+<ul>
+<li>一键安装<br>  – 优点：方便快捷<br>  – 缺点：不能添加账号，不能随意更改密码（只能重新生成）</li>
+<li>自己搭建 Shadowsocks 服务<br>  – 优点：可以添加多个账号（任意增删端口号即可），可以修改密码<br>  – 缺点：ssh 连接服务器，执行一系列命令行命令（不过，这对于想要捣鼓捣鼓服务器的人来说，比如我，这也算是优点）</li>
+</ul>
+<h2 id="一键安装"><a href="#一键安装" class="headerlink" title="一键安装"></a>一键安装</h2><p>如下图，点击 <code>Intsall Shadowsocks Server</code> 即可：<img src="http://image.gonghonglou.com/ssvps/bwg_Shadowsocks.png" alt="Intsall Shadowsocks Server"></p>
+<p>安装成功后如下图，会提供给我们：端口号、加密方式、密码，其中密码只能重新生成，不能更改。<img src="http://image.gonghonglou.com/ssvps/bwg_ssServer.jpeg" alt="Shadowsocks Server"></p>
+<h3 id="下载-iOS、Mac-客户端连接-vps"><a href="#下载-iOS、Mac-客户端连接-vps" class="headerlink" title="下载 iOS、Mac 客户端连接 vps"></a>下载 iOS、Mac 客户端连接 vps</h3><ul>
+<li>Mac 客户端：<a href="https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">ShadowsocksX</a></li>
+<li>iOS 客户端：App Store 搜索「Wingy」或着「Shadowrocket」</li>
+</ul>
+<h2 id="自己搭建-Shadowsocks-服务"><a href="#自己搭建-Shadowsocks-服务" class="headerlink" title="自己搭建 Shadowsocks 服务"></a>自己搭建 Shadowsocks 服务</h2><p>接下来，该是此篇博客最有趣的内容了：操作 Linux 服务器，搭建 Shadowsocks 服务。</p>
+<p>首先如果你使用了上一种方式一键安装了 Shadowsocks，那么，在采用这种方式搭建服务前应当卸载上一个 Shadowsocks 服务，上一张图片所在网页的左下方会有一键卸载：<code>Unintsall Shadowsocks Server</code>。如果不卸载该服务，会和接下来自己手动安装的 Shadowsocks 服务冲突。  </p>
+<p>保险起见，你可以选择从头来过：重装系统，如下图选择一款操作系统来安装： <img src="http://image.gonghonglou.com/ssvps/bwg_installNewOS.png" alt="重装系统"></p>
+<p>重装完成后，你会受到一封告知邮件，并且附有一份临时服务器登录密码。当然，你也可以点击上图中的 <code>Root password modification</code> 重新生成一份密码。注意：生成密码前需要先 stop 服务器。</p>
+<p>开启终端，使用 ssh 远程连接服务器：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> root<span class="variable">@you_server_ip</span> -p you_server_port</span><br></pre></td></tr></table></figure></p>
+<p>you_server_ip：你的服务器 ip 地址，you_server_port：你的服务器端口号，回车输入 root 登录密码即可。<br>如果你之前 ssh 登录过服务器，又重装之后再次登录可能会有以下问题</p>
+<blockquote>
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>@       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
+</blockquote>
+<p>执行如下命令，将 known_hosts 文件里包含你服务器 ip 地址那一段删掉即可成功连接：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~<span class="regexp">/.ssh/known</span>_hosts</span><br></pre></td></tr></table></figure></p>
+<p>为方便之后 ssh 登录，可执行以下命令修改 root 密码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure></p>
+<p>回车输入两次新密码确认即可。</p>
+<h3 id="安装-Shadowsocks"><a href="#安装-Shadowsocks" class="headerlink" title="安装 Shadowsocks"></a>安装 Shadowsocks</h3><p>安装 setuptools 和 pip ，在终端执行以下命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> python-setuptools &amp;&amp; easy_install pip</span><br></pre></td></tr></table></figure></p>
+<p>安装 Python-Gevent，用于提高性能，在终端执行以下命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> libevent</span><br><span class="line">yum <span class="keyword">install</span> python-devel</span><br><span class="line">pip <span class="keyword">install</span> gevent</span><br></pre></td></tr></table></figure></p>
+<p>若执行第三行报错：</p>
+<blockquote>
+<p>DEPRECATION: Python 2.6 is no longer supported by the Python core team, please upgrade your Python. A future version of pip will drop support for Python 2.6</p>
+</blockquote>
+<p>说明，你的 Python 版本是 2.6，终端执行命令 <code>Python -V</code> 查看 Python 版本</p>
+<p>你可以执行以下命令简单升级 Python2.7<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> centos-<span class="keyword">release</span>-SCL</span><br><span class="line">yum <span class="keyword">install</span> python27</span><br><span class="line">. /opt/rh/python27/<span class="keyword">enable</span></span><br></pre></td></tr></table></figure></p>
+<p>然后执行命令 <code>Python -V</code> 验证此时的 Python 版本。你也可以自行 Google 完全升级 Python 的方法。</p>
+<p>安装 M2Crypto，用于加密的第三库，在终端执行以下命令：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install </span>openssl-devel</span><br><span class="line">yum <span class="keyword">install </span><span class="keyword">swig</span><br><span class="line"></span>pip <span class="keyword">install </span>M2Crypto</span><br></pre></td></tr></table></figure></p>
+<p>安装 Shadowsocks 服务端，在终端执行以下命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> shadowsocks</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置-Shadowsocks"><a href="#配置-Shadowsocks" class="headerlink" title="配置 Shadowsocks"></a>配置 Shadowsocks</h3><p>新建配置文件，在终端执行以下命令：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="meta-keyword">/etc/</span>shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>编辑内容如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"you_server_ip"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">9000</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"you_server_password"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"rc4-md5"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解释一下：<br>server：你的服务器 IP 地址<br>server_port：你的服务器端口号<br>local_address：本地代理地址<br>local_port：本地代理端口<br>password：你给你的服务器端口号设置的密码<br>timeout：超时断开，以秒为单位<br>method：加密方式。推荐使用 rc4-md5，比 aes-256-cfb 速度快</p>
+<p>开始 Shadowsocks 服务，在终端执行以下命令：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c <span class="meta-keyword">/etc/</span>shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>至此，使用 Shadowsocks 客户端就可以科学上网了。</p>
+<h4 id="配置多账号"><a href="#配置多账号" class="headerlink" title="配置多账号"></a>配置多账号</h4><p>执行编辑命令：<code>vi /etc/shadowsocks.json</code>，将 shadowsocks.json 重新编辑为：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"you_server_ip"</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">         <span class="attr">"9000"</span>:<span class="string">"9000password"</span>,</span><br><span class="line">         <span class="attr">"9001"</span>:<span class="string">"9001password"</span>,</span><br><span class="line">         <span class="attr">"9002"</span>:<span class="string">"9002password"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"rc4-md5"</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解释一下：</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Explanation </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server</td>
+<td>服务器 IP 地址</td>
+</tr>
+<tr>
+<td>server_port</td>
+<td>服务器端口号</td>
+</tr>
+<tr>
+<td>local_address</td>
+<td>本地代理地址</td>
+</tr>
+<tr>
+<td>local_port</td>
+<td>本地代理端口</td>
+</tr>
+<tr>
+<td>port_password</td>
+<td>自己设定的服务器端口号及密码</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>超时断开，以秒为单位</td>
+</tr>
+<tr>
+<td>method</td>
+<td>加密方式（rc4-md5）</td>
+</tr>
+<tr>
+<td>fast_open</td>
+<td>是否使用TCP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="设置服务器开机启动"><a href="#设置服务器开机启动" class="headerlink" title="设置服务器开机启动"></a>设置服务器开机启动</h4><p>设置开机启动，在终端执行以下命令：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.<span class="keyword">local</span></span><br></pre></td></tr></table></figure></p>
+<p>将以下服务开启命令加入 rc.local 文件：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c <span class="meta-keyword">/etc/</span>shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>保存退出即可。执行命令 <code>reboot</code> 重启试试看～</p>
+<p>至此，已经可以科学上网，秒开 Youtobe，1080无压力～</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>以上便是我搭建个人 VPS，实现科学上网的全过程，希望对大家有所帮助，欢迎吐槽～</p>
+<p>转载请保留原文地址：<a href="http://gonghonglou.com/2017/07/10/ss-vps">http://gonghonglou.com/2017/07/10/ss-vps</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p> <a href="https://www.linpx.com/p/the-installation-and-configuration-of-ssserver-two.html" target="_blank" rel="external">安装SSserver和配置(二)</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/05/cell-height/" rel="next" title="UITableViewCell计算行高的几种方式">
+                <i class="fa fa-chevron-left"></i> UITableViewCell计算行高的几种方式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="与佳期" />
+          <p class="site-author-name" itemprop="name">与佳期</p>
+          <p class="site-description motion-element" itemprop="description">登白薠兮骋望，与佳期兮夕张。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-github"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/gonghonglou" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#购买-VPS"><span class="nav-number">1.</span> <span class="nav-text">购买 VPS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装载-Shadowsocks-服务"><span class="nav-number">2.</span> <span class="nav-text">装载 Shadowsocks 服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一键安装"><span class="nav-number">2.1.</span> <span class="nav-text">一键安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-iOS、Mac-客户端连接-vps"><span class="nav-number">2.1.1.</span> <span class="nav-text">下载 iOS、Mac 客户端连接 vps</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己搭建-Shadowsocks-服务"><span class="nav-number">2.2.</span> <span class="nav-text">自己搭建 Shadowsocks 服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Shadowsocks"><span class="nav-number">2.2.1.</span> <span class="nav-text">安装 Shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Shadowsocks"><span class="nav-number">2.2.2.</span> <span class="nav-text">配置 Shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置多账号"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">配置多账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置服务器开机启动"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">设置服务器开机启动</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">与佳期</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'gonghonglou';
+      var disqus_identifier = '2017/07/10/ss-vps/';
+      var disqus_title = '一小时轻松科学上网';
+      var disqus_url = 'http://gonghonglou.com/2017/07/10/ss-vps/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
