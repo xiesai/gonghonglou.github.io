@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-10T13:52:30.000Z</updated>
+  <updated>2017-07-10T14:06:34.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-10T13:52:30.000Z</updated>
+    <updated>2017-07-10T14:06:34.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -117,7 +117,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;port_password&lt;/td&gt;
-&lt;td&gt;自己设定的服务器端口号及密码&lt;/td&gt;
+&lt;td&gt;Shadowsocks 服务端口号及密码&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;timeout&lt;/td&gt;
@@ -125,7 +125,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;method&lt;/td&gt;
-&lt;td&gt;加密方式（rc4-md5）&lt;/td&gt;
+&lt;td&gt;加密方式，推荐使用 rc4-md5，比 aes-256-cfb 速度快很多&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;fast_open&lt;/td&gt;
