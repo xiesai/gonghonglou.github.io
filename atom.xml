@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-10T10:02:00.000Z</updated>
+  <updated>2017-07-10T11:28:55.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-10T10:02:00.000Z</updated>
+    <updated>2017-07-10T11:28:55.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -74,7 +74,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;执行如下命令，将 known_hosts 文件里包含你服务器 ip 地址那一段删掉即可成功连接：&lt;br&gt;&lt;figure class=&quot;highlight crystal&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vim ~&lt;span class=&quot;regexp&quot;&gt;/.ssh/known&lt;/span&gt;_hosts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;为方便之后 ssh 登录，可执行以下命令修改 root 密码：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;passwd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;回车输入两次新密码确认即可。&lt;/p&gt;
+&lt;p&gt;回车输入新密码确认即可。&lt;/p&gt;
 &lt;h3 id=&quot;安装-Shadowsocks&quot;&gt;&lt;a href=&quot;#安装-Shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;安装 Shadowsocks&quot;&gt;&lt;/a&gt;安装 Shadowsocks&lt;/h3&gt;&lt;p&gt;安装 setuptools 和 pip ，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; python-setuptools &amp;amp;&amp;amp; easy_install pip&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;安装 Python-Gevent，用于提高性能，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; libevent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yum &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; python-devel&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; gevent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;若执行第三行报错：&lt;/p&gt;

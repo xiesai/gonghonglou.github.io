@@ -83,7 +83,7 @@ PPTP：  – 优点：网上关于搭建 PPTP 服务">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_Shadowsocks.png">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_ssServer.jpeg">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_installNewOS.png">
-<meta property="og:updated_time" content="2017-07-10T10:02:00.000Z">
+<meta property="og:updated_time" content="2017-07-10T11:28:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一小时轻松实现科学上网">
 <meta name="twitter:description" content="之前一直在用 Green VPN，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 Green 官网 就看到这则「相遇有时，后会无期」的公告。
@@ -356,7 +356,7 @@ PPTP：  – 优点：网上关于搭建 PPTP 服务">
 </blockquote>
 <p>执行如下命令，将 known_hosts 文件里包含你服务器 ip 地址那一段删掉即可成功连接：<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~<span class="regexp">/.ssh/known</span>_hosts</span><br></pre></td></tr></table></figure></p>
 <p>为方便之后 ssh 登录，可执行以下命令修改 root 密码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure></p>
-<p>回车输入两次新密码确认即可。</p>
+<p>回车输入新密码确认即可。</p>
 <h3 id="安装-Shadowsocks"><a href="#安装-Shadowsocks" class="headerlink" title="安装 Shadowsocks"></a>安装 Shadowsocks</h3><p>安装 setuptools 和 pip ，在终端执行以下命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> python-setuptools &amp;&amp; easy_install pip</span><br></pre></td></tr></table></figure></p>
 <p>安装 Python-Gevent，用于提高性能，在终端执行以下命令：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> libevent</span><br><span class="line">yum <span class="keyword">install</span> python-devel</span><br><span class="line">pip <span class="keyword">install</span> gevent</span><br></pre></td></tr></table></figure></p>
 <p>若执行第三行报错：</p>
