@@ -84,7 +84,7 @@ PPTP：  – 优点：网上关于搭建 PPTP 服务">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_ssServer.jpeg">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/ss_shadowsocks.png">
 <meta property="og:image" content="http://image.gonghonglou.com/ssvps/bwg_installNewOS.png">
-<meta property="og:updated_time" content="2017-07-11T10:12:15.000Z">
+<meta property="og:updated_time" content="2017-07-11T10:16:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一小时轻松实现科学上网">
 <meta name="twitter:description" content="之前一直在用 Green VPN，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 Green 官网 就看到这则「相遇有时，后会无期」的公告。
@@ -425,8 +425,8 @@ PPTP：  – 优点：网上关于搭建 PPTP 服务">
 </blockquote>
 <p>说明你已经在 python2.6 环境下安装好了 shadowsocks 服务，那么在任意目录下你都可以执行 <code>ssserver -c /etc/shadowsocks.json</code> 命令开启 shadowsocks 服务。    </p>
 <h3 id="设置服务器开机启动"><a href="#设置服务器开机启动" class="headerlink" title="设置服务器开机启动"></a>设置服务器开机启动</h3><p>设置开机启动，在终端执行以下命令：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.<span class="keyword">local</span></span><br></pre></td></tr></table></figure></p>
-<p>如果你 python2.6 环境没有安装 shadowsocks 服务，那么将以下更改目录命令及服务开启命令加入 rc.local 文件：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">. <span class="meta-keyword">/opt/</span>rh<span class="meta-keyword">/python27/</span>enable</span><br><span class="line">ssserver -c <span class="meta-keyword">/etc/</span>shadowsocks.json</span><br></pre></td></tr></table></figure></p>
-<p>如果你已经在 python2.6 环境下装好了 shadowsocks 服务，那么只需要将服务开启命令：<code>ssserver -c /etc/shadowsocks.json</code> 加入 rc.local 文件即可。<br>倘若你嫌弃执行 <code>. /opt/rh/python27/enable</code> 命令太麻烦，要么在 python2.6 环境下成功安装shadowsocks 服务，又或者自行 Google 完全升级 python2.7。</p>
+<p>如果你已经 python2.6 环境下装好了 shadowsocks 服务，那么将以下服务开启命令加入 rc.local 文件即可：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c <span class="meta-keyword">/etc/</span>shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>如果你 python2.6 环境没有安装 shadowsocks 服务，那么需要将更改目录命令：<code>. /opt/rh/python27/enable</code> 也加入 rc.local 文件里（在开启 shadowsocks 服务命令之前执行）<br>倘若你嫌弃执行 <code>. /opt/rh/python27/enable</code> 命令太麻烦，要么在 python2.6 环境下成功安装shadowsocks 服务，又或者自行 Google 完全升级 python2.7。</p>
 <p>保存退出即可。执行命令 <code>reboot</code> 重启服务器试试看～</p>
 <p>至此，已经可以科学上网，秒开 Youtobe，1080无压力～</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>以上便是我搭建个人 VPS，实现科学上网的全过程，希望对大家有所帮助，欢迎吐槽～</p>

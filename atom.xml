@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-11T10:12:15.000Z</updated>
+  <updated>2017-07-11T10:16:57.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-11T10:12:15.000Z</updated>
+    <updated>2017-07-11T10:16:57.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -142,8 +142,8 @@
 &lt;/blockquote&gt;
 &lt;p&gt;说明你已经在 python2.6 环境下安装好了 shadowsocks 服务，那么在任意目录下你都可以执行 &lt;code&gt;ssserver -c /etc/shadowsocks.json&lt;/code&gt; 命令开启 shadowsocks 服务。    &lt;/p&gt;
 &lt;h3 id=&quot;设置服务器开机启动&quot;&gt;&lt;a href=&quot;#设置服务器开机启动&quot; class=&quot;headerlink&quot; title=&quot;设置服务器开机启动&quot;&gt;&lt;/a&gt;设置服务器开机启动&lt;/h3&gt;&lt;p&gt;设置开机启动，在终端执行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/rc.&lt;span class=&quot;keyword&quot;&gt;local&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;如果你 python2.6 环境没有安装 shadowsocks 服务，那么将以下更改目录命令及服务开启命令加入 rc.local 文件：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;. &lt;span class=&quot;meta-keyword&quot;&gt;/opt/&lt;/span&gt;rh&lt;span class=&quot;meta-keyword&quot;&gt;/python27/&lt;/span&gt;enable&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssserver -c &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;shadowsocks.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;如果你已经在 python2.6 环境下装好了 shadowsocks 服务，那么只需要将服务开启命令：&lt;code&gt;ssserver -c /etc/shadowsocks.json&lt;/code&gt; 加入 rc.local 文件即可。&lt;br&gt;倘若你嫌弃执行 &lt;code&gt;. /opt/rh/python27/enable&lt;/code&gt; 命令太麻烦，要么在 python2.6 环境下成功安装shadowsocks 服务，又或者自行 Google 完全升级 python2.7。&lt;/p&gt;
+&lt;p&gt;如果你已经 python2.6 环境下装好了 shadowsocks 服务，那么将以下服务开启命令加入 rc.local 文件即可：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssserver -c &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;shadowsocks.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果你 python2.6 环境没有安装 shadowsocks 服务，那么需要将更改目录命令：&lt;code&gt;. /opt/rh/python27/enable&lt;/code&gt; 也加入 rc.local 文件里（在开启 shadowsocks 服务命令之前执行）&lt;br&gt;倘若你嫌弃执行 &lt;code&gt;. /opt/rh/python27/enable&lt;/code&gt; 命令太麻烦，要么在 python2.6 环境下成功安装shadowsocks 服务，又或者自行 Google 完全升级 python2.7。&lt;/p&gt;
 &lt;p&gt;保存退出即可。执行命令 &lt;code&gt;reboot&lt;/code&gt; 重启服务器试试看～&lt;/p&gt;
 &lt;p&gt;至此，已经可以科学上网，秒开 Youtobe，1080无压力～&lt;/p&gt;
 &lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;p&gt;以上便是我搭建个人 VPS，实现科学上网的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
