@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-12T07:38:39.000Z</updated>
+  <updated>2017-07-13T02:51:22.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-12T07:38:39.000Z</updated>
+    <updated>2017-07-13T02:51:22.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -142,7 +142,7 @@
 &lt;h3 id=&quot;补充三：&quot;&gt;&lt;a href=&quot;#补充三：&quot; class=&quot;headerlink&quot; title=&quot;补充三：&quot;&gt;&lt;/a&gt;补充三：&lt;/h3&gt;&lt;p&gt;你当然可以自行 Google 完全升级 Python 的方法。&lt;/p&gt;
 &lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;p&gt;以上便是我搭建个人 VPS，实现科学上网的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
 &lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2017/07/10/ss-vps&quot;&gt;http://gonghonglou.com/2017/07/10/ss-vps&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h1&gt;&lt;p&gt; &lt;a href=&quot;https://www.linpx.com/p/the-installation-and-configuration-of-ssserver-two.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安装SSserver和配置(二)&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt; &lt;a href=&quot;https://www.linpx.com/p/the-installation-and-configuration-of-ssserver-two.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安装SSserver和配置(二)&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -740,7 +740,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
     <link href="http://gonghonglou.com/2016/04/01/CocoaPods/"/>
     <id>http://gonghonglou.com/2016/04/01/CocoaPods/</id>
     <published>2016-04-01T07:17:10.000Z</published>
-    <updated>2017-07-03T08:43:03.000Z</updated>
+    <updated>2017-07-13T02:55:54.000Z</updated>
     
     <content type="html">&lt;p&gt;工欲善其事，必先利其器！在iOS开发中 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods&lt;/a&gt; 作为库依赖管理工具就是一把利器。&lt;/p&gt;
 &lt;p&gt;有了CocoaPods你再也不需要手动将需要的第三方库拖进你的工程、添加第三方库所依赖的framework、设置如&lt;code&gt;-fno-objc-arc&lt;/code&gt;等编译参数、手动管理这些库的更新，当某个第三方库有依赖其他的库还要继续拖、拖、拖……&lt;/p&gt;
@@ -872,7 +872,7 @@ $ git push origin --tags
 &lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/CocoaPods&quot;&gt;http://gonghonglou.com/2016/04/01/CocoaPods&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://guides.cocoapods.org/using/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Using CocoaPods&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.superqq.com/blog/2014/10/16/cocoapodsan-zhuang-he-shi-yong-jiao-cheng/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CocoaPods安装和使用教程&lt;/a&gt; &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;用CocoaPods做iOS程序的依赖管理&lt;/a&gt; &lt;/li&gt;
@@ -897,7 +897,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/"/>
     <id>http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/</id>
     <published>2016-03-17T15:12:45.000Z</published>
-    <updated>2017-07-03T08:43:50.000Z</updated>
+    <updated>2017-07-13T02:56:39.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ReactiveCocoa/ReactiveCocoa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactiveCocoa&lt;/a&gt; 是一个Objective-C 框架，受 &lt;a href=&quot;https://en.wikipedia.org/wiki/Functional_reactive_programming&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Functional Reactive Programming&lt;/a&gt;的启发。它提供了一系列用来&lt;strong&gt;组合和转换值流&lt;/strong&gt;的API。&lt;/p&gt;
 &lt;p&gt;如果你早已熟悉了函数响应式编程或者知道ReactiveCocoa的基本前提，看看&lt;a href=&quot;https://github.com/ReactiveCocoa/ReactiveCocoa/tree/v2.5/Documentation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentation&lt;/a&gt;这个文件夹里的framework overview等文件更深一步来了解它是怎样在实践中工作的。&lt;/p&gt;
@@ -955,7 +955,7 @@ $ git push origin --tags
 &lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa&quot;&gt;http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;ReactiveCocoa的Objective-C官方文档&lt;a href=&quot;https://github.com/ReactiveCocoa/ReactiveCocoa/blob/v2.5/README.md#when-to-use-reactivecocoa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactiveCocoa Documentation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;雷纯锋的&lt;a href=&quot;http://blog.leichunfeng.com/blog/2015/12/25/reactivecocoa-v2-dot-5-yuan-ma-jie-xi-zhi-jia-gou-zong-lan/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactiveCocoa v2.5 源码解析之架构总览&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;吖了个峥的&lt;a href=&quot;http://www.jianshu.com/p/87ef6720a096&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;最快让你上手ReactiveCocoa之基础篇&lt;/a&gt; 和 &lt;a href=&quot;http://www.jianshu.com/p/e10e5ca413b7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;最快让你上手ReactiveCocoa之进阶篇&lt;/a&gt;&lt;/li&gt;
@@ -1076,7 +1076,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/02/03/firstblog/"/>
     <id>http://gonghonglou.com/2016/02/03/firstblog/</id>
     <published>2016-02-03T06:50:14.000Z</published>
-    <updated>2017-03-14T02:16:33.000Z</updated>
+    <updated>2017-07-13T02:56:24.000Z</updated>
     
     <content type="html">&lt;p&gt;这是一篇详细文章来讲述用Mac搭建Hexo博客于Github上的完整历程， 也是踩了无数的坑搭起来的，现在写下些经验来分享，希望能帮大家少踩些坑。&lt;/p&gt;
 &lt;p&gt;曾买过一款阿里的云虚拟主机，后来才发现不能自己装软件只能上传网站程序，除非另买&lt;a href=&quot;https://www.aliyun.com/easybuy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ECS&lt;/a&gt;，对于第一个月的实习工资还没拿到手的我想想还是算了，先用Wordpress搭起来玩玩吧。然而在上传网站程序中几次失败，本就觉得没劲，遂一怒转向Github。好了，废话少说，开始吧。&lt;/p&gt;
@@ -1169,7 +1169,7 @@ npm install hexo --save
 &lt;p&gt;试了一下在国内访问 &lt;a href=&quot;http://gonghonglou.com&quot;&gt;gonghonglou.com&lt;/a&gt; 拦不住 要飞起来了😂&lt;/p&gt;
 &lt;h4 id=&quot;——11-10更新-以上————————————————&quot;&gt;&lt;a href=&quot;#——11-10更新-以上————————————————&quot; class=&quot;headerlink&quot; title=&quot;——11.10更新 以上————————————————&quot;&gt;&lt;/a&gt;——11.10更新 以上————————————————&lt;/h4&gt;&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;以上便是我搭建&lt;a href=&quot;http://gonghonglou.com&quot;&gt;与佳期的个人博客(gonghonglou.com)&lt;/a&gt;的全过程，希望对大家有所帮助，欢迎吐槽～&lt;/p&gt;
 &lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/02/03/firstblog&quot;&gt;http://gonghonglou.com/2016/02/03/firstblog&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://hexo.io/docs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo官网&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://leopardpan.github.io/2015/08/12/hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HEXO&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/31cbbbc5f9fa/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何生成SSH key&lt;/a&gt;&lt;/li&gt;
