@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-13T02:51:22.000Z</updated>
+  <updated>2017-07-13T03:19:25.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-13T02:51:22.000Z</updated>
+    <updated>2017-07-13T03:19:25.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直在用 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt;，而且 Green 的智能分流等功能做的也是越来越好，可惜，突然听到 Green 要关闭服务了，发生了什么？？访问 &lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green 官网&lt;/a&gt; 就看到这则「相遇有时，后会无期」的公告。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -61,8 +61,8 @@
 &lt;p&gt;如下图为 Shadowsocks Mac 客户端，填入服务器 IP 地址、上图中 Shadowsocks Server 端口号、加密方式、密码确定即可连接 VPS 的 Shadowsocks 服务，iOS 上的软件也是填写这些内容：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/ss_addip.png&quot; alt=&quot;Shadowsocks for Mac&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如此，便可以科学上网了，一键安装，就是这么简单～&lt;br&gt;接下来是略微专业一点的做法，需要了解一些 Linux 命令。&lt;/p&gt;
 &lt;h2 id=&quot;自己搭建-Shadowsocks-服务&quot;&gt;&lt;a href=&quot;#自己搭建-Shadowsocks-服务&quot; class=&quot;headerlink&quot; title=&quot;自己搭建 Shadowsocks 服务&quot;&gt;&lt;/a&gt;自己搭建 Shadowsocks 服务&lt;/h2&gt;&lt;p&gt;接下来，该是此篇博客最有趣的内容了：操作 Linux 服务器，搭建 Shadowsocks 服务。&lt;/p&gt;
-&lt;p&gt;首先如果你使用了上一种方式一键安装了 Shadowsocks，那么，在采用这种方式搭建服务前应当卸载上一个 Shadowsocks 服务，上一张图片所在网页的最下方会有一键卸载：&lt;code&gt;Unintsall Shadowsocks Server&lt;/code&gt;。如果不卸载该服务，会和接下来自己手动安装的 Shadowsocks 服务冲突。  &lt;/p&gt;
-&lt;p&gt;保险起见，你可以选择从头来过：重装系统。&lt;br&gt;这里又是开始～&lt;br&gt;如下图选择一款操作系统来安装，墙裂建议选择 centos-7-x86_64-bbr，因为接下来安装 Shadowsocks 要依赖 python2.7 版本，而 centos-6 默认安装的是 python2.6：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_installnewos.png&quot; alt=&quot;重装系统&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先如果你使用了上一种方式一键安装了 Shadowsocks，那么，在采用这种方式搭建服务前应当卸载上一个 Shadowsocks 服务，上一张图片所在网页的最下方会有一键卸载：&lt;code&gt;Unintsall Shadowsocks Server&lt;/code&gt;。如果不卸载该服务，会和接下来自己手动安装的 Shadowsocks 服务冲突。&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;保险起见，你可以选择从头来过：重装系统。&lt;br&gt;这里又是开始～&lt;br&gt;如下图选择一款操作系统来安装，&lt;strong&gt;墙裂建议选择 centos-7-x86_64-bbr，因为接下来安装 Shadowsocks 要依赖 python2.7 版本，而 centos-6 默认安装的是 python2.6&lt;/strong&gt;：&lt;img src=&quot;http://image.gonghonglou.com/ssvps/bwg_installnewos.png&quot; alt=&quot;重装系统&quot;&gt;&lt;/p&gt;
 &lt;p&gt;重装完成后，你会受到一封告知邮件，并且附有一份临时服务器登录密码。当然，你也可以点击上图中的 &lt;code&gt;Root password modification&lt;/code&gt; 重新生成一份密码。注意：生成密码前需要先 stop 服务器。&lt;/p&gt;
 &lt;h3 id=&quot;连接服务器&quot;&gt;&lt;a href=&quot;#连接服务器&quot; class=&quot;headerlink&quot; title=&quot;连接服务器&quot;&gt;&lt;/a&gt;连接服务器&lt;/h3&gt;&lt;p&gt;开启终端，使用 ssh 远程连接服务器：&lt;br&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;ssh&lt;/span&gt; root&lt;span class=&quot;variable&quot;&gt;@you_server_ip&lt;/span&gt; -p you_server_port&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;you_server_ip：你的服务器 ip 地址，you_server_port：你的服务器端口号，回车输入 root 登录密码即可。&lt;br&gt;如果你之前 ssh 登录过服务器，又重装之后再次登录可能会有以下问题：&lt;/p&gt;
