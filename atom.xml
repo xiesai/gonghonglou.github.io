@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-14T01:51:46.000Z</updated>
+  <updated>2017-07-24T04:11:48.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://gonghonglou.com/2017/07/10/ss-vps/"/>
     <id>http://gonghonglou.com/2017/07/10/ss-vps/</id>
     <published>2017-07-10T02:38:09.000Z</published>
-    <updated>2017-07-14T01:51:46.000Z</updated>
+    <updated>2017-07-24T04:11:48.000Z</updated>
     
     <content type="html">&lt;p&gt;自从科学上网这件事越来越成为一门口口相传的手艺的时候，就一直想要亲身实践下自建 VPS。&lt;a href=&quot;https://www.greenjsq.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Green VPN&lt;/a&gt; 突然发布了这则「相遇有时，后会无期」的公告，使我又失去了一个科学上网的工具，终于敦促我完成了这次体验。&lt;/p&gt;
 &lt;p&gt;我还能说什么，当然是选择原谅她。。。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/ssvps/Green_VPN.png&quot; alt=&quot;相遇有时，后会无期
@@ -307,7 +307,7 @@
     <link href="http://gonghonglou.com/2016/10/29/set-language/"/>
     <id>http://gonghonglou.com/2016/10/29/set-language/</id>
     <published>2016-10-29T14:18:38.000Z</published>
-    <updated>2017-07-03T08:44:26.000Z</updated>
+    <updated>2017-07-24T04:12:54.000Z</updated>
     
     <content type="html">&lt;p&gt;Xcode 新建一个工程的默认语言是英文，所以你在 app 里粘贴复制都是显示的 &lt;code&gt;copy&lt;/code&gt; &lt;code&gt;paste&lt;/code&gt;，你可以通过在 &lt;code&gt;info.plst&lt;/code&gt; 文件里选择 &lt;code&gt;Localization native development region&lt;/code&gt; 来设置不同语言。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://image.gonghonglou.com/setlanguage/info_language.png&quot; alt=&quot;info.plst&quot;&gt;&lt;/p&gt;
@@ -372,7 +372,7 @@
 &lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/10/29/setlanguage&quot;&gt;http://gonghonglou.com/2016/10/29/setlanguage&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/10/29/set-language&quot;&gt;http://gonghonglou.com/2016/10/29/set-language&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
@@ -564,7 +564,7 @@
     <link href="http://gonghonglou.com/2016/05/10/chongming-cycling/"/>
     <id>http://gonghonglou.com/2016/05/10/chongming-cycling/</id>
     <published>2016-05-10T03:06:35.000Z</published>
-    <updated>2017-01-09T12:32:00.000Z</updated>
+    <updated>2017-07-24T04:14:08.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;事件：&lt;/strong&gt;环崇明岛骑行&lt;br&gt;&lt;strong&gt;人物：&lt;/strong&gt;博主、博主的小伙伴&lt;br&gt;&lt;strong&gt;时间：&lt;/strong&gt;五一小假&lt;br&gt;&lt;strong&gt;地点：&lt;/strong&gt;崇明岛&lt;br&gt;&lt;strong&gt;正文：&lt;/strong&gt;现在发是不有点晚了？ 闭嘴！&lt;/p&gt;
 &lt;p&gt;列位权当是篇环崇明岛骑行的攻略来看也未尝不可。&lt;/p&gt;
@@ -594,7 +594,7 @@
 &lt;p&gt;五一环崇明岛骑行，第一次远途骑行正式结束，感觉良好！&lt;/p&gt;
 &lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;p&gt;什么，你说这当一篇攻略来看的话也太逊了？&lt;br&gt;作为一名码农出身的骑行手，不能忍你！   &lt;/p&gt;
 &lt;p&gt;这里有一份.gpx文件 👉&lt;a href=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ChongmingCycling/%20cycling_trajectory.gpx.zip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击下载&lt;/a&gt;&lt;br&gt;记录了环崇明岛的骑行轨迹，将它导入到支持gpx格式的软件里就可以了，大家喜欢用什么软件自行Google吧～&lt;/p&gt;
-&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/05/10/ChongmingCycling/&quot;&gt;http://gonghonglou.com/2016/05/10/ChongmingCycling&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/05/10/chongming-cycling/&quot;&gt;http://gonghonglou.com/2016/05/10/chongming-cycling&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -613,7 +613,7 @@
     <link href="http://gonghonglou.com/2016/04/01/build-tomcat/"/>
     <id>http://gonghonglou.com/2016/04/01/build-tomcat/</id>
     <published>2016-04-01T08:27:06.000Z</published>
-    <updated>2017-07-12T04:41:45.000Z</updated>
+    <updated>2017-07-24T04:14:43.000Z</updated>
     
     <content type="html">&lt;p&gt;因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。&lt;/p&gt;
 &lt;h3 id=&quot;Java环境&quot;&gt;&lt;a href=&quot;#Java环境&quot; class=&quot;headerlink&quot; title=&quot;Java环境&quot;&gt;&lt;/a&gt;Java环境&lt;/h3&gt;&lt;p&gt;点击下载：&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdk-7u79-macosx-x64.dmg&lt;/a&gt;&lt;/p&gt;
@@ -675,7 +675,7 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
 &lt;li&gt;&lt;p&gt;愉快的玩耍&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h3&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/BuildTomcat&quot;&gt;http://gonghonglou.com/2016/04/01/BuildTomcat&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h3&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/build-tomcat&quot;&gt;http://gonghonglou.com/2016/04/01/build-tomcat&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -695,7 +695,7 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
     <link href="http://gonghonglou.com/2016/04/01/update-pods-que/"/>
     <id>http://gonghonglou.com/2016/04/01/update-pods-que/</id>
     <published>2016-04-01T07:24:10.000Z</published>
-    <updated>2017-01-09T12:46:42.000Z</updated>
+    <updated>2017-07-24T04:15:16.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;问题描述：&quot;&gt;&lt;a href=&quot;#问题描述：&quot; class=&quot;headerlink&quot; title=&quot;问题描述：&quot;&gt;&lt;/a&gt;问题描述：&lt;/h3&gt;&lt;p&gt;OS X 10.11之后升级CocoaPods，执行命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ sudo gem update cocoapods           // 更新至最新版
@@ -718,7 +718,7 @@ $ sudo gem install cocoapods --pre     // 或者 更新至测试版
 &lt;h3 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;上一篇文章关于CocoaPods的详细介绍：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/CocoaPods&quot;&gt;iOS的库依赖管理工具CocoaPods&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/UpdatePodsQue&quot;&gt;http://gonghonglou.com/2016/04/01/UpdatePodsQue&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/04/01/update-pods-que&quot;&gt;http://gonghonglou.com/2016/04/01/update-pods-que&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
@@ -897,7 +897,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/"/>
     <id>http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa/</id>
     <published>2016-03-17T15:12:45.000Z</published>
-    <updated>2017-07-13T02:56:39.000Z</updated>
+    <updated>2017-07-24T04:16:18.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/ReactiveCocoa/ReactiveCocoa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactiveCocoa&lt;/a&gt; 是一个Objective-C 框架，受 &lt;a href=&quot;https://en.wikipedia.org/wiki/Functional_reactive_programming&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Functional Reactive Programming&lt;/a&gt;的启发。它提供了一系列用来&lt;strong&gt;组合和转换值流&lt;/strong&gt;的API。&lt;/p&gt;
 &lt;p&gt;如果你早已熟悉了函数响应式编程或者知道ReactiveCocoa的基本前提，看看&lt;a href=&quot;https://github.com/ReactiveCocoa/ReactiveCocoa/tree/v2.5/Documentation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentation&lt;/a&gt;这个文件夹里的framework overview等文件更深一步来了解它是怎样在实践中工作的。&lt;/p&gt;
@@ -952,7 +952,7 @@ $ git push origin --tags
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa&quot;&gt;http://gonghonglou.com/2016/03/17/MeetingReactiveCocoa&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa&quot;&gt;http://gonghonglou.com/2016/03/17/meet-ReactiveCocoa&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;ul&gt;
@@ -980,7 +980,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/03/03/date-week/"/>
     <id>http://gonghonglou.com/2016/03/03/date-week/</id>
     <published>2016-03-03T03:47:11.000Z</published>
-    <updated>2017-07-03T08:43:17.000Z</updated>
+    <updated>2017-07-24T04:16:50.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间练手模拟校园app写了个Demo，其中在写课程表的界面时，加上了当前日期，为了让日期与星期对应也是前后折腾了好几次，主要还是对日期的情况思考的不够全面吧（比如判断每月天数和月初月末的交替），不过最终还是完成需求。最后意外发现简便方法，写下来分享。    &lt;/p&gt;
 &lt;ul&gt;
@@ -1007,7 +1007,7 @@ $ git push origin --tags
 &lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 判断当前天是周几，从而计算出当周的周一是几号（负数表示上个月月末）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString  &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt; @&lt;span class=&quot;string&quot;&gt;&quot;周一&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// 因为下面有 day++;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周二&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周三&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周四&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周五&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-4&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周六&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([weekString &lt;span class=&quot;string&quot;&gt;isEqual:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;周日&quot;&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    day = &lt;span class=&quot;number&quot;&gt;-6&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 放置日期&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	[self &lt;span class=&quot;string&quot;&gt;setDateLabel:&lt;/span&gt;CGRectMake(i*((self.view.frame.size.width&lt;span class=&quot;number&quot;&gt;-33.5&lt;/span&gt;)&lt;span class=&quot;regexp&quot;&gt;/7+0.5)+30.5, kTopY, (self.view.frame.size.width-33.5)/&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;) &lt;span class=&quot;string&quot;&gt;number:&lt;/span&gt;[NSString &lt;span class=&quot;string&quot;&gt;stringWithFormat:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, [GetOneDay &lt;span class=&quot;string&quot;&gt;getOneDay:&lt;/span&gt;day++]]];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;如此才是万事大吉！&lt;br&gt;比上边的判断简单了许多，不过上边的判断也是一种思路，所以记录下来，给大家一个借鉴！&lt;/p&gt;
 &lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
-&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/03/dateandweek&quot;&gt;http://gonghonglou.com/2016/03/03/dateandweek&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/03/date-week&quot;&gt;http://gonghonglou.com/2016/03/03/date-week&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;迁移文章 首发于2015-10-13&lt;/strong&gt;&lt;/p&gt;
 </content>
     
@@ -1027,7 +1027,7 @@ $ git push origin --tags
     <link href="http://gonghonglou.com/2016/03/03/protect-apple-id/"/>
     <id>http://gonghonglou.com/2016/03/03/protect-apple-id/</id>
     <published>2016-03-03T03:36:26.000Z</published>
-    <updated>2017-01-09T12:45:09.000Z</updated>
+    <updated>2017-07-24T04:17:19.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;p&gt;刚从售后拿到Mac 回学校的公交车上。记录下这悲惨的经历告诫各位果友&lt;br&gt;篇幅略长，怕有些读者看不下去遂将告诫先写在前面：&lt;/p&gt;
 &lt;ul&gt;
@@ -1056,7 +1056,7 @@ $ git push origin --tags
 &lt;li&gt;对于重要文件及时做好备份，Apple的锁做的很强大，极好的保护了我们的设备和数据，可是一旦泄露iCloud密码伤害也会很致命&lt;/li&gt;
 &lt;li&gt;对于备份，Mac上有Time Machine备份工具甚是好用，听起来（嘿）&lt;br&gt;也是售后的技术大哥告知的，感谢AppleCare和Apple售后的好态度。&lt;br&gt;&lt;img src=&quot;http://image.gonghonglou.com/protectappleid/save.png&quot; alt=&quot;屏幕快照 2015-10-10 18.41.11.png&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/03/protectappleid&quot;&gt;http://gonghonglou.com/2016/03/03/protectappleid&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2016/03/03/protect-apple-id&quot;&gt;http://gonghonglou.com/2016/03/03/protect-apple-id&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;迁移文章 首发于2015-10-10 &lt;/strong&gt;&lt;/p&gt;
 </content>
     
