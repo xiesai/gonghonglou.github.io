@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-07-31T06:21:31.000Z</updated>
+  <updated>2017-08-09T05:05:07.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>100 Days, 100 Blogs</title>
+    <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
+    <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
+    <published>2017-08-09T03:57:11.000Z</published>
+    <updated>2017-08-09T05:05:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。&lt;/p&gt;
+&lt;h1 id=&quot;Day-1-深入理解Objective-C：Category&quot;&gt;&lt;a href=&quot;#Day-1-深入理解Objective-C：Category&quot; class=&quot;headerlink&quot; title=&quot;# Day 1 : 深入理解Objective-C：Category&quot;&gt;&lt;/a&gt;# Day 1 : &lt;a href=&quot;https://tech.meituan.com/DiveIntoCategory.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深入理解Objective-C：Category&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://tech.meituan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;美团点评技术团队&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;##1、category 在 runtime 层用结构体 category_t 定义：&lt;/p&gt;
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;category_t&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; *name; &lt;span class=&quot;comment&quot;&gt;// 类的名字&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;classref_t&lt;/span&gt; cls; &lt;span class=&quot;comment&quot;&gt;// 类&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;method_list_t&lt;/span&gt; *instanceMethods; &lt;span class=&quot;comment&quot;&gt;// category中所有给类添加的实例方法的列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;method_list_t&lt;/span&gt; *classMethods; &lt;span class=&quot;comment&quot;&gt;// category中所有添加的类方法的列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;protocol_list_t&lt;/span&gt; *protocols; &lt;span class=&quot;comment&quot;&gt;// category实现的所有协议的列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;property_list_t&lt;/span&gt; *instanceProperties; &lt;span class=&quot;comment&quot;&gt;// category中添加的所有属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;category_t&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;由该结构体可以看出 category 可以动态的添加实例方法，类方法，甚至可以实现协议，添加属性，但无法添加实例变量&lt;br&gt;因为无法添加实例变量，所以当采用 category 为类添加属性时，并不会自动生成带有 &lt;code&gt;_&lt;/code&gt; 的实例变量，所以 &lt;code&gt;setter&lt;/code&gt; 和 &lt;code&gt;getter&lt;/code&gt; 方法也需要自己去实现，在文章末尾有介绍采用关联对象来实现，使用 &lt;code&gt;objc_setAssociatedObject&lt;/code&gt; 和 &lt;code&gt;objc_getAssociatedObject&lt;/code&gt; 方法。&lt;/p&gt;
+&lt;p&gt;##2、category 替换原来类已有的方法&lt;/p&gt;
+&lt;p&gt;category 的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，运行时在查找方法的时候是顺着方法列表的顺序查找的，它只要一找到对应名字的方法，就会罢休。&lt;br&gt;所以，category 的方法没有“完全替换掉”原来类已经有的方法。在文章第六节也有介绍可以使用 &lt;code&gt;class_copyMethodList&lt;/code&gt; 方法获取方法列表，顺着方法列表找到最后一个对应名字的方法，就可以调用原来类的方法&lt;/p&gt;
+&lt;p&gt;##3、-category 和 +load 方法&lt;/p&gt;
+&lt;p&gt;在类的 +load 方法调用的时候，我们可以调用 category 中声明的方法，因为附加 category 到类的工作会先于 +load 方法的执行&lt;br&gt;+load 的执行顺序是先类，后 category，而 category 的 +load 执行顺序是根据编译顺序决定的（Compile Sources（4 items）里的顺序）&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;小白出手，请多指教。如言有误，还望斧正！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;转载请保留原文地址：&lt;a href=&quot;http://gonghonglou.com/2017/08/09/100days-100blogs&quot;&gt;http://gonghonglou.com/2017/08/09/100days-100blogs&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>记环青海湖骑行</title>
