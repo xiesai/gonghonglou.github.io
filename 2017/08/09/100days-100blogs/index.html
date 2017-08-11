@@ -96,18 +96,18 @@
 
 
 <meta name="description" content="一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。
-# 持续更新中……# Da">
+微博每日打卡：#100da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="100 Days, 100 Blogs">
 <meta property="og:url" content="http://gonghonglou.com/2017/08/09/100days-100blogs/index.html">
 <meta property="og:site_name" content="与佳期的个人博客">
 <meta property="og:description" content="一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。
-# 持续更新中……# Da">
-<meta property="og:updated_time" content="2017-08-10T04:22:29.000Z">
+微博每日打卡：#100da">
+<meta property="og:updated_time" content="2017-08-11T04:02:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="100 Days, 100 Blogs">
 <meta name="twitter:description" content="一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。
-# 持续更新中……# Da">
+微博每日打卡：#100da">
 
 
 
@@ -402,7 +402,12 @@
 
       
         <p>一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。<br>但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。</p>
-<h1 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="# 持续更新中……"></a># 持续更新中……</h1><h1 id="Day-2-谈Objective-C-block的实现"><a href="#Day-2-谈Objective-C-block的实现" class="headerlink" title="# Day 2 : 谈Objective-C block的实现"></a># Day 2 : <a href="http://blog.devtang.com/2013/07/28/a-look-inside-blocks/" target="_blank" rel="external">谈Objective-C block的实现</a></h1><p>由 <a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧的博客</a> 发布</p>
+<p>微博每日打卡：<a href="https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e" target="_blank" rel="external">#100days,100blogs#</a></p>
+<h1 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="# 持续更新中……"></a># 持续更新中……</h1><h1 id="Day-3-Objective-C对象模型及应用"><a href="#Day-3-Objective-C对象模型及应用" class="headerlink" title="# Day 3 : Objective-C对象模型及应用"></a># Day 3 : <a href="http://blog.devtang.com/2013/10/15/objective-c-object-model/" target="_blank" rel="external">Objective-C对象模型及应用</a></h1><p>由 <a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧的博客</a> 发布</p>
+<p>##1、ISA 指针<br>– 每一个对象都有一个名为 isa 的指针，指向该对象的类。<br>– 在 Objective-C 语言中，每一个类实际上也是一个对象，每一个类也有一个名为 isa 的指针，指向该类的元类。<br>– 元类的 isa 指针指向根元类。<br>– 根元类的 isa 指针指向自己。    </p>
+<p>（文章中有一张图直白的说明了 isa 指针的指向）</p>
+<p>##2、Method Swizzling API 说明<br>– <code>class_replaceMethod</code>, 当需要替换的方法可能有不存在的情况时，可以考虑使用该方法。<br>– <code>method_exchangeImplementations</code>，当需要交换 2 个方法的实现时使用。<br>– <code>method_setImplementation</code> 最简单的用法，当仅仅需要为一个方法设置其实现方式时使用。</p>
+<h1 id="Day-2-谈Objective-C-block的实现"><a href="#Day-2-谈Objective-C-block的实现" class="headerlink" title="# Day 2 : 谈Objective-C block的实现"></a># Day 2 : <a href="http://blog.devtang.com/2013/07/28/a-look-inside-blocks/" target="_blank" rel="external">谈Objective-C block的实现</a></h1><p>由 <a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧的博客</a> 发布</p>
 <p>##1、block 的 struct 结构：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> Block_descriptor &#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span> reserved;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span> <span class="built_in">size</span>;</span><br><span class="line">    <span class="keyword">void</span> (*copy)(<span class="keyword">void</span> *dst, <span class="keyword">void</span> *src);</span><br><span class="line">    <span class="keyword">void</span> (*dispose)(<span class="keyword">void</span> *);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Block_layout &#123;</span><br><span class="line">    <span class="keyword">void</span> *isa; <span class="comment">// 所有对象都有该指针，用于实现对象相关的功能。</span></span><br><span class="line">    <span class="keyword">int</span> flags; <span class="comment">// 用于按 bit 位表示一些 block 的附加信息，本文后面介绍 block copy 的实现代码可以看到对该变量的使用。</span></span><br><span class="line">    <span class="keyword">int</span> reserved; <span class="comment">// 保留变量。</span></span><br><span class="line">    <span class="keyword">void</span> (*invoke)(<span class="keyword">void</span> *, ...); <span class="comment">// 函数指针，指向具体的 block 实现的函数调用地址。</span></span><br><span class="line">    <span class="keyword">struct</span> Block_descriptor *descriptor; <span class="comment">// 表示该 block 的附加描述信息，主要是 size 大小，以及 copy 和 dispose 函数的指针。</span></span><br><span class="line">    <span class="comment">/* Imported variables. */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>##2、clang 命令改写 OC 语言下的 block</p>
 <p>使用 clang 的 <code>clang -rewrite-objc block.c</code> 命令，可以将 Objetive-C 的源码改写成 c 语言的，生成的 .cpp 文件中有许多关键代码展示了 block 的实现原理。    </p>
@@ -631,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#持续更新中……"><span class="nav-number">1.</span> <span class="nav-text"># 持续更新中……</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-2-谈Objective-C-block的实现"><span class="nav-number">2.</span> <span class="nav-text"># Day 2 : 谈Objective-C block的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-1-深入理解Objective-C：Category"><span class="nav-number">3.</span> <span class="nav-text"># Day 1 : 深入理解Objective-C：Category</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#持续更新中……"><span class="nav-number">1.</span> <span class="nav-text"># 持续更新中……</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-3-Objective-C对象模型及应用"><span class="nav-number">2.</span> <span class="nav-text"># Day 3 : Objective-C对象模型及应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-2-谈Objective-C-block的实现"><span class="nav-number">3.</span> <span class="nav-text"># Day 2 : 谈Objective-C block的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-1-深入理解Objective-C：Category"><span class="nav-number">4.</span> <span class="nav-text"># Day 1 : 深入理解Objective-C：Category</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
