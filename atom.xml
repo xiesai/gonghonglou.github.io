@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-11T04:02:23.000Z</updated>
+  <updated>2017-08-12T05:46:28.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,11 +20,56 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-11T04:02:23.000Z</updated>
+    <updated>2017-08-12T05:46:28.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-3-Objective-C对象模型及应用&quot;&gt;&lt;a href=&quot;#Day-3-Objective-C对象模型及应用&quot; class=&quot;headerlink&quot; title=&quot;# Day 3 : Objective-C对象模型及应用&quot;&gt;&lt;/a&gt;# Day 3 : &lt;a href=&quot;http://blog.devtang.com/2013/10/15/objective-c-object-model/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Objective-C对象模型及应用&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://blog.devtang.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;唐巧的博客&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-4-Objective-C-load-vs-initialize&quot;&gt;&lt;a href=&quot;#Day-4-Objective-C-load-vs-initialize&quot; class=&quot;headerlink&quot; title=&quot;# Day 4 : Objective-C +load vs +initialize&quot;&gt;&lt;/a&gt;# Day 4 : &lt;a href=&quot;http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Objective-C +load vs +initialize&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://blog.leichunfeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;雷纯锋的技术博客&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;##1、+load&lt;br&gt;– 调用所有类的 +load 方法（包括分类的 +load 方法）是直接使用函数内存地址的方式 &lt;code&gt;(*load_method)(cls, SEL_load);&lt;/code&gt; 进行调用的，而不是使用发送消息 &lt;code&gt;objc_msgSend&lt;/code&gt; 的方式。也就是说如果子类没有实现 +load 方法，那么当它被加载时 runtime 是不会去调用父类的 +load 方法的。同理，当一个类和它的分类都实现了 +load 方法时，两个方法都会被调用。&lt;br&gt;– 子类的 +load 方法会在它的所有父类的 +load 方法之后执行，而分类的 +load 方法会在它的主类的 +load 方法之后执行。但是不同的类之间的 +load 方法的调用顺序是不确定的。&lt;/p&gt;
+&lt;p&gt;##2、+initialize&lt;br&gt;– runtime 使用了发送消息 &lt;code&gt;objc_msgSend&lt;/code&gt; 的方式对 +initialize 方法进行调用。如果子类没有实现 +initialize 方法，那么继承自父类的实现会被调用；如果一个类的分类实现了 +initialize 方法，那么就会对这个类中的实现造成覆盖。&lt;br&gt;– 如果一个子类没有实现 +initialize 方法，那么父类的实现是会被执行多次的。可以使用下面的代码确保自己的 +initialize 方法只执行一次：&lt;br&gt;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;+ (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)initialize &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; == [ClassName &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// ... do the initialization ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##3、总结&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;+load&lt;/th&gt;
+&lt;th&gt;+initialize&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;调用时机&lt;/td&gt;
+&lt;td&gt;被添加到 runtime 时&lt;/td&gt;
+&lt;td&gt;收到第一条消息前，可能永远不调用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;调用顺序&lt;/td&gt;
+&lt;td&gt;父类-&amp;gt;子类-&amp;gt;分类&lt;/td&gt;
+&lt;td&gt;父类-&amp;gt;子类&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;调用次数&lt;/td&gt;
+&lt;td&gt;1次&lt;/td&gt;
+&lt;td&gt;多次&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;是否需要显式调用父类实现&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;是否沿用父类的实现&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分类中的实现&lt;/td&gt;
+&lt;td&gt;类和分类都执行&lt;/td&gt;
+&lt;td&gt;覆盖类中的方法，只执行分类的实现&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&quot;Day-3-Objective-C对象模型及应用&quot;&gt;&lt;a href=&quot;#Day-3-Objective-C对象模型及应用&quot; class=&quot;headerlink&quot; title=&quot;# Day 3 : Objective-C对象模型及应用&quot;&gt;&lt;/a&gt;# Day 3 : &lt;a href=&quot;http://blog.devtang.com/2013/10/15/objective-c-object-model/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Objective-C对象模型及应用&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://blog.devtang.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;唐巧的博客&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;##1、ISA 指针&lt;br&gt;– 每一个对象都有一个名为 isa 的指针，指向该对象的类。&lt;br&gt;– 在 Objective-C 语言中，每一个类实际上也是一个对象，每一个类也有一个名为 isa 的指针，指向该类的元类。&lt;br&gt;– 元类的 isa 指针指向根元类。&lt;br&gt;– 根元类的 isa 指针指向自己。    &lt;/p&gt;
 &lt;p&gt;（文章中有一张图直白的说明了 isa 指针的指向）&lt;/p&gt;
 &lt;p&gt;##2、Method Swizzling API 说明&lt;br&gt;– &lt;code&gt;class_replaceMethod&lt;/code&gt;, 当需要替换的方法可能有不存在的情况时，可以考虑使用该方法。&lt;br&gt;– &lt;code&gt;method_exchangeImplementations&lt;/code&gt;，当需要交换 2 个方法的实现时使用。&lt;br&gt;– &lt;code&gt;method_setImplementation&lt;/code&gt; 最简单的用法，当仅仅需要为一个方法设置其实现方式时使用。&lt;/p&gt;

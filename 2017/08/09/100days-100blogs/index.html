@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="与佳期的个人博客">
 <meta property="og:description" content="一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。
 微博每日打卡：#100da">
-<meta property="og:updated_time" content="2017-08-11T04:02:23.000Z">
+<meta property="og:updated_time" content="2017-08-12T05:46:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="100 Days, 100 Blogs">
 <meta name="twitter:description" content="一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。
@@ -403,7 +403,52 @@
       
         <p>一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。<br>但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，顺便在这里记录一下，做个总结。</p>
 <p>微博每日打卡：<a href="https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e" target="_blank" rel="external">#100days,100blogs#</a></p>
-<h1 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="# 持续更新中……"></a># 持续更新中……</h1><h1 id="Day-3-Objective-C对象模型及应用"><a href="#Day-3-Objective-C对象模型及应用" class="headerlink" title="# Day 3 : Objective-C对象模型及应用"></a># Day 3 : <a href="http://blog.devtang.com/2013/10/15/objective-c-object-model/" target="_blank" rel="external">Objective-C对象模型及应用</a></h1><p>由 <a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧的博客</a> 发布</p>
+<h1 id="持续更新中……"><a href="#持续更新中……" class="headerlink" title="# 持续更新中……"></a># 持续更新中……</h1><h1 id="Day-4-Objective-C-load-vs-initialize"><a href="#Day-4-Objective-C-load-vs-initialize" class="headerlink" title="# Day 4 : Objective-C +load vs +initialize"></a># Day 4 : <a href="http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/" target="_blank" rel="external">Objective-C +load vs +initialize</a></h1><p>由 <a href="http://blog.leichunfeng.com/" target="_blank" rel="external">雷纯锋的技术博客</a> 发布</p>
+<p>##1、+load<br>– 调用所有类的 +load 方法（包括分类的 +load 方法）是直接使用函数内存地址的方式 <code>(*load_method)(cls, SEL_load);</code> 进行调用的，而不是使用发送消息 <code>objc_msgSend</code> 的方式。也就是说如果子类没有实现 +load 方法，那么当它被加载时 runtime 是不会去调用父类的 +load 方法的。同理，当一个类和它的分类都实现了 +load 方法时，两个方法都会被调用。<br>– 子类的 +load 方法会在它的所有父类的 +load 方法之后执行，而分类的 +load 方法会在它的主类的 +load 方法之后执行。但是不同的类之间的 +load 方法的调用顺序是不确定的。</p>
+<p>##2、+initialize<br>– runtime 使用了发送消息 <code>objc_msgSend</code> 的方式对 +initialize 方法进行调用。如果子类没有实现 +initialize 方法，那么继承自父类的实现会被调用；如果一个类的分类实现了 +initialize 方法，那么就会对这个类中的实现造成覆盖。<br>– 如果一个子类没有实现 +initialize 方法，那么父类的实现是会被执行多次的。可以使用下面的代码确保自己的 +initialize 方法只执行一次：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)initialize &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">self</span> == [ClassName <span class="keyword">self</span>]) &#123;</span><br><span class="line">    <span class="comment">// ... do the initialization ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##3、总结</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>+load</th>
+<th>+initialize</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调用时机</td>
+<td>被添加到 runtime 时</td>
+<td>收到第一条消息前，可能永远不调用</td>
+</tr>
+<tr>
+<td>调用顺序</td>
+<td>父类-&gt;子类-&gt;分类</td>
+<td>父类-&gt;子类</td>
+</tr>
+<tr>
+<td>调用次数</td>
+<td>1次</td>
+<td>多次</td>
+</tr>
+<tr>
+<td>是否需要显式调用父类实现</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否沿用父类的实现</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>分类中的实现</td>
+<td>类和分类都执行</td>
+<td>覆盖类中的方法，只执行分类的实现</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Day-3-Objective-C对象模型及应用"><a href="#Day-3-Objective-C对象模型及应用" class="headerlink" title="# Day 3 : Objective-C对象模型及应用"></a># Day 3 : <a href="http://blog.devtang.com/2013/10/15/objective-c-object-model/" target="_blank" rel="external">Objective-C对象模型及应用</a></h1><p>由 <a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧的博客</a> 发布</p>
 <p>##1、ISA 指针<br>– 每一个对象都有一个名为 isa 的指针，指向该对象的类。<br>– 在 Objective-C 语言中，每一个类实际上也是一个对象，每一个类也有一个名为 isa 的指针，指向该类的元类。<br>– 元类的 isa 指针指向根元类。<br>– 根元类的 isa 指针指向自己。    </p>
 <p>（文章中有一张图直白的说明了 isa 指针的指向）</p>
 <p>##2、Method Swizzling API 说明<br>– <code>class_replaceMethod</code>, 当需要替换的方法可能有不存在的情况时，可以考虑使用该方法。<br>– <code>method_exchangeImplementations</code>，当需要交换 2 个方法的实现时使用。<br>– <code>method_setImplementation</code> 最简单的用法，当仅仅需要为一个方法设置其实现方式时使用。</p>
@@ -636,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#持续更新中……"><span class="nav-number">1.</span> <span class="nav-text"># 持续更新中……</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-3-Objective-C对象模型及应用"><span class="nav-number">2.</span> <span class="nav-text"># Day 3 : Objective-C对象模型及应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-2-谈Objective-C-block的实现"><span class="nav-number">3.</span> <span class="nav-text"># Day 2 : 谈Objective-C block的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-1-深入理解Objective-C：Category"><span class="nav-number">4.</span> <span class="nav-text"># Day 1 : 深入理解Objective-C：Category</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#持续更新中……"><span class="nav-number">1.</span> <span class="nav-text"># 持续更新中……</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-4-Objective-C-load-vs-initialize"><span class="nav-number">2.</span> <span class="nav-text"># Day 4 : Objective-C +load vs +initialize</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-3-Objective-C对象模型及应用"><span class="nav-number">3.</span> <span class="nav-text"># Day 3 : Objective-C对象模型及应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-2-谈Objective-C-block的实现"><span class="nav-number">4.</span> <span class="nav-text"># Day 2 : 谈Objective-C block的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-1-深入理解Objective-C：Category"><span class="nav-number">5.</span> <span class="nav-text"># Day 1 : 深入理解Objective-C：Category</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">6.</span> <span class="nav-text">后记</span></a></li></ol></div>
             
 
           </div>
