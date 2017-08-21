@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-20T13:19:28.000Z</updated>
+  <updated>2017-08-21T03:57:51.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,11 +20,15 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-20T13:19:28.000Z</updated>
+    <updated>2017-08-21T03:57:51.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-12-理解-Scroll-Views&quot;&gt;&lt;a href=&quot;#Day-12-理解-Scroll-Views&quot; class=&quot;headerlink&quot; title=&quot;# Day 12 : 理解 Scroll Views&quot;&gt;&lt;/a&gt;# Day 12 : &lt;a href=&quot;https://objccn.io/issue-3-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;理解 Scroll Views&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-13-并发编程：API-及挑战&quot;&gt;&lt;a href=&quot;#Day-13-并发编程：API-及挑战&quot; class=&quot;headerlink&quot; title=&quot;# Day 13 : 并发编程：API 及挑战&quot;&gt;&lt;/a&gt;# Day 13 : &lt;a href=&quot;https://objccn.io/issue-2-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;并发编程：API 及挑战&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;##1、OS X 和 iOS 中的并发编程&lt;br&gt;– 线程&lt;br&gt;可以使用 Instruments 中的 CPU strategy view 来得知代码是如何在多核 CPU 中调度执行的。&lt;br&gt;– Grand Central Dispatch&lt;br&gt;GCD 公开有 5 个不同的队列：运行在主线程中的 main queue，3 个不同优先级的后台队列，以及一个优先级更低的后台队列（用于 I/O）。 另外，开发者可以创建自定义队列：串行或者并行队列。自定义队列非常强大，在自定义队列中被调度的所有 block 最终都将被放入到系统的全局队列中和线程池中。&lt;br&gt;强烈建议在绝大多数情况下使用默认的优先级队列，避免在不同优先级的队列中调度访问共享资源的任务而产生不可预期的行为，比如低优先级的任务阻塞了高优先级任务而造成程序的完全挂起。&lt;br&gt;– Operation Queues&lt;br&gt;NSOperationQueue 有两种不同类型的队列：主队列和自定义队列。主队列运行在主线程之上，而自定义队列在后台执行。你可以通过重写 main 或者 start 方法来定义自己的 operations。&lt;br&gt;你可以通过 maxConcurrentOperationCount 属性来控制一个特定队列中可以有多少个操作参与并发执行，还可以在 operation 之间指定依赖关系。&lt;br&gt;– Run Loops&lt;br&gt;主线程一般来说都已经配置好了 main run loop。然而其他线程默认情况下都没有设置 run loop。你也可以自行为其他线程设置 run loop ，但是一般来说我们很少需要这么做。大多数时间使用 main run loop 会容易得多。&lt;/p&gt;
+&lt;p&gt;##2、并发编程中面临的挑战&lt;br&gt;– 资源共享&lt;br&gt;– 互斥锁&lt;br&gt;– 死锁&lt;br&gt;– 资源饥饿（Starvation）&lt;br&gt;– 优先级反转&lt;/p&gt;
+&lt;p&gt;##3、总结&lt;br&gt;我们建议采纳的安全模式是这样的：从主线程中提取出要使用到的数据，并利用一个操作队列在后台处理相关的数据，最后回到主队列中来发送你在后台队列中得到的结果。使用这种方式，你不需要自己做任何锁操作，这也就大大减少了犯错误的几率。&lt;/p&gt;
+&lt;h1 id=&quot;Day-12-理解-Scroll-Views&quot;&gt;&lt;a href=&quot;#Day-12-理解-Scroll-Views&quot; class=&quot;headerlink&quot; title=&quot;# Day 12 : 理解 Scroll Views&quot;&gt;&lt;/a&gt;# Day 12 : &lt;a href=&quot;https://objccn.io/issue-3-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;理解 Scroll Views&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;该篇文章比较简洁，从 UIView 的光栅化和组合说起，简单明了的介绍了 Scroll View 的实现思路。&lt;br&gt;并介绍了 Scroll View 的：&lt;br&gt;– Content Offset：相当于更改 Superview.bounds.origin&lt;br&gt;– Content Size：可滚动区域&lt;br&gt;– Content Insets：可以改变 content offset 的最大和最小值，这样便可以滚动出可滚动区域&lt;/p&gt;
 &lt;p&gt;或许可以应用在有键盘弹出的页面，比如登录页面，弹出键盘输入用户名密码时会遮挡屏幕下半部的视图，可以采用 Scroll View 的滚动特性来解决这一尴尬，恰巧今天碰见 Medium 的登录页面貌似就是这么设计的。&lt;/p&gt;
 &lt;h1 id=&quot;Day-11-绘制像素到屏幕上&quot;&gt;&lt;a href=&quot;#Day-11-绘制像素到屏幕上&quot; class=&quot;headerlink&quot; title=&quot;# Day 11 : 绘制像素到屏幕上&quot;&gt;&lt;/a&gt;# Day 11 : &lt;a href=&quot;https://objccn.io/issue-3-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;绘制像素到屏幕上&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
