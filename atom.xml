@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-22T04:01:11.000Z</updated>
+  <updated>2017-08-23T05:28:44.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,11 +20,23 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-22T04:01:11.000Z</updated>
+    <updated>2017-08-23T05:28:44.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-14-常见的后台实践&quot;&gt;&lt;a href=&quot;#Day-14-常见的后台实践&quot; class=&quot;headerlink&quot; title=&quot;# Day 14 : 常见的后台实践&quot;&gt;&lt;/a&gt;# Day 14 : &lt;a href=&quot;https://objccn.io/issue-2-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;常见的后台实践&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-15-底层并发-API&quot;&gt;&lt;a href=&quot;#Day-15-底层并发-API&quot; class=&quot;headerlink&quot; title=&quot;# Day 15 : 底层并发 API&quot;&gt;&lt;/a&gt;# Day 15 : &lt;a href=&quot;https://objccn.io/issue-2-3/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;底层并发 API&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;该篇文章并非是专门介绍 GCD(Grand Central Dispatch) 使用的，但从分析及解决并发问题的角度出发介绍了很多 GCD 的用法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从前…：&lt;code&gt;dispatch_once&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;延后执行：&lt;code&gt;dispatch_after&lt;/code&gt;&lt;br&gt;  – 队列&lt;br&gt;  – 目标队列：为一个类创建它自己的队列而不是使用全局的队列，这种方式可以设置队列的名字，在 Xcode 的 Debug Navigator 中可以看到所有的队列名字，(lldb) thread list 命令会在控制台打印出所有队列的名字。&lt;br&gt;  – 优先级&lt;/li&gt;
+&lt;li&gt;隔离&lt;br&gt;  – 资源保护&lt;br&gt;  – 单一资源的多读单写：&lt;code&gt;dispatch_barrier_async&lt;/code&gt;&lt;br&gt;  – 锁竞争&lt;br&gt;  – 全都使用异步分发：&lt;code&gt;dispatch_async()&lt;/code&gt;&lt;br&gt;  – 如何写出好的异步 API&lt;/li&gt;
+&lt;li&gt;迭代执行：&lt;code&gt;dispatch_apply&lt;/code&gt;&lt;br&gt;  – 组：&lt;code&gt;dispatch_group_t&lt;/code&gt;&lt;br&gt;  – 对现有API使用 dispatch_group_t&lt;/li&gt;
+&lt;li&gt;事件源：&lt;code&gt;dispatch_source_t&lt;/code&gt;&lt;br&gt;  – 监视进程&lt;br&gt;  – 监视文件&lt;br&gt;  – 定时器&lt;br&gt;  – 取消&lt;/li&gt;
+&lt;li&gt;输入输出&lt;br&gt;  – GCD 和缓冲区：&lt;code&gt;dispatch_data_t&lt;/code&gt;&lt;br&gt;  – 读和写：&lt;code&gt;dispatch_io_create_with_path&lt;/code&gt;、&lt;code&gt;dispatch_io_read&lt;/code&gt;、&lt;code&gt;dispatch_io_write&lt;/code&gt; 和 &lt;code&gt;dispatch_io_close&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;基准测试：&lt;code&gt;uint64_t dispatch_benchmark(size_t count, void (^block)(void));&lt;/code&gt;能够测量给定的代码执行的平均的纳秒数&lt;/li&gt;
+&lt;li&gt;原子操作&lt;br&gt;  – 计数器&lt;br&gt;  – 比较和交换&lt;br&gt;  – 原子队列&lt;br&gt;  – 自旋锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Day-14-常见的后台实践&quot;&gt;&lt;a href=&quot;#Day-14-常见的后台实践&quot; class=&quot;headerlink&quot; title=&quot;# Day 14 : 常见的后台实践&quot;&gt;&lt;/a&gt;# Day 14 : &lt;a href=&quot;https://objccn.io/issue-2-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;常见的后台实践&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;作者从以下方面介绍了将耗时操作放进后台执行的策略：&lt;br&gt;– 后台的 Core Data&lt;br&gt;– 更新 Main Context&lt;br&gt;– 后台 UI 代码&lt;br&gt;– 后台绘制：如果确定 drawRect: 是应用的性能瓶颈，把 drawRect:中的代码放到后台操作中去。然后将原本打算绘制的视图用一个 image view 来替换，等到操作执行完后再去更新。在绘制的方法中，使用 UIGraphicsBeginImageContextWithOptions 来取代 UIGraphicsGetCurrentContext ：&lt;br&gt;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;UIGraphicsBeginImageContextWithOptions&lt;/span&gt;(size, &lt;span class=&quot;literal&quot;&gt;NO&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// drawing code here&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;UIImage&lt;/span&gt; *i = &lt;span class=&quot;built_in&quot;&gt;UIGraphicsGetImageFromCurrentImageContext&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;UIGraphicsEndImageContext&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; i;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;通过在第三个参数中传入 0 ，设备的主屏幕的 scale 将被自动传入，这将使图片在普通设备和 retina 屏幕上都有良好的表现。&lt;/p&gt;
 &lt;p&gt;– 异步网络请求处理：像 AFNetworking 这样的框架：建立一个独立的线程，为建立的线程设置自己的 run loop，然后在其中调度 URL 连接。&lt;br&gt;– 进阶：后台文件 I/O：对于不方便一次性读入内存的大文件可以使用异步处理文件的 NSInputStream&lt;br&gt;。。。。。。&lt;/p&gt;
