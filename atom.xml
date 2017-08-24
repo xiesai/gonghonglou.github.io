@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-23T05:28:44.000Z</updated>
+  <updated>2017-08-24T03:49:48.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,11 +20,19 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-23T05:28:44.000Z</updated>
+    <updated>2017-08-24T03:49:48.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-15-底层并发-API&quot;&gt;&lt;a href=&quot;#Day-15-底层并发-API&quot; class=&quot;headerlink&quot; title=&quot;# Day 15 : 底层并发 API&quot;&gt;&lt;/a&gt;# Day 15 : &lt;a href=&quot;https://objccn.io/issue-2-3/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;底层并发 API&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-16-自定义控件&quot;&gt;&lt;a href=&quot;#Day-16-自定义控件&quot; class=&quot;headerlink&quot; title=&quot;# Day 16 : 自定义控件&quot;&gt;&lt;/a&gt;# Day 16 : &lt;a href=&quot;https://objccn.io/issue-3-4/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自定义控件&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;该篇文章比较基础，介绍了 UIView 的三个基类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;视图层次概览&lt;br&gt;  – reponders (响应者)：UIView 的父类，能够处理触摸、手势、远程控制等事件。&lt;br&gt;  – views (视图)：视图的区域是由它的 frame 定义的。实际上 frame 是一个派生属性，是由 center 和 bounds 合成而来。&lt;br&gt;  – controls (控件)：建立在视图上，增加了更多的交互支持。最重要的是，它增加了 target / action 模式。&lt;/li&gt;
+&lt;li&gt;渲染&lt;br&gt;  – 尽量避免 drawRect:，使用现有的视图构建自定义视图。如果重写 drawRect:，确保检查内容模式。默认的模式是将内容缩放以填充视图的范围，这在当视图的 frame 改变时并不会重新绘制。&lt;br&gt;  – 处理图片时，你也可以让 GPU 为你工作来代替使用 Core Graphics。使用 Core Image，你不必用 CPU 做任何的工作就可以在图片上建立复杂的效果。&lt;/li&gt;
+&lt;li&gt;自定义交互&lt;br&gt;  – 使用 Target-Action&lt;br&gt;  – 使用代理&lt;br&gt;  – 使用 Block&lt;br&gt;  – 使用 KVO&lt;br&gt;  – 使用通知&lt;/li&gt;
+&lt;li&gt;辅助功能 (Accessibility)&lt;br&gt;  – 本地化：使用 NSLocalizedString 本地化字符串。&lt;br&gt;  – 测试：可以使用 UIAutomation 或者其它基于它的工具。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Day-15-底层并发-API&quot;&gt;&lt;a href=&quot;#Day-15-底层并发-API&quot; class=&quot;headerlink&quot; title=&quot;# Day 15 : 底层并发 API&quot;&gt;&lt;/a&gt;# Day 15 : &lt;a href=&quot;https://objccn.io/issue-2-3/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;底层并发 API&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;该篇文章并非是专门介绍 GCD(Grand Central Dispatch) 使用的，但从分析及解决并发问题的角度出发介绍了很多 GCD 的用法&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;从前…：&lt;code&gt;dispatch_once&lt;/code&gt;&lt;/li&gt;
