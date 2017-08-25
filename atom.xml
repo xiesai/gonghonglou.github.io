@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-25T04:08:27.000Z</updated>
+  <updated>2017-08-25T04:10:34.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-25T04:08:27.000Z</updated>
+    <updated>2017-08-25T04:10:34.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-17-Build-过程&quot;&gt;&lt;a href=&quot;#Day-17-Build-过程&quot; class=&quot;headerlink&quot; title=&quot;# Day 17 : Build 过程&quot;&gt;&lt;/a&gt;# Day 17 : &lt;a href=&quot;https://objccn.io/issue-6-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Build 过程&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;解密 Build 日志&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Build过程的控制&lt;br&gt;  – Build Phases：代表将代码转变为可执行文件的最高级别规则。&lt;br&gt;  – 定制Build Phases：可以在 build phases 中添加运行自定义脚本，就像CocoaPods使用的一样，来做额外的工作。&lt;br&gt;  – Build Rules：指定了不同的文件类型该如何编译。&lt;br&gt;  – Build Settings：可以配置每个任务（之前在 build log 输出中看到的任务）的详细内容。例如可以添加一个 “Run Script”：如果一个源文件超过指定行数，就发出警告。如下代码所示，设置的行数为 200。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Build过程的控制&lt;br&gt;  – Build Phases：代表将代码转变为可执行文件的最高级别规则。&lt;br&gt;  – 定制Build Phases：可以在 build phases 中添加运行自定义脚本，就像CocoaPods使用的一样，来做额外的工作。&lt;br&gt;  – Build Rules：指定了不同的文件类型该如何编译。&lt;br&gt;  – Build Settings：可以配置每个任务（之前在 build log 输出中看到的任务）的详细内容。例如可以添加一个 “Run Script”：如果一个源文件超过指定行数，就发出警告。如下代码所示，设置的行数为 200：&lt;/p&gt;
   &lt;figure class=&quot;highlight nsis&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$&amp;#123;SRCROOT&amp;#125;&lt;/span&gt;&quot;&lt;/span&gt; \( -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -or -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; \) -print0 | xargs -&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; wc -l | awk &#39;&lt;span class=&quot;variable&quot;&gt;$1&lt;/span&gt; &amp;gt; &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt; &amp;amp;&amp;amp; &lt;span class=&quot;variable&quot;&gt;$2&lt;/span&gt; != &lt;span class=&quot;string&quot;&gt;&quot;total&quot;&lt;/span&gt; &amp;#123; &lt;span class=&quot;literal&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;$2&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;:1: warning: file more than 200 lines&quot;&lt;/span&gt; &amp;#125;&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;工程文件（.pbxproj）&lt;/p&gt;
