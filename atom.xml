@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-08-27T09:05:22.000Z</updated>
+  <updated>2017-08-27T09:07:34.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-08-27T09:05:22.000Z</updated>
+    <updated>2017-08-27T09:07:34.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-19-IP，TCP-和-HTTP&quot;&gt;&lt;a href=&quot;#Day-19-IP，TCP-和-HTTP&quot; class=&quot;headerlink&quot; title=&quot;# Day 19 : IP，TCP 和 HTTP&quot;&gt;&lt;/a&gt;# Day 19 : &lt;a href=&quot;https://objccn.io/issue-10-6/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IP，TCP 和 HTTP&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
-&lt;p&gt;又温习一遍网络链接的知识。。。&lt;/p&gt;
+&lt;p&gt;又温习一遍网络连接的知识。。。&lt;/p&gt;
 &lt;h1 id=&quot;Day-18-基础集合类&quot;&gt;&lt;a href=&quot;#Day-18-基础集合类&quot; class=&quot;headerlink&quot; title=&quot;# Day 18 : 基础集合类&quot;&gt;&lt;/a&gt;# Day 18 : &lt;a href=&quot;https://objccn.io/issue-7-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;基础集合类&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;这篇文章可真的是基础了，可能是今天时间太紧张没找到一篇比较有深度的文章，不过这篇文章从基础集合类（NSArray, NSSet, NSOrderedSet 和 NSDictionary）讲起，分别介绍了它们的方法，分析了性能，当是基础知识的一次复习吧。&lt;br&gt;文中总结列出了枚举 NSArray 和 NSDictionary 的几种方法，并分析了各自的性能，值得一看。因为都是一些基础集合类，就不做什么笔记了，各个类的方法到 Xcode 里都能轻易找着。&lt;/p&gt;
 &lt;h1 id=&quot;Day-17-Build-过程&quot;&gt;&lt;a href=&quot;#Day-17-Build-过程&quot; class=&quot;headerlink&quot; title=&quot;# Day 17 : Build 过程&quot;&gt;&lt;/a&gt;# Day 17 : &lt;a href=&quot;https://objccn.io/issue-6-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Build 过程&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://objccn.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ObjC 中国&lt;/a&gt; 发布&lt;/p&gt;
