@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/podInstall.png">
 <meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/Framework.png">
 <meta property="og:image" content="http://image.gonghonglou.com/CocoaPods/cocoapods_push.png">
-<meta property="og:updated_time" content="2017-08-28T16:54:54.000Z">
+<meta property="og:updated_time" content="2017-08-28T17:03:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS的库依赖管理工具CocoaPods">
 <meta name="twitter:description" content="工欲善其事，必先利其器！在iOS开发中 CocoaPods 作为库依赖管理工具就是一把利器。
@@ -521,7 +521,7 @@
 <p>成功后结果应该为：</p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Updating spec repo <span class="code">`master`</span></span><br><span class="line">Validating podspec</span><br><span class="line"><span class="code"> -&gt; DJLSplitCollectionView (0.0.1)</span></span><br><span class="line"></span><br><span class="line">Updating spec repo <span class="code">`master`</span></span><br><span class="line"></span><br><span class="line"><span class="code">--------------------------------------------------------------------------------</span><br><span class="line"> 🎉  Congrats</span><br><span class="line"></span><br><span class="line"> 🚀  DJLSplitCollectionView (0.0.1) successfully published</span><br><span class="line"> 📅  August 28th, 09:39</span><br><span class="line"> 🌎  https://cocoapods.org/pods/DJLSplitCollectionView</span><br><span class="line"> 👍  Tell your friends!</span><br><span class="line">--------------------------------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
 <p>如图：<img src="http://image.gonghonglou.com/CocoaPods/cocoapods_push.png" alt="pod trunk push"></p>
-<p>大功告成，几秒或者几分钟后 <code>pod search my_framework_name</code> 搜索一下吧～</p>
+<p>大功告成，几秒或者几分钟后 <code>pod search my_framework_name</code> 搜索一下吧～<br>如果搜不到的话，建议执行如下方法：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm ~<span class="regexp">/Library/</span>Caches<span class="regexp">/CocoaPods/</span>search_index.json</span><br><span class="line">pod search my_framework_name</span><br></pre></td></tr></table></figure></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
 <li><p>小白出手，请多指教。如言有误，还望斧正！</p>
 </li>
