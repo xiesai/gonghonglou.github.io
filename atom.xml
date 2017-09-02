@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-09-01T03:43:07.000Z</updated>
+  <updated>2017-09-02T05:04:39.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -20,11 +20,14 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-09-01T03:43:07.000Z</updated>
+    <updated>2017-09-02T05:04:39.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-24-iOS书写高质量代码之耦合的处理&quot;&gt;&lt;a href=&quot;#Day-24-iOS书写高质量代码之耦合的处理&quot; class=&quot;headerlink&quot; title=&quot;# Day 24 : iOS书写高质量代码之耦合的处理&quot;&gt;&lt;/a&gt;# Day 24 : &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzI5MjEzNzA1MA==&amp;amp;mid=2650264313&amp;amp;idx=1&amp;amp;sn=9dbb05dec78c0265efee16299ea95d22&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS书写高质量代码之耦合的处理&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;&quot;&gt;MrPeak杂货铺&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-25-iOS-常见知识点（三）：Lock&quot;&gt;&lt;a href=&quot;#Day-25-iOS-常见知识点（三）：Lock&quot; class=&quot;headerlink&quot; title=&quot;# Day 25 : iOS 常见知识点（三）：Lock&quot;&gt;&lt;/a&gt;# Day 25 : &lt;a href=&quot;http://www.jianshu.com/p/ddbe44064ca4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 常见知识点（三）：Lock&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/263107bb1199&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AidenRao&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;iOS 中的八大锁&lt;br&gt;– NSLock：遵循 NSLocking 协议lock 方法是加锁，unlock 是解锁，tryLock 是尝试加锁，如果失败的话返回 NO，lockBeforeDate: 是在指定Date之前尝试加锁，如果在指定时间之前都不能加锁，则返回NO&lt;br&gt;互斥锁会使得线程阻塞，阻塞的过程又分两个阶段，第一阶段是会先空转，可以理解成跑一个 while 循环，不断地去申请加锁，在空转一定时间之后，线程会进入 waiting 状态，此时线程就不占用CPU资源了，等锁可用的时候，这个线程会立即被唤醒。&lt;br&gt;– NSConditionLock：遵循 NSLocking 协议，方法都类似，只是多了一个 condition 属性，以及每个操作都多了一个关于 condition 属性的方法。NSConditionLock 还可以实现任务之间的依赖&lt;br&gt;– NSRecursiveLock：递归锁，他和 NSLock 的区别在于，NSRecursiveLock 可以在一个线程中重复加锁（反正单线程内任务是按顺序执行的，不会出现资源竞争问题），NSRecursiveLock 会记录上锁和解锁的次数，当二者平衡的时候，才会释放锁，其它线程才可以上锁成功&lt;br&gt;– NSCondition：NSCondition 并不会像上文的那些锁一样，先轮询，而是直接进入 waiting 状态，当其它线程中的该锁执行 signal 或者 broadcast 方法时，线程被唤醒，继续运行之后的方法&lt;br&gt;– @synchronized：&lt;br&gt;– dispatch_semaphore：GCD 用来同步的一种方式&lt;br&gt;– OSSpinLock：OSSpinLock 会一直轮询，等待时会消耗大量 CPU 资源，不适用于较长时间的任务&lt;br&gt;– pthread_mutex：C 语言下多线程加互斥锁的方式&lt;/p&gt;
+&lt;p&gt;这里介绍了iOS中的几种锁，简单介绍了其中的用法，具体的使用还是要代码中实践才是。&lt;/p&gt;
+&lt;h1 id=&quot;Day-24-iOS书写高质量代码之耦合的处理&quot;&gt;&lt;a href=&quot;#Day-24-iOS书写高质量代码之耦合的处理&quot; class=&quot;headerlink&quot; title=&quot;# Day 24 : iOS书写高质量代码之耦合的处理&quot;&gt;&lt;/a&gt;# Day 24 : &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzI5MjEzNzA1MA==&amp;amp;mid=2650264313&amp;amp;idx=1&amp;amp;sn=9dbb05dec78c0265efee16299ea95d22&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS书写高质量代码之耦合的处理&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;&quot;&gt;MrPeak杂货铺&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;写高质量代码之耦合的处理的几种方式：&lt;br&gt;– .m引用：直接在 .m 文件创建对象调用方法&lt;br&gt;– .h Property：.h 文件中声明引用，依赖关系清晰&lt;br&gt;– .h ReadOnly Property：重写 setter 方法，对代码有更大的掌控能力，且避免轻易修改引用属性&lt;br&gt;– init 注入：对外就只提供一次机会（初始化init）来设置&lt;br&gt;– parameter 注入：将依赖类作为参数传入函数，耦合只发生在函数内部，一旦函数调用结束，就结束了依赖关系&lt;br&gt;– 单例引用：函数调用中使用单例，缺点也十分明显，应当慎用单例&lt;br&gt;– 继承：通过继承调用父类的方法，但确认父子关系也是麻烦的存在&lt;br&gt;– runtime依赖：耦合度非常之低，甚至可以说感觉不到，但是当依赖类的方法名发生改变时编译并不会提醒&lt;br&gt;– protocol依赖：好处在于他只规定了方法的声明，并不限定具体是那个类来实现它，给后期的维护留下更大的空间和可能性&lt;/p&gt;
 &lt;p&gt;以上方法的优点和缺点都很明显，怎么使用还要靠业务和coder自己决定。&lt;/p&gt;
 &lt;h1 id=&quot;Day-23-iOS关于时间的处理&quot;&gt;&lt;a href=&quot;#Day-23-iOS关于时间的处理&quot; class=&quot;headerlink&quot; title=&quot;# Day 23 : iOS关于时间的处理&quot;&gt;&lt;/a&gt;# Day 23 : &lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzI5MjEzNzA1MA==&amp;amp;mid=2650264295&amp;amp;idx=1&amp;amp;sn=cdbe94a73be261aebf2afaba24320ef7&amp;amp;scene=19#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS关于时间的处理&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;&quot;&gt;MrPeak杂货铺&lt;/a&gt; 发布&lt;/p&gt;
