@@ -95,32 +95,19 @@
 
 
 
-<meta name="description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
+<meta name="description" content="因为 SafeKit 的异常保护的原理是在 category 替换系统方法，只需在工程中引用 SafeKit 即可避免 NSArray 数组越界等引发的 crash，并不需要额外操作。所以日常开发中渐渐的并不会怎么在意到 SafeKit 的存在。
+最近公司有一份项目需要重构，完全重写的那种，从新建一份空工程开始。之前并没有在意 SafeKit 的存在，所以在最开始并没有在工程中引入 SafeKit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
-<meta property="og:url" content="http://gonghonglou.com/2016/04/01/build-tomcat/index.html">
+<meta property="og:title" content="从 SafeKit 看异常保护及 Method Swizzling 使用分析">
+<meta property="og:url" content="http://gonghonglou.com/2017/09/07/analyse-safekit/index.html">
 <meta property="og:site_name" content="与佳期的个人博客">
-<meta property="og:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
-<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/mysql.png">
-<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/localhost.png">
-<meta property="og:image" content="http://image.gonghonglou.com/apachetomcat/sequel.png">
-<meta property="og:updated_time" content="2017-07-24T04:14:43.000Z">
+<meta property="og:description" content="因为 SafeKit 的异常保护的原理是在 category 替换系统方法，只需在工程中引用 SafeKit 即可避免 NSArray 数组越界等引发的 crash，并不需要额外操作。所以日常开发中渐渐的并不会怎么在意到 SafeKit 的存在。
+最近公司有一份项目需要重构，完全重写的那种，从新建一份空工程开始。之前并没有在意 SafeKit 的存在，所以在最开始并没有在工程中引入 SafeKit">
+<meta property="og:updated_time" content="2017-09-07T07:59:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac上搭建Apache Tomcat ＋ MySQL">
-<meta name="twitter:description" content="因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。
-Java环境点击下载：jdk-7u79-macosx-x64.dmg
-下载之后一路点击安装即可
-MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64 
-下载之后同样一路点击安装即可，默认的安">
-<meta name="twitter:image" content="http://image.gonghonglou.com/apachetomcat/mysql.png">
+<meta name="twitter:title" content="从 SafeKit 看异常保护及 Method Swizzling 使用分析">
+<meta name="twitter:description" content="因为 SafeKit 的异常保护的原理是在 category 替换系统方法，只需在工程中引用 SafeKit 即可避免 NSArray 数组越界等引发的 crash，并不需要额外操作。所以日常开发中渐渐的并不会怎么在意到 SafeKit 的存在。
+最近公司有一份项目需要重构，完全重写的那种，从新建一份空工程开始。之前并没有在意 SafeKit 的存在，所以在最开始并没有在工程中引入 SafeKit">
 
 
 
@@ -148,13 +135,13 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
 
 
 
-  <link rel="canonical" href="http://gonghonglou.com/2016/04/01/build-tomcat/"/>
+  <link rel="canonical" href="http://gonghonglou.com/2017/09/07/analyse-safekit/"/>
 
 
 
 
 
-  <title>Mac上搭建Apache Tomcat ＋ MySQL | 与佳期的个人博客</title>
+  <title>从 SafeKit 看异常保护及 Method Swizzling 使用分析 | 与佳期的个人博客</title>
   
 
 
@@ -317,7 +304,7 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://gonghonglou.com/2016/04/01/build-tomcat/">
+    <link itemprop="mainEntityOfPage" href="http://gonghonglou.com/2017/09/07/analyse-safekit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="与佳期">
@@ -334,7 +321,7 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mac上搭建Apache Tomcat ＋ MySQL</h1>
+          <h1 class="post-title" itemprop="name headline">从 SafeKit 看异常保护及 Method Swizzling 使用分析</h1>
         
 
         <div class="post-meta">
@@ -346,8 +333,8 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-01T16:27:06+08:00">
-                2016-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T14:03:03+08:00">
+                2017-09-07
               </time>
             
 
@@ -369,8 +356,8 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -387,9 +374,9 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/01/build-tomcat/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/07/analyse-safekit/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/04/01/build-tomcat/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/07/analyse-safekit/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,67 +401,34 @@ MySQL数据库点击下载：mysql-5.6.29-osx10.8-x86_64
       
 
       
-        <p>因连接公司项目的测试服务器各种不便所以搭了个本地服务器Apache Tomcat，数据库用的MySQL。写下过程一来总结，二来分享，希望能帮到诸位一二，来介绍需要下载用到的工具吧。</p>
-<h3 id="Java环境"><a href="#Java环境" class="headerlink" title="Java环境"></a>Java环境</h3><p>点击下载：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">jdk-7u79-macosx-x64.dmg</a></p>
-<p>下载之后一路点击安装即可</p>
-<h3 id="MySQL数据库"><a href="#MySQL数据库" class="headerlink" title="MySQL数据库"></a>MySQL数据库</h3><p>点击下载：<a href="https://dev.mysql.com/downloads/file/?id=461482" target="_blank" rel="external">mysql-5.6.29-osx10.8-x86_64</a> </p>
-<p>下载之后同样一路点击安装即可，默认的安装路径为 <code>/usr/local/mysql-5.6.29-osx10.8-x86_64</code></p>
-<p>此时，在系统偏好设置的最下方如下图所示：</p>
-<p><img src="http://image.gonghonglou.com/apachetomcat/mysql.png" alt=""> </p>
-<p>点击MySQL，然后点击 <code>Start MySQL Server</code> 开启数据库服务</p>
-<p>/Users/user/Desktop/BuildTomcat:mysql.png</p>
-<h3 id="阿帕奇服务器"><a href="#阿帕奇服务器" class="headerlink" title="阿帕奇服务器"></a>阿帕奇服务器</h3><p>点击下载：<a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">apache-tomcat-7.0.68.zip</a></p>
-<p>下载解压后放到任一目录中，我选择的是MySQL的默认安装目录下 <code>/usr/local/</code></p>
-<p>终端 <code>cd</code> 到阿帕奇服务器所在目录的 <code>bin</code> 目录下，执行如下命令：</p>
-<pre><code>$ ./startup.sh        // 开启服务器/Users/user/Desktop/mysql.png
-
-$ ./shutdown.sh       // 关闭服务器
-</code></pre><p>新下载的tomcat在启动时会报错：</p>
-<pre><code>./startup.sh: Permission denied
-</code></pre><p>这是因为权限问题，执行如下命令即可解决：</p>
-<pre><code>$ chmod u+x *.sh    //表示对当前目录下的*.sh文件的所有者增加可执行权限
-</code></pre><p>再次执行开启服务器命令即可。成功开启服务器后，浏览器打开 <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> 出现如下界面表示开启成功：</p>
-<p><img src="http://image.gonghonglou.com/apachetomcat/localhost.png" alt=""></p>
-<p>如上图点击<code>Manager App</code>登录需要账号密码，点击<code>取消</code>会有解释。<br>即打开<code>/usr/local/apache-tomcat-7.0.68/conf</code>目录下的<code>tomcat-users.xml</code>文件，在下方添加配置用户名密码如：</p>
-<pre><code>&lt;role rolename=&quot;manager-gui&quot;/&gt;
-&lt;user username=&quot;tomcat_name&quot; password=&quot;tomcat_password&quot; roles=&quot;manager-gui&quot;/&gt;
-</code></pre><h3 id="Sequel-Pro"><a href="#Sequel-Pro" class="headerlink" title="Sequel Pro"></a>Sequel Pro</h3><p>点击下载mysql的图形化工具：<a href="http://sequelpro.com" target="_blank" rel="external">sequel-pro-1.1.1.dmg</a> </p>
-<p>安装成功后打开，设置如下：</p>
-<p><img src="http://image.gonghonglou.com/apachetomcat/sequel.png" alt=""></p>
-<p><code>Name</code>随意，MySQL初始用户名为<code>root</code> 密码为空，因为初始并没有数据库所以<code>Database</code>也为空。</p>
-<p>点击<code>Connect</code>进入后</p>
-<p>1：左上角选择<code>Add Database...</code>，填入一个名字如<code>troy</code>，点击<code>add</code></p>
-<p>2：<code>Sequel Pro</code>菜单栏选择<code>Database</code>–&gt;<code>User Accounts...</code>,给 root 用户添加用户名密码，点击<code>Apply</code></p>
-<p>这样在下次登录时就要把<code>Password</code>和<code>Database</code>填上再连接</p>
-<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><p>将自己的<code>.sql</code>文件用<code>Sequel Pro</code>打开并运行，这样在数据库中就有了数据</p>
-<p>将自己的<code>.war</code>的<code>jar</code>包添加到<code>/usr/local/apache-tomcat-7.0.68/webapps</code>目录下，这样就有了执行程序</p>
-<p>终端 <code>cd</code> 到阿帕奇服务器所在目录的 <code>bin</code> 目录下，开启服务器可执行如下任一命令：</p>
-<pre><code>$ ./startup.sh         // 单纯开启服务器
-
-$ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
-</code></pre><p>到这里本地服务器就开启了</p>
-<p>执行如下命令，查看服务器在局域网中的地址：</p>
-<pre><code>$ ifconfig
-</code></pre><p>这样你的手机等设备也可以连接到本地服务器了</p>
-<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><ol>
-<li><p>jdk-7u79-macosx-x64.dmg<br> java环境</p>
+        <p>因为 <a href="https://github.com/JJMM/SafeKit" target="_blank" rel="external">SafeKit</a> 的异常保护的原理是在 category 替换系统方法，只需在工程中引用 SafeKit 即可避免 NSArray 数组越界等引发的 crash，并不需要额外操作。所以日常开发中渐渐的并不会怎么在意到 SafeKit 的存在。</p>
+<p>最近公司有一份项目需要重构，完全重写的那种，从新建一份空工程开始。之前并没有在意 SafeKit 的存在，所以在最开始并没有在工程中引入 SafeKit，直到一次痛苦的 debug 发现 crash 发生在这样的地方：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cacheId 为 NSNmber 类型</span></span><br><span class="line"><span class="selector-tag">if</span> ([obj1.cacheId <span class="attribute">isEqualToNumber</span>:obj2.cacheId]) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>报错信息：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*** Terminating app due <span class="keyword">to</span> uncaught exception <span class="string">'NSInvalidArgumentException'</span>, reason: <span class="string">'-[__NSCFNumber compare:]: nil argument'</span></span><br></pre></td></tr></table></figure></p>
+<p>因为在执行 <code>NSNmber</code> 的 <code>isEqualToNumber:</code> 方法时并没有判断 <code>obj2.cacheId</code> 是否为 <code>nil</code>，苹果的API也没有对异常保护，所以当 <code>obj2.cacheId</code> 为 <code>nil</code> 时便会 crash。然后才想起 <a href="https://github.com/JJMM/SafeKit" target="_blank" rel="external">SafeKit</a> </p>
+<p>而且以这种写法 Xcode 也不会给出警告，所以在 coding 时很容易忽略为 <code>nil</code> 的情况。</p>
+<h1 id="SafeKit-源码"><a href="#SafeKit-源码" class="headerlink" title="SafeKit 源码"></a><a href="https://github.com/JJMM/SafeKit" target="_blank" rel="external">SafeKit</a> 源码</h1><p>SafeKit 的源码非常少，原理非常简单，就是将 <code>NSNumber</code>, <code>NSArray</code>, <code>NSMutableArray</code>, <code>NSDictionary</code>, <code>NSMutableArray</code>, <code>NSString</code>, <code>NSMutableString</code> 中会因越界、为 <code>nil</code> 等情况发生 crash 的方法替换为自己的方法，在自己的方法中加判断，如果越界、为 <code>nil</code>等 直接 return，否则继续执行。</p>
+<h2 id="例如NSArray"><a href="#例如NSArray" class="headerlink" title="例如NSArray"></a>例如NSArray</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"NSArray+SafeKit.h"</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">"NSObject+swizzle.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSArray</span> (<span class="title">SafeKit</span>)</span></span><br><span class="line"></span><br><span class="line">- (instancetype)initWithObjects_safe:(<span class="keyword">id</span> *)objects count:(<span class="built_in">NSUInteger</span>)cnt &#123;</span><br><span class="line">    <span class="built_in">NSUInteger</span> newCnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSUInteger</span> i = <span class="number">0</span>; i &lt; cnt; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!objects[i]) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        newCnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">self</span> = [<span class="keyword">self</span> initWithObjects_safe:objects count:newCnt];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)safe_objectAtIndex:(<span class="built_in">NSUInteger</span>)index &#123;</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= [<span class="keyword">self</span> count]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> safe_objectAtIndex:index];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSArray</span> *)safe_arrayByAddingObject:(<span class="keyword">id</span>)anObject &#123;</span><br><span class="line">    <span class="keyword">if</span> (!anObject) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">self</span> safe_arrayByAddingObject:anObject];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        [<span class="keyword">self</span> safe_swizzleMethod:<span class="keyword">@selector</span>(initWithObjects_safe:count:) tarClass:<span class="string">@"__NSPlaceholderArray"</span> tarSel:<span class="keyword">@selector</span>(initWithObjects:count:)];</span><br><span class="line">        [<span class="keyword">self</span> safe_swizzleMethod:<span class="keyword">@selector</span>(safe_objectAtIndex:) tarClass:<span class="string">@"__NSArrayI"</span> tarSel:<span class="keyword">@selector</span>(objectAtIndex:)];</span><br><span class="line">        [<span class="keyword">self</span> safe_swizzleMethod:<span class="keyword">@selector</span>(safe_arrayByAddingObject:) tarClass:<span class="string">@"__NSArrayI"</span> tarSel:<span class="keyword">@selector</span>(arrayByAddingObject:)];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>以 <code>safe_arrayByAddingObject:</code> 替换 <code>arrayByAddingObject:</code> 方法，当 anObject 不存在则直接返回self<br>以 <code>safe_objectAtIndex:</code> 替换 <code>objectAtIndex:</code> 方法，当数组越界时直接返回 nil</p>
+<p>需要注意的是：<br>在 iOS10 及以前，NSArray 的语法糖 <code>array[i]</code> 用法会先调用 <code>- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx NS_AVAILABLE(10_8, 6_0);</code> 方法，如果没有再调用 <code>- (ObjectType)objectAtIndex:(NSUInteger)index;</code> 方法，所以 SafeKit 可以保证安全。</p>
+<p>但是在 iOS11 beta 版中， <code>array[i]</code> 语法糖会直接调用  <code>- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx NS_AVAILABLE(10_8, 6_0);</code> 方法，如果没有则直接报错，所以为了适配 iOS11 ，在 SafeKit 的 NSArray+SafeKit 分类中还应该替换掉 <code>- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx NS_AVAILABLE(10_8, 6_0);</code> 方法。</p>
+<h1 id="Method-Swizzling-使用分析"><a href="#Method-Swizzling-使用分析" class="headerlink" title="Method Swizzling 使用分析"></a>Method Swizzling 使用分析</h1><p>Method Swizzling 大概是 Runtime 中最常用的一个黑魔法了，它本质上就是对 IMP 和 SEL 进行交换。</p>
+<h2 id="Method-Swizzling-应该在-load-方法中执行"><a href="#Method-Swizzling-应该在-load-方法中执行" class="headerlink" title="Method Swizzling 应该在 +load 方法中执行"></a>Method Swizzling 应该在 +load 方法中执行</h2><p>+load 方法是当类或分类被添加到 Objective-C runtime 时被调用的；<br>+initialize 方法是在类或它的子类收到第一条消息之前被调用的，这里所指的消息包括实例方法和类方法的调用。也就是说 +initialize 方法是以懒加载的方式被调用的，如果程序一直没有给某个类或它的子类发送消息，那么这个类的 +initialize 方法是永远不会被调用的。</p>
+<p>所以 Method Swizzling 应该在 +load 方法中执行，避免 Method Swizzling 不会被执行到的情况</p>
+<h2 id="使用-dispatch-once-保证执行次数"><a href="#使用-dispatch-once-保证执行次数" class="headerlink" title="使用 dispatch_once 保证执行次数"></a>使用 dispatch_once 保证执行次数</h2><p>Method Swizzling 本质上就是对 IMP 和 SEL 进行交换，如果被执行偶数次那么调换就会失效，相当于没有调换。比如同时调换 NSArray 和 NSMutableArray 中的 objectAtIndex:，如果不用 dispatch_once 保证执行，就可能导致调换方法失效。</p>
+<p>也正因为这个原因，在 load 方法中执行 Method Swizzling 时不可调用 <code>[super load]</code> 方法，否则同样会导致调换方法失效。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.leichunfeng.com/blog/2015/06/14/objective-c-method-swizzling-best-practice/" target="_blank" rel="external">Objective-C Method Swizzling 的最佳实践</a> 一文中给出的最佳实践：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@interface</span> UIViewController (MRCUMAnalytics)</span><br><span class="line"></span><br><span class="line"><span class="variable">@end</span></span><br><span class="line"></span><br><span class="line"><span class="variable">@implementation</span> UIViewController (MRCUMAnalytics)</span><br><span class="line"></span><br><span class="line">+ (void)load &#123;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    <span class="selector-tag">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        Class class = <span class="selector-attr">[self class]</span>;</span><br><span class="line"></span><br><span class="line">        SEL originalSelector = <span class="variable">@selector</span>(<span class="attribute">viewWillAppear</span>:);</span><br><span class="line">        SEL swizzledSelector = <span class="variable">@selector</span>(<span class="attribute">mrc_viewWillAppear</span>:);</span><br><span class="line"></span><br><span class="line">        Method originalMethod = class_getInstanceMethod(class, originalSelector);</span><br><span class="line">        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);</span><br><span class="line"></span><br><span class="line">        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));</span><br><span class="line">        <span class="selector-tag">if</span> (success) &#123;</span><br><span class="line">            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            method_exchangeImplementations(originalMethod, swizzledMethod);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#pragma</span> <span class="selector-tag">mark</span> <span class="selector-tag">-</span> <span class="selector-tag">Method</span> <span class="selector-tag">Swizzling</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">mrc_viewWillAppear</span><span class="selector-pseudo">:(BOOL)animated</span> &#123;</span><br><span class="line">    <span class="selector-attr">[self mrc_viewWillAppear:animated]</span>;</span><br><span class="line">    <span class="selector-attr">[MobClick beginLogPageView:NSStringFromClass([self class]</span>)];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@end</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.jianshu.com/p/db6dc23834e3" target="_blank" rel="external">神经病院Objective-C Runtime出院第三天——如何正确使用Runtime</a> 一文中给出的Swizzling Method 标准定义，避免命名冲突：<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">typedef IMP *IMPPointer;</span><br><span class="line"></span><br><span class="line">BOOL class_swizzleMethodAndStore(<span class="class"><span class="keyword">Class</span> <span class="title">class</span>, <span class="title">SEL</span> <span class="title">original</span>, <span class="title">IMP</span> <span class="title">replacement</span>, <span class="title">IMPPointer</span> <span class="title">store</span>) &#123;</span></span><br><span class="line">    IMP imp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="function"><span class="keyword">Method</span> <span class="title">method</span> =</span> class_getInstanceMethod(<span class="class"><span class="keyword">class</span>, <span class="title">original</span>);</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="function"><span class="keyword">method</span>) &#123;</span></span><br><span class="line">        <span class="keyword">const</span> char *type = method_getTypeEncoding(<span class="function"><span class="keyword">method</span>);</span></span><br><span class="line">        imp = class_replaceMethod(<span class="class"><span class="keyword">class</span>, <span class="title">original</span>, <span class="title">replacement</span>, <span class="title">type</span>);</span></span><br><span class="line">        <span class="keyword">if</span> (!imp) &#123;</span><br><span class="line">            imp = method_getImplementation(<span class="function"><span class="keyword">method</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (imp &amp;&amp; store) &#123; *store = imp; &#125;</span><br><span class="line">    <span class="keyword">return</span> (imp != <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@implementation NSObject (FRRuntimeAdditions)</span><br><span class="line">+ (BOOL)swizzle:(SEL)original with:(IMP)replacement store:(IMPPointer)store &#123;</span><br><span class="line">    <span class="keyword">return</span> class_swizzleMethodAndStore(<span class="built_in">self</span>, original, replacement, store);</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><ul>
+<li><p>小白出手，请多指教。如言有误，还望斧正！</p>
 </li>
-<li><p>mysql-5.6.29-osx10.9-x86_64.dmg<br> mysql数据库</p>
+<li><p>转载请保留原文地址：<a href="http://gonghonglou.com/2017/09/07/analyse-safekit/">http://gonghonglou.com/2017/09/07/analyse-safekit/</a></p>
 </li>
-<li><p>apache-tomcat-7.0.68.zip<br> 阿帕奇服务器</p>
-</li>
-<li><p>sequel-pro-1.1.1.dmg<br> mysql的图形化工具</p>
-</li>
-<li><p>troy_2016-03-25.sql<br> sql语句，放在 Sequel Pro中执行，生成数据）</p>
-</li>
-<li><p>rest.war<br> 运行程序，放在 apache-tomcat-7.0.68/webapps 目录下</p>
-</li>
-<li><p>开启服务器</p>
-</li>
-<li><p>愉快的玩耍</p>
-</li>
-</ol>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>转载请保留原文地址：<a href="http://gonghonglou.com/2016/04/01/build-tomcat">http://gonghonglou.com/2016/04/01/build-tomcat</a></p>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://blog.leichunfeng.com/blog/2015/05/02/objective-c-plus-load-vs-plus-initialize/" target="_blank" rel="external">Objective-C +load vs +initialize</a></li>
+<li><a href="http://blog.leichunfeng.com/blog/2015/06/14/objective-c-method-swizzling-best-practice/" target="_blank" rel="external">Objective-C Method Swizzling 的最佳实践</a></li>
+<li><a href="http://www.jianshu.com/p/db6dc23834e3" target="_blank" rel="external">神经病院Objective-C Runtime出院第三天——如何正确使用Runtime</a></li>
+</ul>
 
       
     </div>
@@ -511,8 +465,8 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/update-pods-que/" rel="next" title="解决OS X 10.11之后CocoaPods的升级问题">
-                <i class="fa fa-chevron-left"></i> 解决OS X 10.11之后CocoaPods的升级问题
+              <a href="/2017/08/09/100days-100blogs/" rel="next" title="100 Days, 100 Blogs">
+                <i class="fa fa-chevron-left"></i> 100 Days, 100 Blogs
               </a>
             
           </div>
@@ -520,10 +474,6 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/10/chongming-cycling/" rel="prev" title="记环崇明岛骑行">
-                记环崇明岛骑行 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -687,7 +637,7 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java环境"><span class="nav-number">1.</span> <span class="nav-text">Java环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阿帕奇服务器"><span class="nav-number">3.</span> <span class="nav-text">阿帕奇服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequel-Pro"><span class="nav-number">4.</span> <span class="nav-text">Sequel Pro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加数据"><span class="nav-number">5.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下"><span class="nav-number">6.</span> <span class="nav-text">总结一下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SafeKit-源码"><span class="nav-number">1.</span> <span class="nav-text">SafeKit 源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例如NSArray"><span class="nav-number">1.1.</span> <span class="nav-text">例如NSArray</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method-Swizzling-使用分析"><span class="nav-number">2.</span> <span class="nav-text">Method Swizzling 使用分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-Swizzling-应该在-load-方法中执行"><span class="nav-number">2.1.</span> <span class="nav-text">Method Swizzling 应该在 +load 方法中执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-dispatch-once-保证执行次数"><span class="nav-number">2.2.</span> <span class="nav-text">使用 dispatch_once 保证执行次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.3.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.1.</span> <span class="nav-text">Reference</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -830,9 +780,9 @@ $ ./catalina.sh run    // 开启服务器，控制台可打印服务器数据
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gonghonglou.com/2016/04/01/build-tomcat/';
-          this.page.identifier = '2016/04/01/build-tomcat/';
-          this.page.title = 'Mac上搭建Apache Tomcat ＋ MySQL';
+          this.page.url = 'http://gonghonglou.com/2017/09/07/analyse-safekit/';
+          this.page.identifier = '2017/09/07/analyse-safekit/';
+          this.page.title = '从 SafeKit 看异常保护及 Method Swizzling 使用分析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://gonghonglou.disqus.com/embed.js';
