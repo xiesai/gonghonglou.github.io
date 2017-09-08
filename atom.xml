@@ -117,11 +117,16 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-09-08T05:20:06.000Z</updated>
+    <updated>2017-09-08T17:49:36.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-31-Objective-C-Runtime&quot;&gt;&lt;a href=&quot;#Day-31-Objective-C-Runtime&quot; class=&quot;headerlink&quot; title=&quot;# Day 31 : Objective-C Runtime&quot;&gt;&lt;/a&gt;# Day 31 : &lt;a href=&quot;http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/?url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Objective-C Runtime&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://yulingtianxia.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;玉令天下的博客&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-32-HTTPS-是如何保证安全的？&quot;&gt;&lt;a href=&quot;#Day-32-HTTPS-是如何保证安全的？&quot; class=&quot;headerlink&quot; title=&quot;# Day 32 : HTTPS 是如何保证安全的？&quot;&gt;&lt;/a&gt;# Day 32 : &lt;a href=&quot;http://www.jianshu.com/p/b894a7e1c779&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HTTPS 是如何保证安全的？&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/87b62ec36074&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程序员Delton&lt;/a&gt; 发布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;HTTP 面临的一个问题叫做 “窃听” 或者 “嗅探” ，指的是和你在同一个网络下或者是途径的路由上的攻击者可以偷窥到你传输的内容。&lt;/li&gt;
+&lt;li&gt;HTTPS 通常是通过“加密”来解决这个问题。&lt;br&gt;2.1. 对称加密：需要一个密钥 key 来加密整个信息，加密和解密所需要使用的 key 是一样的。比如 AES 算法，在数学上保证了，只要你使用的 key 足够足够足够足够的长，破解是几乎不可能的。&lt;br&gt;2.2. 非对称加密：可以生成一对密钥 (k1, k2)，凡是 k1 加密的数据，k1 自身不能解密，而需要 k2 才能解密；凡是 k2 加密的数据，k2 不能解密，需要 k1 才能解密。这种算法事实上有很多，常用的是 RSA，其基于的数学原理是两个大素数的乘积很容易算，而拿到这个乘积去算出是哪两个素数相乘就很复杂了。&lt;br&gt;2.2.1. 用 RSA 技术生成了一对 k1、k2，你把 k1 用明文发送了出去，路经有人或许会截取，但是没有用，k1 加密的数据需要用 k2 才能解密。而此时，k2 在你自己的手里。k1 送达目的地后，目的地的人会去准备一个接下来用于对称加密传输的密钥 key，然后用收到的 k1 把 key 加密了，把加密好的数据传回来。路上的人就算截取到了，也解密不出 key。等到了你自己手上，你用手上的 k2 把用 k1 加密的 key 解出来，现在就只有你和你的目的地拥有 key，你们就可以用 AES 算法进行对称加密的传输啦。&lt;br&gt;2.2.2. 第一个问题：因为 非对称加密 的密码对生成和加密的消耗时间比较长，为了节省双方的计算时间，通常只用它来交换密钥，而非直接用来传输数据。&lt;br&gt;2.2.3. 第二个问题：中间人攻击。&lt;br&gt;2.2.4. 为解决第二个问题引入一个第三方叫做 CA。CA 是一些非常权威的专门用于认证一个网站合法性的组织。服务商可以向他们申请一个证书，使得他们建立安全连接时可以带上 CA 的签名。如果和你建立安全连接的人带着这些人的签名，那么认为这个安全连接是安全的，没有遭到中间人攻击。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Day-31-Objective-C-Runtime&quot;&gt;&lt;a href=&quot;#Day-31-Objective-C-Runtime&quot; class=&quot;headerlink&quot; title=&quot;# Day 31 : Objective-C Runtime&quot;&gt;&lt;/a&gt;# Day 31 : &lt;a href=&quot;http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/?url_type=39&amp;amp;object_type=webpage&amp;amp;pos=1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Objective-C Runtime&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://yulingtianxia.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;玉令天下的博客&lt;/a&gt; 发布&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;引言&lt;/li&gt;
 &lt;li&gt;简介&lt;/li&gt;
