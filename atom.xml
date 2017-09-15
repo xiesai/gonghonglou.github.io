@@ -907,6 +907,87 @@
   </entry>
   
   <entry>
+    <title>技术博跑题之手把手教你制作iPhone铃声</title>
+    <link href="http://gonghonglou.com/2016/09/21/make-ringtone/"/>
+    <id>http://gonghonglou.com/2016/09/21/make-ringtone/</id>
+    <published>2016-09-21T03:46:21.000Z</published>
+    <updated>2016-09-21T05:05:40.000Z</updated>
+    
+    <content type="html">&lt;p&gt;有没有觉得手机来电撞铃太痛&lt;/p&gt;
+&lt;p&gt;有没有觉得闹钟太安静叫不醒&lt;/p&gt;
+&lt;p&gt;iPhone手机不能直接在音乐软件里设置铃声，但也提供了可以更换铃声的方法，需要用到 iTunes 软件，虽然麻烦，但好歹也可以更换铃声了&lt;/p&gt;
+&lt;p&gt;生命在于折腾 ～&lt;/p&gt;
+&lt;p&gt;硬件    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MacBook Pro 10.11.5    &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;iPhone6s iOS9&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;软件         &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;iTunes 12.3.3.17    &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;网易云音乐 1.4.5&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;获取歌曲&quot;&gt;&lt;a href=&quot;#获取歌曲&quot; class=&quot;headerlink&quot; title=&quot;获取歌曲&quot;&gt;&lt;/a&gt;获取歌曲&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;1、打开网易云音乐（为什么是网易云音乐？喜欢、任性～）。搜索喜欢的歌曲，下载后，在 &lt;code&gt;Finder&lt;/code&gt; 中显示，拷贝出来放到桌面（便于操作）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8811.20.48.png&quot; alt=&quot;&quot;&gt;        &lt;/p&gt;
+&lt;h2 id=&quot;制作铃声&quot;&gt;&lt;a href=&quot;#制作铃声&quot; class=&quot;headerlink&quot; title=&quot;制作铃声&quot;&gt;&lt;/a&gt;制作铃声&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;2、打开 iTunes 软件。点击 🎵 图标，选择播放列表（便于操作），将桌面上的 &lt;code&gt;.mp3&lt;/code&gt; 格式的音乐拖到 iTunes 里&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8810.40.37.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;3、选中播放列表中的音乐文件，右键 –&amp;gt; 显示简介 –&amp;gt; 选项，设置自己喜欢的开始到结束的时间段（iPhone铃声最长设置为40秒），不要忘记前面打勾☑️ 确定之后播放试听一下是否满意。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8810.46.26.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8810.47.30.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;4、如果满意呢，就选中播放列表中的音乐文件，右键 –&amp;gt; 创建ACC版本，在播放列表下边会出现一个新文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8810.54.28.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;5、选中新文件，右键 –&amp;gt; 在 &lt;code&gt;Finder&lt;/code&gt; 中显示，这是一个 &lt;code&gt;.m4a&lt;/code&gt; 格式的文件，将这个文件拷贝出来放到桌面（便于操作），更改后缀名为 &lt;code&gt;.m4r&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;-&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;6、将播放列表中生成的ACC版本文件删除&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;-&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;7、点击 &lt;code&gt;···&lt;/code&gt; 符号，选中铃声，将桌面上的 &lt;code&gt;.m4r&lt;/code&gt;文件拖到列表里&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8811.06.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;8、手机USB连接到电脑，iTunes 里会出现一个 📱 标志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;-&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;9、点击 📱 标志，选中铃声，勾选你喜欢的铃声，点击 &lt;code&gt;同步&lt;/code&gt; 即可(这里的同步会把制作的铃声同步到iPhone，也会把iPhone上的软件等等数据备份到iTunes里，所以第一次同步时会比较慢)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn9bi.com1.z0.glb.clouddn.com/ringtone/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-09-21%20%E4%B8%8A%E5%8D%8811.09.05.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;完成&quot;&gt;&lt;a href=&quot;#完成&quot; class=&quot;headerlink&quot; title=&quot;完成&quot;&gt;&lt;/a&gt;完成&lt;/h2&gt;&lt;p&gt;同步完成后在iPhone -&amp;gt; 设置 -&amp;gt; 声音 -&amp;gt; 电话铃声 里看到了，另外闹钟铃声也可以使用。&lt;/p&gt;
+&lt;p&gt;✌️✌️✌️&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有没有觉得手机来电撞铃太痛&lt;/p&gt;
+&lt;p&gt;有没有觉得闹钟太安静叫不醒&lt;/p&gt;
+&lt;p&gt;iPhone手机不能直接在音乐软件里设置铃声，但也提供了可以更换铃声的方法，需要用到 iTunes 软件，虽然麻烦，但好歹也可以更换铃声了&lt;/p&gt;
+&lt;p&gt;生命在于折腾 ～&lt;/p&gt;
+&lt;p&gt;硬件
+    
+    </summary>
+    
+      <category term="Life" scheme="http://gonghonglou.com/categories/Life/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>iOS中关于二维码的识别与生成</title>
     <link href="http://gonghonglou.com/2016/07/24/QRCode/"/>
     <id>http://gonghonglou.com/2016/07/24/QRCode/</id>
