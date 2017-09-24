@@ -117,11 +117,23 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-09-22T03:29:57.000Z</updated>
+    <updated>2017-09-24T10:10:06.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-45-iOS-处理图片的一些小-Tip&quot;&gt;&lt;a href=&quot;#Day-45-iOS-处理图片的一些小-Tip&quot; class=&quot;headerlink&quot; title=&quot;# Day 45 : iOS 处理图片的一些小 Tip&quot;&gt;&lt;/a&gt;# Day 45 : &lt;a href=&quot;https://blog.ibireme.com/2015/11/02/ios_image_tips/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 处理图片的一些小 Tip&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://blog.ibireme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Garan no Dou (ibireme)&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-47-不再安全的-OSSpinLock&quot;&gt;&lt;a href=&quot;#Day-47-不再安全的-OSSpinLock&quot; class=&quot;headerlink&quot; title=&quot;# Day 47 : 不再安全的 OSSpinLock&quot;&gt;&lt;/a&gt;# Day 47 : &lt;a href=&quot;https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;不再安全的 OSSpinLock&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://blog.ibireme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Garan no Dou (ibireme)&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;– 最终的结论就是，除非开发者能保证访问锁的线程全部都处于同一优先级，否则 iOS 系统中所有类型的自旋锁都不能再使用了。&lt;br&gt;– 可以看到除了 OSSpinLock 外，dispatch_semaphore 和 pthread_mutex 性能是最高的。有消息称，苹果在新系统中已经优化了 pthread_mutex 的性能，所以它看上去和 OSSpinLock 差距并没有那么大了。&lt;/p&gt;
+&lt;h1 id=&quot;Day-46-iOS-保持界面流畅的技巧&quot;&gt;&lt;a href=&quot;#Day-46-iOS-保持界面流畅的技巧&quot; class=&quot;headerlink&quot; title=&quot;# Day 46 : iOS 保持界面流畅的技巧&quot;&gt;&lt;/a&gt;# Day 46 : &lt;a href=&quot;https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 保持界面流畅的技巧&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://blog.ibireme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Garan no Dou (ibireme)&lt;/a&gt; 发布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;演示项目&lt;/li&gt;
+&lt;li&gt;屏幕显示图像的原理&lt;/li&gt;
+&lt;li&gt;卡顿产生的原因和解决方案&lt;br&gt;3.1. CPU 资源消耗原因和解决方案&lt;br&gt;3.2. GPU 资源消耗原因和解决方案&lt;/li&gt;
+&lt;li&gt;AsyncDisplayKit&lt;br&gt;4.1. ASDK 的由来&lt;br&gt;4.2. ASDK 的资料&lt;br&gt;4.3. ASDK 的基本原理&lt;br&gt;4.4. ASDK 的图层预合成&lt;br&gt;4.5. ASDK 异步并发操作&lt;br&gt;4.6. Runloop 任务分发&lt;/li&gt;
+&lt;li&gt;微博 Demo 性能优化技巧&lt;br&gt;5.1. 预排版&lt;br&gt;5.2. 预渲染&lt;br&gt;5.3. 异步绘制&lt;br&gt;5.4. 全局并发控制&lt;br&gt;5.5. 更高效的异步图片加载&lt;br&gt;5.6. 其他可以改进的地方&lt;/li&gt;
+&lt;li&gt;如何评测界面的流畅度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;YY大神的深度好文，之前已经读过，温故而知新！&lt;/p&gt;
+&lt;h1 id=&quot;Day-45-iOS-处理图片的一些小-Tip&quot;&gt;&lt;a href=&quot;#Day-45-iOS-处理图片的一些小-Tip&quot; class=&quot;headerlink&quot; title=&quot;# Day 45 : iOS 处理图片的一些小 Tip&quot;&gt;&lt;/a&gt;# Day 45 : &lt;a href=&quot;https://blog.ibireme.com/2015/11/02/ios_image_tips/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 处理图片的一些小 Tip&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://blog.ibireme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Garan no Dou (ibireme)&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;– 如何把 GIF 动图保存到相册&lt;br&gt;– 将 UIImage 保存到磁盘，用什么方式最好&lt;br&gt;– UIImage 缓存是怎么回事&lt;br&gt;– 用 imageWithData 能不能避免缓存&lt;br&gt;– 怎么能避免缓存&lt;br&gt;– 能直接取到图片解码后的数据，而不是通过画布取到吗&lt;br&gt;– 如何判断一个文件的图片类型&lt;br&gt;– 怎样像浏览器那样边下载边显示图片&lt;/p&gt;
 &lt;h1 id=&quot;Day-44-移动端图片格式调研&quot;&gt;&lt;a href=&quot;#Day-44-移动端图片格式调研&quot; class=&quot;headerlink&quot; title=&quot;# Day 44 : 移动端图片格式调研&quot;&gt;&lt;/a&gt;# Day 44 : &lt;a href=&quot;https://blog.ibireme.com/2015/11/02/mobile_image_benchmark/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;移动端图片格式调研&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://blog.ibireme.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Garan no Dou (ibireme)&lt;/a&gt; 发布&lt;/p&gt;
 &lt;ol&gt;
