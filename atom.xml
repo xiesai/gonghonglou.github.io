@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gonghonglou.com/"/>
-  <updated>2017-10-09T04:02:09.000Z</updated>
+  <updated>2017-09-08T05:58:46.000Z</updated>
   <id>http://gonghonglou.com/</id>
   
   <author>
@@ -14,30 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Effective Objective-C 2.0 读书笔记</title>
-    <link href="http://gonghonglou.com/2017/10/09/Effective-Objective-C-note/"/>
-    <id>http://gonghonglou.com/2017/10/09/Effective-Objective-C-note/</id>
-    <published>2017-10-09T03:50:33.000Z</published>
-    <updated>2017-10-09T04:02:09.000Z</updated>
-    
-    <content type="html">&lt;p&gt;《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。&lt;/p&gt;
-&lt;p&gt;#第一章：熟悉Objective-C&lt;/p&gt;
-&lt;h2 id=&quot;第一条：了解Objective-C语言的起源&quot;&gt;&lt;a href=&quot;#第一条：了解Objective-C语言的起源&quot; class=&quot;headerlink&quot; title=&quot;第一条：了解Objective-C语言的起源&quot;&gt;&lt;/a&gt;第一条：了解Objective-C语言的起源&lt;/h2&gt;&lt;p&gt;要点：&lt;br&gt;– Objective-C为C语言添加了面向对象的特性，是其超集。Objective-C使用动态绑定的消息结构，也就是说，在运行时才会去检查对象类型。接收一条消息之后，究竟应执行何种代码，由运行期环境而非编译器来决定。&lt;br&gt;– 理解C语言的核心概念有助于写好Objective-C程序。尤其要掌握内存模型与指针。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。&lt;/p&gt;
-&lt;p&gt;#第一章：熟悉Objective-C&lt;/p
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://gonghonglou.com/categories/iOS/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>从 SafeKit 看异常保护及 Method Swizzling 使用分析</title>
@@ -141,11 +117,15 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-10-10T03:52:38.000Z</updated>
+    <updated>2017-10-11T06:10:45.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-63-小笨狼漫谈多线程：GCD-一&quot;&gt;&lt;a href=&quot;#Day-63-小笨狼漫谈多线程：GCD-一&quot; class=&quot;headerlink&quot; title=&quot;# Day 63 : 小笨狼漫谈多线程：GCD(一)&quot;&gt;&lt;/a&gt;# Day 63 : &lt;a href=&quot;http://www.jianshu.com/p/c2b14bb999de&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;小笨狼漫谈多线程：GCD(一)&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/1f93e3b1f3da&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;小笨狼&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-64-深入理解-weak-strong-dance&quot;&gt;&lt;a href=&quot;#Day-64-深入理解-weak-strong-dance&quot; class=&quot;headerlink&quot; title=&quot;# Day 64 : 深入理解 weak-strong dance&quot;&gt;&lt;/a&gt;# Day 64 : &lt;a href=&quot;http://www.jianshu.com/p/4e6153ea2734&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深入理解 weak-strong dance&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/71a9f866a9f5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sheepy&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;– 问：self指向的对象已经被废弃的情况下，_handler成员变量也不存在了，在 ARC 下会自动释放它指向的 Block 对象，这个时候 Block 对象应该已经没有被变量所持有了，它的引用计数应该已经为0了，它应该被废弃了啊，为什么它还能继续存在并执行？&lt;br&gt;– 答：把 Block 赋值给self.handler的时候，在栈上生成的 Block 被复制了一份，放到堆上，并被_handler持有。而之后如果你把这个 Block 当作 GCD 参数使用（比较常见的需要使用 weak-strong dance 的情况），GCD 函数内部会把该 Block 再 copy 一遍，而此时 Block 已经在堆上，则该 Block 的引用计数加1。所以此时 Block 的引用计数是大于1的，即使self对象被废弃（譬如执行了退出当前页面之类的操作），Block 会被 release 一次，但它的引用计数仍然大于0，故而不会被废弃。&lt;/p&gt;
+&lt;p&gt;– 问：本来在 Block 内部使用weakSelf就是为了让 Block 对象不持有self指向的对象，那在 Block 内部又把weakSelf赋给strongSelf不就又持有self对象了么？又循环引用了？&lt;br&gt;– 答：&lt;strong&gt;weak是个神奇的东西，每次使用&lt;/strong&gt;weak变量的时候，都会取出该变量指向的对象并 retain，然后将该对象注册到 autoreleasepool 中。通过上述代码我们可以发现，在__xx_block_func_y中，局部变量occlass会持有捕获的对象，然后对象会被注册到 autoreleasepool。这是延长对象生命周期的关键（保证在执行 Block 期间对象不会被废弃），但这不会造成循环引用，当函数执行结束，变量occlass超出作用域，过一会儿（一般一次 RunLoop 之后），对象就被释放了。所以 weak-strong dance 的行为非常符合预期：延长捕获对象的生命周期，一旦 Block 执行完，对象被释放，而 Block 也会被释放（如果被 GCD 之类的 API copy 过一次增加了引用计数，那最终也会被 GCD 释放）&lt;/p&gt;
+&lt;p&gt;关于&lt;strong&gt;weak：&lt;br&gt;– &lt;/strong&gt;weak修饰的变量不会持有对象，它用一张 weak 表（类似于引用计数表的散列表）来管理对象和变量。赋值的时候它会以赋值对象的地址作为 key，变量的地址为 value，注册到 weak 表中。一旦该对象被废弃，就通过对象地址在 weak 表中找到变量的地址，赋值为 nil，然后将该条记录从 weak 表中删除。&lt;br&gt;– 每使用一次_weak变量就会把对象注册到 autoreleasepool 中，所以如果短时间内大量使用_weak变量的话，会导致注册到 autoreleasepool 中的对象大量增加，占用一定内存。而 weak-strong dance 恰好无意中解决了这个隐患，在执行 Block 时，把_weak变量（weakSelf）赋值给一个临时变量（strongSelf），之后一直都使用这个临时变量，所以_weak变量只使用了一次，也就只有一个对象注册到 autoreleasepool 中。&lt;/p&gt;
+&lt;h1 id=&quot;Day-63-小笨狼漫谈多线程：GCD-一&quot;&gt;&lt;a href=&quot;#Day-63-小笨狼漫谈多线程：GCD-一&quot; class=&quot;headerlink&quot; title=&quot;# Day 63 : 小笨狼漫谈多线程：GCD(一)&quot;&gt;&lt;/a&gt;# Day 63 : &lt;a href=&quot;http://www.jianshu.com/p/c2b14bb999de&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;小笨狼漫谈多线程：GCD(一)&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/1f93e3b1f3da&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;小笨狼&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;– dispatch_queue_t&lt;br&gt;– async：&lt;br&gt;&lt;code&gt;void dispatch_async(dispatch_queue_t queue, dispatch_block_t block);&lt;/code&gt;&lt;br&gt;&lt;code&gt;void dispatch_async_f(dispatch_queue_t queue, void *context, dispatch_function_t work);&lt;/code&gt;&lt;br&gt;– sync：&lt;br&gt;&lt;code&gt;void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block);&lt;/code&gt;&lt;br&gt;&lt;code&gt;void dispatch_sync_f(dispatch_queue_t queue, void *context, dispatch_function_t work);&lt;/code&gt;&lt;br&gt;– 获取主线程队列：&lt;br&gt;&lt;code&gt;dispatch_queue_t dispatch_get_main_queue(void)&lt;/code&gt;&lt;br&gt;– 获取全局队列：&lt;br&gt;&lt;code&gt;dispatch_queue_t dispatch_get_global_queue(long identifier, unsigned long flags);&lt;/code&gt;&lt;br&gt;– 创建队列：&lt;br&gt;&lt;code&gt;dispatch_queue_t dispatch_queue_create(const char *label, dispatch_queue_attr_t attr);&lt;/code&gt;&lt;br&gt;– 设置目标队列：&lt;br&gt;&lt;code&gt;void dispatch_set_target_queue(dispatch_object_t object, dispatch_queue_t queue);&lt;/code&gt;&lt;br&gt;注意：当目标队列串行时，任何在目标队列中执行的block都会串行执行，无论原队列是否串行&lt;br&gt;– 延时：&lt;br&gt;&lt;code&gt;dispatch_after(dispatch_time_t when, dispatch_queue_t queue, dispatch_block_t block);&lt;/code&gt;&lt;br&gt;&lt;code&gt;void dispatch_after_f(dispatch_time_t when, dispatch_queue_t queue, void *context, dispatch_function_t work);&lt;/code&gt;&lt;br&gt;– dispatch_barrier：&lt;br&gt;使用dispatch_barrier将任务加入到并行队列之后，任务会在前面任务全部执行完成之后执行，任务执行过程中，其他任务无法执行，直到barrier任务执行完成&lt;br&gt;– set_specific &amp;amp; get_specific：&lt;br&gt;&lt;code&gt;void dispatch_queue_set_specific(dispatch_queue_t queue, const void *key, void *context, dispatch_function_t destructor);&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;void *dispatch_queue_get_specific(dispatch_queue_t queue, const void *key);&lt;/code&gt;&lt;br&gt;&lt;code&gt;void *dispatch_get_specific(const void *key);&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Day-62-iOS-OS-X内存管理-二-：借助工具解决内存问题&quot;&gt;&lt;a href=&quot;#Day-62-iOS-OS-X内存管理-二-：借助工具解决内存问题&quot; class=&quot;headerlink&quot; title=&quot;# Day 62 : iOS/OS X内存管理(二)：借助工具解决内存问题&quot;&gt;&lt;/a&gt;# Day 62 : &lt;a href=&quot;http://www.jianshu.com/p/09c5141d4531&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS/OS X内存管理(二)：借助工具解决内存问题&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;http://www.jianshu.com/u/256fb15baf75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sam_Lau&lt;/a&gt; 发布&lt;/p&gt;
