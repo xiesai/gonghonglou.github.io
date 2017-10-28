@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
+<meta name="description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一段时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
 第 1 章：熟悉Objective-C第 1 条：了解Objective-C语言的起源要点：– Objective-C 为 C 语言添加了面向对象的特性，是其超集。Objective">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Effective Objective-C 2.0 读书笔记">
 <meta property="og:url" content="http://gonghonglou.com/2017/10/08/Effective-Objective-C-note/index.html">
 <meta property="og:site_name" content="与佳期的个人博客">
-<meta property="og:description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
+<meta property="og:description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一段时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
 第 1 章：熟悉Objective-C第 1 条：了解Objective-C语言的起源要点：– Objective-C 为 C 语言添加了面向对象的特性，是其超集。Objective">
-<meta property="og:updated_time" content="2017-10-23T16:35:41.000Z">
+<meta property="og:updated_time" content="2017-10-28T13:38:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Objective-C 2.0 读书笔记">
-<meta name="twitter:description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
+<meta name="twitter:description" content="《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一段时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。
 第 1 章：熟悉Objective-C第 1 条：了解Objective-C语言的起源要点：– Objective-C 为 C 语言添加了面向对象的特性，是其超集。Objective">
 
 
@@ -401,7 +401,7 @@
       
 
       
-        <p>《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一点时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。</p>
+        <p>《Effective Objective-C 2.0（编写高质量iOS与OS X代码的52个有效方法）》这本书已经买了有一段时间了，一直没有时间读完，趁着这个十一在家没事终于读过了，顺便做一下读书笔记总结记录一下吧。</p>
 <h1 id="第-1-章：熟悉Objective-C"><a href="#第-1-章：熟悉Objective-C" class="headerlink" title="第 1 章：熟悉Objective-C"></a>第 1 章：熟悉Objective-C</h1><h2 id="第-1-条：了解Objective-C语言的起源"><a href="#第-1-条：了解Objective-C语言的起源" class="headerlink" title="第 1 条：了解Objective-C语言的起源"></a>第 1 条：了解Objective-C语言的起源</h2><p>要点：<br>– Objective-C 为 C 语言添加了面向对象的特性，是其超集。Objective-C 使用动态绑定的消息结构，也就是说，在运行时才会去检查对象类型。接收一条消息之后，究竟应执行何种代码，由运行期环境而非编译器来决定。<br>– 理解 C 语言的核心概念有助于写好 Objective-C 程序。尤其要掌握内存模型与指针。</p>
 <h2 id="第-2-条：在类的头文件中尽量少引入其他头文件"><a href="#第-2-条：在类的头文件中尽量少引入其他头文件" class="headerlink" title="第 2 条：在类的头文件中尽量少引入其他头文件"></a>第 2 条：在类的头文件中尽量少引入其他头文件</h2><p>要点：<br>– 除非确有必要，否则不要引入头文件。一般来说，应在某个类的头文件中使用向前声明来提及别的类，并在实现文件中引入那些类的头文件。这样做可以尽量降低类之间的耦合（coupling）。<br>– 有时无法使用向前声明，比如要声明某个类遵循一项协议。这种情况下，尽量把“该类遵循某协议”的这条声明移至“class-continuation分类”中。如果不行的话，就把协议单独放在一个头文件中，然后将其引入。</p>
 <h2 id="第-3-条：多用字面量语法，少用与之等价的方法"><a href="#第-3-条：多用字面量语法，少用与之等价的方法" class="headerlink" title="第 3 条：多用字面量语法，少用与之等价的方法"></a>第 3 条：多用字面量语法，少用与之等价的方法</h2><p>要点：<br>– 应该使用字面量语法来创建字符串、数值、数组、字典。与创建此类对象的常规方法相比，这么做更加简明扼要。<br>– 应该通过取下标操作在访问数组下标或字典中的键所对应的元素。<br>– 用字面量语法创建数组或字典时，若值中有 nil，则会抛出异常。因此，务必确保值里不含 nil。</p>
