@@ -197,11 +197,19 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-11-01T14:41:51.000Z</updated>
+    <updated>2017-11-02T14:59:33.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-85-检测iOS的APP性能的一些方法&quot;&gt;&lt;a href=&quot;#Day-85-检测iOS的APP性能的一些方法&quot; class=&quot;headerlink&quot; title=&quot;# Day 85 : 检测iOS的APP性能的一些方法&quot;&gt;&lt;/a&gt;# Day 85 : &lt;a href=&quot;https://github.com/ming1016/study/wiki/%E6%A3%80%E6%B5%8BiOS%E7%9A%84APP%E6%80%A7%E8%83%BD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;检测iOS的APP性能的一些方法&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/ming1016&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;戴铭（ming1016）&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-86-深入剖析-iOS-性能优化&quot;&gt;&lt;a href=&quot;#Day-86-深入剖析-iOS-性能优化&quot; class=&quot;headerlink&quot; title=&quot;# Day 86 : 深入剖析 iOS 性能优化&quot;&gt;&lt;/a&gt;# Day 86 : &lt;a href=&quot;https://github.com/ming1016/study/wiki/%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90-iOS-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深入剖析 iOS 性能优化&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/ming1016&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;戴铭（ming1016）&lt;/a&gt; 发布&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;时间复杂度&lt;br&gt;– NSArray / NSMutableArray&lt;br&gt;– NSSet / NSMutableSet / NSCountedSet&lt;br&gt;– NSDictionary / NSMutableDictionary&lt;br&gt;– containsObject 方法在数组和 Set 里不同的实现&lt;/li&gt;
+&lt;li&gt;用 GCD 来做优化&lt;br&gt;– 异步处理事件&lt;br&gt;– 需要耗时长的任务&lt;br&gt;– 避免线程爆炸&lt;br&gt;– GCD 相关 Crash 日志&lt;/li&gt;
+&lt;li&gt;I/O 性能优化&lt;br&gt;– NSCache&lt;/li&gt;
+&lt;li&gt;控制 App 的 Wake 次数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过自动化代码检查的方式来避免问题&lt;br&gt;一系列牛逼操作……&lt;/p&gt;
+&lt;h1 id=&quot;Day-85-检测iOS的APP性能的一些方法&quot;&gt;&lt;a href=&quot;#Day-85-检测iOS的APP性能的一些方法&quot; class=&quot;headerlink&quot; title=&quot;# Day 85 : 检测iOS的APP性能的一些方法&quot;&gt;&lt;/a&gt;# Day 85 : &lt;a href=&quot;https://github.com/ming1016/study/wiki/%E6%A3%80%E6%B5%8BiOS%E7%9A%84APP%E6%80%A7%E8%83%BD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;检测iOS的APP性能的一些方法&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/ming1016&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;戴铭（ming1016）&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;– Time Profiler&lt;br&gt;– Allocations&lt;br&gt;– Leak&lt;br&gt;– 开发时需要注意如何避免一些性能问题：&lt;br&gt;– NSDateFormatter&lt;br&gt;– UIImage&lt;br&gt;– 页面加载&lt;br&gt;– 优化首次加载时间&lt;br&gt;– 监控卡顿的方法&lt;br&gt;– 堆栈dump的方法&lt;/p&gt;
 &lt;h1 id=&quot;Day-84-深入理解Objective-C：方法缓存&quot;&gt;&lt;a href=&quot;#Day-84-深入理解Objective-C：方法缓存&quot; class=&quot;headerlink&quot; title=&quot;# Day 84 : 深入理解Objective-C：方法缓存&quot;&gt;&lt;/a&gt;# Day 84 : &lt;a href=&quot;https://tech.meituan.com/DiveIntoMethodCache.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深入理解Objective-C：方法缓存&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://tech.meituan.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;美团点评技术团队&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;objc_msgSend（就arm平台而言）的消息分发分为以下几个步骤：&lt;/p&gt;
