@@ -197,11 +197,13 @@
     <link href="http://gonghonglou.com/2017/08/09/100days-100blogs/"/>
     <id>http://gonghonglou.com/2017/08/09/100days-100blogs/</id>
     <published>2017-08-09T03:57:11.000Z</published>
-    <updated>2017-11-12T12:45:52.000Z</updated>
+    <updated>2017-11-13T11:42:05.000Z</updated>
     
     <content type="html">&lt;p&gt;一直以来都活跃在微博、简书等各大网站搜罗技术博客，每当看到大牛发布或者转发技术博客都会点进去搂一眼，内容比较好或者比较感兴趣的话就会转发收藏。&lt;br&gt;但这些都是零零碎碎的，大多时候都是路上、睡觉前或者什么间隙看到一篇好文章，简单看一下就收藏了，当时来不及 想着以后细读，但往往是在这之后基本上不会再次翻阅了。所以计划从今天起每天仔细阅读一篇技术博客，在这里做一做笔记。&lt;/p&gt;
 &lt;p&gt;微博每日打卡：&lt;a href=&quot;https://weibo.com/p/100808e7a8991364ef294db915427e9aeb2a7e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#100days,100blogs#&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-96-iOS-源代码分析-—-SDWebImage&quot;&gt;&lt;a href=&quot;#Day-96-iOS-源代码分析-—-SDWebImage&quot; class=&quot;headerlink&quot; title=&quot;# Day 96 : iOS 源代码分析 — SDWebImage&quot;&gt;&lt;/a&gt;# Day 96 : &lt;a href=&quot;https://github.com/Draveness/Analyze/blob/master/contents/SDWebImage/iOS%20%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20---%20SDWebImage.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 源代码分析 — SDWebImage&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/Draveness&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Draveness&lt;/a&gt; 发布&lt;/p&gt;
+&lt;h1 id=&quot;持续更新中……&quot;&gt;&lt;a href=&quot;#持续更新中……&quot; class=&quot;headerlink&quot; title=&quot;# 持续更新中……&quot;&gt;&lt;/a&gt;# 持续更新中……&lt;/h1&gt;&lt;h1 id=&quot;Day-97-AFNetworking-概述（一）&quot;&gt;&lt;a href=&quot;#Day-97-AFNetworking-概述（一）&quot; class=&quot;headerlink&quot; title=&quot;# Day 97 : AFNetworking 概述（一）&quot;&gt;&lt;/a&gt;# Day 97 : &lt;a href=&quot;https://github.com/Draveness/analyze/blob/master/contents/AFNetworking/AFNetworking%20%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AFNetworking 概述（一）&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/Draveness&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Draveness&lt;/a&gt; 发布&lt;/p&gt;
+&lt;p&gt;– 如何使用 NSURLSession 发出 HTTP 请求&lt;br&gt;– 如何使用 AFNetworking 发出 HTTP 请求&lt;/p&gt;
+&lt;h1 id=&quot;Day-96-iOS-源代码分析-—-SDWebImage&quot;&gt;&lt;a href=&quot;#Day-96-iOS-源代码分析-—-SDWebImage&quot; class=&quot;headerlink&quot; title=&quot;# Day 96 : iOS 源代码分析 — SDWebImage&quot;&gt;&lt;/a&gt;# Day 96 : &lt;a href=&quot;https://github.com/Draveness/Analyze/blob/master/contents/SDWebImage/iOS%20%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20---%20SDWebImage.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 源代码分析 — SDWebImage&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;由 &lt;a href=&quot;https://github.com/Draveness&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Draveness&lt;/a&gt; 发布&lt;/p&gt;
 &lt;p&gt;总结，SDWebImage 的图片加载过程其实很符合我们的直觉：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;查看缓存&lt;/li&gt;
